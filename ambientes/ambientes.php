@@ -39,6 +39,9 @@
 <div class="col-md-8 col-md-offset-2" >
 	<a  class="btn btn-success " href="anadir_ambiente.php">Añadir Ambiente
 		<i  class="glyphicon glyphicon glyphicon-plus" ></i>
+
+		<a  class="btn btn-info lol" href="../calendario/index.php">Detalles
+		<i  class="glyphicon glyphicon glyphicon-search" ></i>
 	</a><br><br>
 
 
