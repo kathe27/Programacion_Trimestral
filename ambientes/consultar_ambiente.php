@@ -46,6 +46,8 @@
 				<td><strong>Instructor</strong></td>
 				<td><strong>Hora de Inicio</strong></td>
 				<td><strong>Hora de Entrega</strong></td>
+				<td><strong>Descripcion</strong></td>
+
 
 				
 			</tr>
@@ -72,6 +74,8 @@
 							<td>'.$row["instructor"].'</td>
 							<td>'.$row["hora_inicio"].'</td>
 							<td>'.$row["hora_entrega"].'</td>
+							<td>'.$row["descripcion"].'</td>
+
 
 
 						 </tr>';

@@ -40,7 +40,7 @@
 	<a  class="btn btn-success " href="anadir_ambiente.php">Añadir Ambiente
 		<i  class="glyphicon glyphicon glyphicon-plus" ></i>
 
-		<a  class="btn btn-info lol" href="../calendario/index.php">Detalles
+		<a  class="btn btn-info pull-right" href="../calendario/index.php">Detalles
 		<i  class="glyphicon glyphicon glyphicon-search" ></i>
 	</a><br><br>
 

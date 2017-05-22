@@ -68,6 +68,12 @@
 	                    <input type="time" name="hora_entrega" class="form-control" placeholder="Hora de Entrega" >
 	                    <hr>
 	                </div>
+
+	                  <div class="form-group">
+	                 	<label for=""><strong>Descripcion*</strong></label>
+	                   <textarea name="descripcion" placeholder="descripcion" id="" cols="20" rows="8" class="form-control"></textarea>
+	                    <hr>
+	                </div>
 	                <div class="form-group">
 	                    <button type="submit" class="btn btn-success">
 	                        <i class="glyphicon glyphicon-plus"></i>
@@ -99,11 +105,13 @@
 			$instructor= mysqli_real_escape_string($con , $_POST["instructor"]);
 			$hora_inicio= mysqli_real_escape_string($con , $_POST["hora_inicio"]);
 			$hora_entrega= mysqli_real_escape_string($con , $_POST["hora_entrega"]);
+			$descripcion= mysqli_real_escape_string($con , $_POST["descripcion"]);
+
 
 			
 
-			$sql= "INSERT INTO ambientes (nombre,especialidad,instructor,hora_inicio, hora_entrega)
-				VALUES ('$nombre', '$especialidad', '$instructor', '$hora_inicio', '$hora_entrega')";
+			$sql= "INSERT INTO ambientes (nombre,especialidad,instructor,hora_inicio, hora_entrega, descripcion)
+				VALUES ('$nombre', '$especialidad', '$instructor', '$hora_inicio', '$hora_entrega', '$descripcion')";
 
 			if(!mysqli_query($con,$sql)){
 				die('Error: ' . mysqli_error($con));

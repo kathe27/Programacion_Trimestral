@@ -72,6 +72,11 @@
 	                    <input type="time" value="<?php echo $row['horario'] ?>" name="horario" class="form-control" placeholder="Horario" >
 	                    <hr>
 	                </div>
+	                 <div class="form-group">
+	                 	<label for=""><strong>Descripcion</strong></label>
+	                    <input type="time" value="<?php echo $row['descripcion'] ?>" name="descripcion" class="form-control" placeholder="Descripcion" >
+	                    <hr>
+	                </div>
 	                <div class="form-group">
 	                    <button type="submit" class="btn btn-success">
 	                        <i class="glyphicon glyphicon-pencil"></i>
