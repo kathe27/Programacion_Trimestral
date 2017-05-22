@@ -51,21 +51,14 @@
 	                   <input type="text" class="form-control" name="especialidad" placeholder="Especialidad" required>
 	                   <hr>
 	                </div>
-	                <div class="form-group">
-	                <label for=""><strong>Instructor*</strong></label>
-	                    <input type="text" name="instructor" class="form-control" placeholder="Instructor" required>
-						<hr>
-	                </div>
-
 	                 <div class="form-group">
-	                 	<label for=""><strong>Hora de Inicio*</strong></label>
-	                    <input type="time" name="hora_inicio" class="form-control" placeholder="Hora de Inicio" >
+	                 	<label for=""><strong>Disponibilidad*</strong></label>
+	                    <input type="text" name="disponibilidad" class="form-control" placeholder="Dispobibilidad" >
 	                    <hr>
 	                </div>
-
-	                 <div class="form-group">
-	                 	<label for=""><strong>Hora de Entrega*</strong></label>
-	                    <input type="time" name="hora_entrega" class="form-control" placeholder="Hora de Entrega" >
+	                <div class="form-group">
+	                 	<label for=""><strong>Descripcion*</strong></label>
+	                    <textarea type="text" name="descripcion" class="form-control" placeholder="Descripcion" ></textarea>
 	                    <hr>
 	                </div>
 	                <div class="form-group">
@@ -96,14 +89,12 @@
 			} 
 			$nombre= mysqli_real_escape_string($con , $_POST["nombre"]);
 			$especialidad= mysqli_real_escape_string($con , $_POST["especialidad"]);
-			$instructor= mysqli_real_escape_string($con , $_POST["instructor"]);
-			$hora_inicio= mysqli_real_escape_string($con , $_POST["hora_inicio"]);
-			$hora_entrega= mysqli_real_escape_string($con , $_POST["hora_entrega"]);
+			$descripcion= mysqli_real_escape_string($con , $_POST["descripcion"]);
+			$disponibilidad= mysqli_real_escape_string($con , $_POST["disponibilidad"]);
 
-			
-
-			$sql= "INSERT INTO ambientes (nombre,especialidad,instructor,hora_inicio, hora_entrega)
-				VALUES ('$nombre', '$especialidad', '$instructor', '$hora_inicio', '$hora_entrega')";
+		
+			$sql= "INSERT INTO ambientes (nombre,especialidad,descripcion,disponibilidad)
+				VALUES ('$nombre', '$especialidad', '$descripcion', '$disponibilidad')";
 
 			if(!mysqli_query($con,$sql)){
 				die('Error: ' . mysqli_error($con));

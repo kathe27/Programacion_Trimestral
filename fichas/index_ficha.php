@@ -31,21 +31,20 @@
 
 	<div class="container-fluid mov">
 		<div class="row">
-			<div class="col-md-6 col-md-offset-3 box">
-				<h1 class="text-center">Fichas de Caracterización</h1>
-				<hr>
-				<div class="panel-default">
-					<h3 class="panel-title-success text-center">Registros</h3>
-				</div>
+		<br>
+		<h1 class="text-center">Lista Fichas de Caracterización</h1>
+		<br>
+			<hr>
+			<div class="col-md-6 col-md-offset-3">
 				<div class="panel-body">
 					<div class="row">
-						<div class="col-md-8 col-md-offset-2">
-							
-							<a href="anadir_ficha.php" class="btn btn-success">Añadir <i class="glyphicon glyphicon-plus"></i></a><br><br>
-							<table border="1px" class=" table table-hover">
+						<a href="anadir_ficha.php" class="btn btn-success pull-left">Añadir Ficha <i class="glyphicon glyphicon-plus"></i></a><br><br>
+						<div class="col-md-10 col-md-offset-1">
+							<table class=" table table-hover">
+							<br>
 								<tr>
-									<td><strong>Nombre</strong></td>
-									<td><strong>Acciones</strong></td>
+									<td class="text-center"><strong>Nombre</strong></td>
+									<td class="text-center"><strong>Acciones</strong></td>
 								</tr>
 								<script src="js/jquery-3.1.1.js"></script>
 								<script src="js/bootstrap.min.js"></script>
@@ -60,8 +59,8 @@
 									while ($row = mysqli_fetch_array($insertar)) {
 										echo "
 											<tr>
-												<td>".$row['especializacion']."</td>
-												<td>
+												<td class='text-center'>".$row['especializacion']."</td>
+												<td class='text-center'>
 													<a class='btn btn-info glyphicon glyphicon-search' data-toggle='tooltip' title='Consultar' href='consultar_ficha.php?id=".$row['id']."'></a>
 													<a class='btn btn-success glyphicon glyphicon-pencil' data-toggle='tooltip' title='Modificar' href='editar_ficha.php?id=".$row['id']."'></a>
 													<a class ='btn btn-danger glyphicon glyphicon-trash' data-toggle='tooltip' title='Eliminar' href='eliminar_ficha.php?id=".$row['id']."'></a>

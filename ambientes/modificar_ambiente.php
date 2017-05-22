@@ -52,7 +52,7 @@
 
 	            <form id="add" action="" method="POST"><br>
 	                <div class="form-group">
-	                	 <label for=""><strong>Nombre</strong></label>
+	                	 <label for=""><strong>Nombre de Ambiente</strong></label>
 	                    <input type="text" value="<?php echo $row['nombre'] ?>"  class="form-control"name="nombre" data-validation="required" placeholder="Nombre">
 	                    <hr>
 	                </div>
@@ -61,16 +61,16 @@
 	                   <input type="text" value="<?php echo $row['especialidad'] ?>" class="form-control" name="especialidad" placeholder="Especialidad" required>
 	                   <hr>
 	                </div>
-	                <div class="form-group">
-	                <label for=""><strong>Instructor</strong></label>
-	                    <input type="text" value="<?php echo $row['instructor'] ?>" name="instructor" class="form-control" placeholder="Instructor" required>
-						<hr>
-	                </div>
-
 	                 <div class="form-group">
-	                 	<label for=""><strong>Horario</strong></label>
-	                    <input type="time" value="<?php echo $row['horario'] ?>" name="horario" class="form-control" placeholder="Horario" >
+	                 	<label for=""><strong>Disponibilidad</strong></label>
+	                    <input type="text" value="<?php echo $row['disponibilidad'] ?>" name="disponibilidad" class="form-control" placeholder="Horario" >
 	                    <hr>
+	                </div>
+	                 <div class="form-group">
+	                <label for=""><strong>Descripcion</strong></label>
+	                	<textarea class="form-control" name="descripcion" cols="20" rows="8" placeholder="Descripcion"><?php echo $row['descripcion'] ?></textarea>
+	                 
+						<hr>
 	                </div>
 	                <div class="form-group">
 	                    <button type="submit" class="btn btn-success">
@@ -100,14 +100,13 @@
 			} 
 			$nombre= mysqli_real_escape_string($con , $_POST["nombre"]);
 			$especialidad= mysqli_real_escape_string($con , $_POST["especialidad"]);
-			$instructor= mysqli_real_escape_string($con , $_POST["instructor"]);
-			$hora_inicio= mysqli_real_escape_string($con , $_POST["hora_inicio"]);
-			$hora_entrega= mysqli_real_escape_string($con , $_POST["hora_entrega"]);
+			$descripcion= mysqli_real_escape_string($con , $_POST["descripcion"]);
+			$disponibilidad= mysqli_real_escape_string($con , $_POST["disponibilidad"]);
 
 
 			
 
-			$sql= "UPDATE ambientes SET nombre='$nombre', especialidad='$especialidad',instructor='$instructor', hora_inicio = '$hora_inicio', hora_entrega = '$hora_entrega' WHERE id = $id";
+			$sql= "UPDATE ambientes SET nombre='$nombre', especialidad='$especialidad',descripcion='$descripcion', disponibilidad = '$disponibilidad' WHERE id = $id";
 
 			if(!mysqli_query($con,$sql)){
 				die('Error: ' . mysqli_error($con));

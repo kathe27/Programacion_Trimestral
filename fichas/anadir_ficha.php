@@ -31,68 +31,67 @@
 		<br>
 	<div class="container-fluid mov">
 		<div class="row">
+		<h1 class="text-center">Añadir Fichas de Caracterización</h1>
+		<hr>
 			<div class="col-md-6 col-md-offset-3 box">
-				<h1 class="text-center">Fichas de Caracterización</h1>
-				<hr>
+			<br>
 				<div class="panel-default">
 					<a href="index_ficha.php" class="btn btn-danger"><i class="glyphicon glyphicon-arrow-left"></i>Volver</a>
-					<div class="panel-heading">
-						<h3 class="panel-title-success text-center">Formulario Fichas de Caracterización</h3>
-					</div>
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-md-8 col-md-offset-2">
 								<form action="" method="POST">
 									<div class="form-group">
-									<label for="" class="label label-success">Ficha</label>
+									<label>Ficha*</label>
 										<input type="number" 
 											 class="form-control" 
 											 name="ficha" 
-											 placeholder="Ingrese su ficha*">
+											 placeholder="Ingrese su ficha">
 									</div>		 
 									<div class="form-group">
-									<label for="" class="label label-success">Especializacion</label>
+									<label>Especializacion*</label>
 										<input type="text" 
 											class="form-control" 
 											name="especializacion" 
 											placeholder="Especializacion*">
 									</div>
 									<div class="form-group">
-										<label for="" class="label label-success">Instructor</label>
+										<label>Instructor*</label>
 										<input type="text" 
 											class="form-control" 
 											name="instructor" 
-											placeholder="Instructor*">
+											placeholder="Instructor">
 									</div>
 									<div class="form-group">
-										<label for="" class="label label-success">Fecha de Inicio</label><br>
+										<label>Fecha de Inicio*</label><br>
 										<input type="date" 
 											class="form-control" 
 											name="fecha_inicio">
 									</div>
 									<div class="form-group">
-										<label for="" class="label label-success">Fecha Lectiva</label><br>
+										<label>Fin Lectiva*</label><br>
 										<input type="date" 
 											class="form-control" 
 											name="fecha_lectiva">
 									</div>
 									<div class="form-group">
-										<label for="" class="label label-success">Fecha Final</label><br>
+										<label>Fecha Final*</label><br>
 										<input type="date" 
 											class="form-control" 
 											name="fecha_final">
 									</div>
 									<div class="form-group">
-										<label for="" class="label label-success">Horario</label>
-										<input type="time" 
+										<label>Horario*</label>
+										<input type="text" 
 											class="form-control" 
-											name="horario">
+											name="horario"
+											placeholder="Horario">
 									</div>
-									<button class="btn btn-success">Enviar 
-										<i class="glyphicon glyphicon-plus-sign"></i>
+									<button class="btn btn-success">Añadir 
+										<i class="glyphicon glyphicon-plus"></i>
 									</button>
-									<button class="btn btn-danger">Borrar 
-										<i class="glyphicon glyphicon-remove-circle">
+									<button class="btn btn-default">Borrar 
+										<i class="glyphicon glyphicon-trash">
 										</i>
 									</button>
 								</form>

@@ -125,6 +125,7 @@ if (isset($_POST['from']))
 
                                 </div>
                                     <div class="pull-right form-inline"><br>
+                                        <a class="btn btn-primary" href="../ambientes/ambientes.php">Volver</a>
                                         <button class="btn btn-info" data-toggle='modal' data-target='#add_evento'>Añadir Evento</button>
                                     </div>
 
