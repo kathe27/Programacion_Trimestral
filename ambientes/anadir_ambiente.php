@@ -71,7 +71,7 @@
 
 	                  <div class="form-group">
 	                 	<label for=""><strong>Descripcion*</strong></label>
-	                   <textarea name="descripcion" placeholder="descripcion" id="" cols="20" rows="8" class="form-control"></textarea>
+	                   <textarea name="descripcion" placeholder="Descripcion" id="" cols="20" rows="8" class="form-control"></textarea>
 	                    <hr>
 	                </div>
 	                <div class="form-group">
