@@ -67,10 +67,16 @@
 	                    <hr>
 	                </div>
 	                 <div class="form-group">
+<<<<<<< HEAD
 	                <label for=""><strong>Descripcion</strong></label>
 	                	<textarea class="form-control" name="descripcion" cols="20" rows="8" placeholder="Descripcion"><?php echo $row['descripcion'] ?></textarea>
 	                 
 						<hr>
+=======
+	                 	<label for=""><strong>Descripcion</strong></label>
+	                    <input type="time" value="<?php echo $row['descripcion'] ?>" name="descripcion" class="form-control" placeholder="Descripcion" >
+	                    <hr>
+>>>>>>> df904acc644e57d8bdf3f1d3567d811317c35bfe
 	                </div>
 	                <div class="form-group">
 	                    <button type="submit" class="btn btn-success">

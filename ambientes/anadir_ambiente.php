@@ -61,6 +61,12 @@
 	                    <textarea type="text" name="descripcion" class="form-control" placeholder="Descripcion" ></textarea>
 	                    <hr>
 	                </div>
+
+	                  <div class="form-group">
+	                 	<label for=""><strong>Descripcion*</strong></label>
+	                   <textarea name="descripcion" placeholder="Descripcion" id="" cols="20" rows="8" class="form-control"></textarea>
+	                    <hr>
+	                </div>
 	                <div class="form-group">
 	                    <button type="submit" class="btn btn-success">
 	                        <i class="glyphicon glyphicon-plus"></i>
@@ -89,12 +95,25 @@
 			} 
 			$nombre= mysqli_real_escape_string($con , $_POST["nombre"]);
 			$especialidad= mysqli_real_escape_string($con , $_POST["especialidad"]);
+<<<<<<< HEAD
 			$descripcion= mysqli_real_escape_string($con , $_POST["descripcion"]);
 			$disponibilidad= mysqli_real_escape_string($con , $_POST["disponibilidad"]);
 
 		
 			$sql= "INSERT INTO ambientes (nombre,especialidad,descripcion,disponibilidad)
 				VALUES ('$nombre', '$especialidad', '$descripcion', '$disponibilidad')";
+=======
+			$instructor= mysqli_real_escape_string($con , $_POST["instructor"]);
+			$hora_inicio= mysqli_real_escape_string($con , $_POST["hora_inicio"]);
+			$hora_entrega= mysqli_real_escape_string($con , $_POST["hora_entrega"]);
+			$descripcion= mysqli_real_escape_string($con , $_POST["descripcion"]);
+
+
+			
+
+			$sql= "INSERT INTO ambientes (nombre,especialidad,instructor,hora_inicio, hora_entrega, descripcion)
+				VALUES ('$nombre', '$especialidad', '$instructor', '$hora_inicio', '$hora_entrega', '$descripcion')";
+>>>>>>> df904acc644e57d8bdf3f1d3567d811317c35bfe
 
 			if(!mysqli_query($con,$sql)){
 				die('Error: ' . mysqli_error($con));
