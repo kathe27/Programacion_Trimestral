@@ -17,18 +17,21 @@
 		    <div class="navbar-header">
 		      <a class="navbar-brand" href="#"><img id="img1" src="ambientes/imgs/sena.png" class="img-rounded" width="100" height="100"></a>
 		    </div>
-		    <ul class="nav navbar-nav">
+		    <ul class="nav navbar-nav navbar-left">
 		      <li><a href="#">Inicio</a></li>
 		      <li><a href="ambientes/ambientes.php">Ambientes</a></li>
 		      <li><a href="fichas/index_ficha.php">Fichas</a></li>
 		      <li><a href="instructores/gestionarIns.php">Instructores</a></li>
 		    </ul>
-		    <form class="navbar-form navbar-right">
-		      <div class="form-group">
-		        <input type="text" class="form-control" placeholder="Buscar">
-		      </div>
-		      <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-zoom-in"></i></button>
-		    </form>
+		    <ul class="nav navbar-nav navbar-right">
+	      		<li><a href="*" class="glyphicon glyphicon-off "></a></li>
+			    <form class="navbar-form navbar-right">
+			      <div class="form-group">
+			        <input type="text" class="form-control" placeholder="Buscar">
+			      </div>
+			      <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-zoom-in"></i></button>
+			    </form>
+		    </ul>
 		  </div>
 		</nav>
 		
