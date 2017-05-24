@@ -31,68 +31,81 @@
 		<br>
 	<div class="container-fluid mov">
 		<div class="row">
+		<h1 class="text-center">Añadir Fichas de Caracterización</h1>
+		<hr>
 			<div class="col-md-6 col-md-offset-3 box">
-				<h1 class="text-center">Fichas de Caracterización</h1>
-				<hr>
+			<br>
 				<div class="panel-default">
 					<a href="index_ficha.php" class="btn btn-danger"><i class="glyphicon glyphicon-arrow-left"></i>Volver</a>
-					<div class="panel-heading">
-						<h3 class="panel-title-success text-center">Formulario Fichas de Caracterización</h3>
-					</div>
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-md-8 col-md-offset-2">
 								<form action="" method="POST">
 									<div class="form-group">
-									<label for="" class="label label-success">Ficha</label>
+									<label>Ficha*</label>
 										<input type="number" 
 											 class="form-control" 
 											 name="ficha" 
-											 placeholder="Ingrese su ficha*">
-									</div>		 
+											 placeholder="Ingrese numero ficha">
+									</div>	
 									<div class="form-group">
-									<label for="" class="label label-success">Especializacion</label>
+										<label>Nombre Ficha*</label>
 										<input type="text" 
 											class="form-control" 
-											name="especializacion" 
-											placeholder="Especializacion*">
+											name="nombre" 
+											placeholder="Nombre Ficha">
+									</div>	 
+									<div class="form-group">
+									<label>Especialidad*</label>
+										<select name="especialidad" class="form-control">
+											<option>Seleccione una opcion...</option>
+											<option value="Eectricidad">Electricidad</option>
+											<option value="Informatica">Informatica</option>
+											<option value="Salud Ocupacionak">Salud Ocupacional</option>
+											<option value="Mecanica">Mecanica</option>
+											<option value="Automotriz">Automotriz</option>
+											<option value="Construccion">Construccion</option>
+											<option value="Confeccion">Confeccion</option>
+											<option value="Ambiental">Ambiental</option>
+										</select>
 									</div>
 									<div class="form-group">
-										<label for="" class="label label-success">Instructor</label>
+										<label>Instructor*</label>
 										<input type="text" 
 											class="form-control" 
 											name="instructor" 
-											placeholder="Instructor*">
+											placeholder="Instructor">
 									</div>
 									<div class="form-group">
-										<label for="" class="label label-success">Fecha de Inicio</label><br>
+										<label>Fecha de Inicio*</label><br>
 										<input type="date" 
 											class="form-control" 
 											name="fecha_inicio">
 									</div>
 									<div class="form-group">
-										<label for="" class="label label-success">Fecha Lectiva</label><br>
+										<label>Fin Lectiva*</label><br>
 										<input type="date" 
 											class="form-control" 
 											name="fecha_lectiva">
 									</div>
 									<div class="form-group">
-										<label for="" class="label label-success">Fecha Final</label><br>
+										<label>Fecha Final*</label><br>
 										<input type="date" 
 											class="form-control" 
 											name="fecha_final">
 									</div>
 									<div class="form-group">
-										<label for="" class="label label-success">Horario</label>
-										<input type="time" 
+										<label>Horario*</label>
+										<input type="text" 
 											class="form-control" 
-											name="horario">
+											name="horario"
+											placeholder="Horario">
 									</div>
-									<button class="btn btn-success">Enviar 
-										<i class="glyphicon glyphicon-plus-sign"></i>
+									<button class="btn btn-success">Añadir 
+										<i class="glyphicon glyphicon-plus"></i>
 									</button>
-									<button class="btn btn-danger">Borrar 
-										<i class="glyphicon glyphicon-remove-circle">
+									<button class="btn btn-default">Borrar 
+										<i class="glyphicon glyphicon-trash">
 										</i>
 									</button>
 								</form>
@@ -107,7 +120,8 @@
 	<?php 
 		if ($_POST) {
 			$ficha = $_POST['ficha'];
-			$especializacion = $_POST['especializacion'];
+			$nombre = $_POST['nombre'];
+			$especialidad = $_POST['especialidad'];
 			$instructor = $_POST['instructor'];
 			$fecha_inicio = $_POST['fecha_inicio'];
 			$fecha_inicio = $_POST['fecha_inicio'];
@@ -118,13 +132,13 @@
 
 
 			$conexion = mysqli_connect('localhost', 'root', '', 'programacion_trimestral');
-			$insertar = "INSERT INTO fichas VALUES('', '$ficha', '$especializacion', '$instructor', '$fecha_inicio', '$fecha_lectiva', '$fecha_final', '$horario')";
+			$insertar = "INSERT INTO fichas VALUES('', '$ficha', '$nombre', '$especialidad', '$instructor', '$fecha_inicio', '$fecha_lectiva', '$fecha_final', '$horario')";
 			$row = mysqli_query($conexion,$insertar);
 			if ($row) {
 				echo "
 				<script>
-				alert('se añadio correctamente');
-				window.location.replace(index.php);
+				alert('Se añadio correctamente');
+				window.location.replace('index_ficha.php');
 				</script>";
 			} else{
 				echo "

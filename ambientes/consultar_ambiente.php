@@ -41,13 +41,9 @@
 	 <a class=" glyphicon glyphicon-arrow-left btn btn-danger" href="ambientes.php">Volver</a><br><br>
 		<table  class="text-center table table-hover box">
 			<tr>
-				<td><strong>Nombre de Aula</strong></td>
-				<td><strong>Especialidad</strong></td>
-				<td><strong>Instructor</strong></td>
-				<td><strong>Hora de Inicio</strong></td>
-				<td><strong>Hora de Entrega</strong></td>
-
-				
+				<td><strong>Ambiente</strong></td>
+				<td><strong>Disponibilidad</strong></td>
+				<td><strong>Descripcion</strong></td>
 			</tr>
 
 		
@@ -68,11 +64,9 @@
 
 
 							<td>'.$row["nombre"].'</td>
-							<td>'.$row["especialidad"].'</td>
-							<td>'.$row["instructor"].'</td>
-							<td>'.$row["hora_inicio"].'</td>
-							<td>'.$row["hora_entrega"].'</td>
-
+							<td>'.$row["disponibilidad"].'</td>
+							<td>'.$row["descripcion"].'</td>
+							
 
 						 </tr>';
 				}	

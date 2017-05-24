@@ -38,25 +38,29 @@
 		<br>
 	<div class="container-fluid mov">
 		<div class="row">
+		<br>
+			<h1 class="text-center">Consultar Fichas de Caracterización</h1>
+			<br>
+			<hr>
 			<div class="col-md-6 col-md-offset-3 box">
-				<h1 class="text-center">Fichas de Caracterización</h1>
-				<hr>
 				<div class="panel-default">
+				<br>
 					<a href="index_ficha.php" class="btn btn-danger"><i class="glyphicon glyphicon-arrow-left"></i>Volver</a>
-					<div class="panel-heading">
-						<h3 class="panel-title-success text-center">Consulta Fichas de Caracterización</h3>
-					</div>
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-md-8 col-md-offset-2">
-								<table class="table table-hover" border="1px">
+								<table class="table table-hover box">
 									<tr>
 										<td><strong>Ficha</strong></td>
 										<td><?php echo $row['ficha'] ?></td>
 									</tr>
 									<tr>
-										<td><strong>Especializacion</strong></td>
-										<td><?php echo $row['especializacion'] ?></td>
+										<td><strong>Nombre Ficha</strong></td>
+										<td><?php echo $row['nombre'] ?></td>
+									</tr>
+									<tr>
+										<td><strong>Especialidad</strong></td>
+										<td><?php echo $row['especialidad'] ?></td>
 									</tr>
 									<tr>
 										<td><strong>Instructor</strong></td>
