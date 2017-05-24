@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <title>Añadir Instructor</title>
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/index.css">
@@ -33,75 +33,178 @@
         </nav>
 
 
-<div class="panel panel-primary col-md-8 col-md-offset-2 ">
+<div class="col-md-6 col-md-offset-3 ">
 
-  <div class="panel-heading panel-primary panel22">Gestionar Instructores</div>
+
   <h1 class="text2 text-center">Añadir instructor</h1>
-    <a class="text2 text22"href="gestionarIns.php">Volver</a>
+   
   <div class="panel-body">
 
     <?php 
 
-    	$con = mysqli_connect("localhost","root","","programacion_trimestral");
-    	$query = mysqli_query($con ,"SELECT * FROM  instructores ");
+      $con = mysqli_connect("localhost","root","","programacion_trimestral");
+      $query = mysqli_query($con ,"SELECT * FROM  instructores ");
 
     ?>
+      <a href="gestionarIns.php" class="btn btn-danger"><i class="glyphicon glyphicon-arrow-left"></i>Volver</a>
+    <form action="" method="post"><br>
+                    <div class="form-group">
+                         <label for=""><strong>Nombres*</strong></label>
+                        <input type="text"  class="form-control"name="nombres" data-validation="required" placeholder="Nombres">
+                        <hr>
+                    </div>
 
-   <form id="add" method="post">
                     <div class="form-group">
-                        <input type="text" placeholder="Digite su nombre" name="nombre" class="form-control" data-validation="required">
+                         <label for=""><strong>Apellidos*</strong></label>
+                        <input type="text"  class="form-control"name="apellidos" data-validation="required" placeholder="Nombres">
+                        <hr>
+                    </div>
+
+                     
+                     <div class="form-group">
+                         <label for=""><strong>Especialidad*</strong></label>
+                         <select name="especialidad" class="form-control">
+                             <option value="">Seleccionar...</option>
+                             <option value="Tecnico">Tecnico</option>
+                             <option value="Transversal">Transversal</option>
+                             <option value="Ingles">Ingles</option>
+
+                         </select>
+                        <hr>
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Digite sus apellidos" name="apellidos" class="form-control" data-validation="required">
-                        
+                         <label for=""><strong>Vinculacion*</strong></label>
+                         <select id="datos" name="vinculacion1" class="form-control" onchange="habilitarCombo(this.value);">
+                             <option value="">Seleccionar...</option>
+                             <option value="Planta">Planta</option>
+                             <option value="Contratista">Contratista</option>
+ 
+                         </select>
+                        <hr>
                     </div>
+
+                       <div class="form-group">
+                         <label for=""><strong>Tipo Planta</strong></label>
+                         <select id="d1" name="tipoplanta" class="form-control" disabled="true">
+                             <option value="">Seleccionar...</option>
+                             <option value="Carrera">Carrera</option>
+                             <option value="Provisional">Provisional</option>
+ 
+                         </select>
+                        <hr>
+                    </div>
+
+                     
+                       <div class="form-group">
+                         <label for=""><strong>Tipo Contrato</strong></label>
+                         <select id="d2" name="tipocontrato" class="form-control" disabled="true">
+                             <option value="">Seleccionar...</option>
+                             <option value="Por Horas">Por Horas</option>
+                             <option value="Término Fijo">Termino Fijo</option>
+ 
+                         </select>
+                        <hr>
+                    </div>
+
+                     <div class="form-group">
+                         <label for=""><strong>Cantidad Horas*</strong></label>
+                         <select  name="cantidadhoras" class="form-control">
+                             <option value="">Seleccionar...</option>
+                             <option value="32">32</option>
+                             <option value="48">40</option>
+ 
+                         </select>
+                        <hr>
+                    </div>
+
                     <div class="form-group">
-                        <input type="text" placeholder="Cual es la especialidad" name="especialidad" class="form-control" data-validation="required">
-                        
+                         <label for=""><strong>Actividades Administrativas</strong></label>
+                         <select  name="actadministrativas" class="form-control">
+                             <option value="">Seleccionar...</option>
+                             <option value="Sindesena">Sindesena</option>
+                             <option value="Articulacion">Articulacion</option>
+                             <option value="Virtual">Virtual</option>
+
+ 
+                         </select>
+                        <hr>
                     </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Apoyo grupos" name="apoyo_grupos" class="form-control" data-validation="required">
+
+                     <div class="form-group">
+                         <label for=""><strong>Area</strong></label>
+                         <select  name="area" class="form-control">
+                             <option value="">Seleccionar...</option>
+                             <option value="Ambiental">Ambiental</option>
+                             <option value="Automotriz">Automotriz</option>
+                             <option value="Etica y Comunicacion">Etica y Comunicacion</option>
+                             <option value="Confeccion">Confeccion</option>
+                             <option value="Construccion">Construccion</option>
+                             <option value="Redes para Gas">Redes para Gas</option>
+                             <option value="Salud Ocupacional">Salud Ocupacional</option>
+                             <option value="Soldadura">Soldadura</option>
+                             <option value="Ingles Presencial">Ingles Presencial</option>
+                             <option value="Ingles Voluntarios">Ingles Voluntarios</option>
+                             <option value="Equipo Tecnico pedagogico">Equipo Tecnico pedagogico</option>
+                             <option value="Cultura Fisica">Cultura Fisica</option>
+                             <option value="Diseño Mecanico">Diseño Mecanico</option>
+                             <option value="Electricidad">Electricidad</option>
+                             <option value="Gestion Integrada de la Calidad">Gestion Integrada de la Calidad</option>
+                             <option value="Informatica y Sistemas">Informatica y Sistemas</option>
+                             <option value="Joyeria">Joyeria</option>
+                             <option value="Mantenimiento">Mantenimiento</option>
+                             <option value="Motos">Motos</option>
+                             <option value="Mobiliario y Maderas">Mobiliario y Maderas</option>
+                             <option value="Proyectos y Emprendimiento">Proyectos y Emprendimiento</option>
+
+
+
+
+
+
+
+ 
+                         </select>
+                        <hr>
                     </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Tipo contrato" name="tipo_contrato" class="form-control" data-validation="required">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="cantidad horas" name="cantidad_horas" class="form-control" data-validation="required">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Restriciones" name="restricciones" class="form-control" data-validation="required">
-                    </div>
-                    <div class="form-group">
-                        <input type="text"  placeholder="horario ejem 2017-12-12 08:40:20" name="horario" class="form-control" data-validation="required">
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-default btn-success"> 
-                            <i class="glyphicon glyphicon-plus"></i>Enviar
-                        </button>
-                        <button type="reset" class="btn btn-default "> 
-                            <i class="glyphicon glyphicon-trash"></i>Limpiar
-                        </button>
-                    </div>
-                </form>
+
+                    <button type="submit" class="btn btn-success">Añadir</button>
+                    <button type="reset" class="btn btn-default">Reiniciar</button>
+
+
+                </div>
+
+         </form>
+
+  
                         
                 <?php 
 
                     if($_POST){
-                        $nombre=$_POST['nombre'];
+                        echo var_dump($_POST);
+
+                        $nombres=$_POST['nombres'];
                         $apellidos=$_POST['apellidos'];
                         $especialidad=$_POST['especialidad'];
-                        $apoyo_grupos=$_POST['apoyo_grupos'];
-                        $tipo_contrato=$_POST['tipo_contrato'];
-                        $cantidad_horas=$_POST['cantidad_horas'];
-                        $restricciones=$_POST['restricciones'];
-                        $horario=$_POST['horario'];
+                        $vinculacion1=$_POST['vinculacion1'];
+                        if ($_POST['vinculacion1'] == 'Contratista') {
+                          $tipoplanta='No Aplica';
+                          $tipocontrato=$_POST['tipocontrato'];
+                        } else{
+                          $tipoplanta=$_POST['tipoplanta'];
+                          $tipocontrato='No Aplica';
+
+                        }
+                        $cantidadhoras=$_POST['cantidadhoras'];
+                        $actadministrativas=$_POST['actadministrativas'];
+                        $area=$_POST['area'];
+
+
 
                         
 
-                        if($nombre != "" && $apellidos != "" && $especialidad != "" && $apoyo_grupos != "" && $tipo_contrato!="" && $cantidad_horas!= "" && $restricciones!="" && $horario!= ""){
-
+                            
                             $con = mysqli_connect("localhost","root","","programacion_trimestral");
-                            $query = mysqli_query($con , "INSERT INTO instructores VALUES ('','$nombre','$apellidos','$especialidad','$apoyo_grupos,','$tipo_contrato','$cantidad_horas','$restricciones','$horario')");
+                            $query = mysqli_query($con , "INSERT INTO instructores(nombres, apellidos, especialidad, vinculacion1, tipoplanta, tipocontrato, cantidadhoras, actadministrativas, area) VALUES('$nombres','$apellidos','$especialidad','$vinculacion1','$tipoplanta','$tipocontrato','$cantidadhoras','$actadministrativas','$area')");
 
                             if($query){
                                 echo "<script>alert('Registro Correctamente');document.location.replace('gestionarIns.php')</script>";
@@ -109,16 +212,9 @@
                                 echo "<script>alert('No se registro Correctamente')</script>";
                                 
                             }
+                          
 
-                    }else{
-                        echo "<script> alert('Hay datos incompletos porfavor complete')</script>";
-                    }
-
-
-
-
-
-
+                    
 
 
 
@@ -127,27 +223,34 @@
                  ?>
   </div>
 </div>
-	
+  
 
-	<script src="js/jquery-3.2.1.min.js"> </script>
-	<script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery-3.2.1.min.js"> </script>
+  <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.form-validator.es.js"></script>
     <script src="js/jquery.form-validator.min.js"></script>
 
-    <script>    
+  
+    <script>
+      function habilitarCombo(valor){
+    if(valor=='Planta'){
+      document.getElementById("d1").disabled = false;
+      document.getElementById("d2").disabled = true;
 
-            $(function() {
-                $.validate({ form: '#add', 
-                    languaje : es
+    }
+    else {
+      document.getElementById("d2").disabled = false;
+      document.getElementById("d1").disabled = true;
 
-            });
-            });
-
+    }
+  }
     </script>
 
 
 
-	
+
+
+  
 
 </body>
 </html>

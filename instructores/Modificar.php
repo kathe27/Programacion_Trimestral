@@ -33,11 +33,10 @@
         </nav>
 
 
-<div class="panel panel-primary col-md-8 col-md-offset-2 ">
+<div class=" col-md-8 col-md-offset-2 ">
 
-  <div class="panel-heading panel-primary panel22">Gestionar Instructores</div>
+
   <h1 class="text2 text-center">Modificar instructor</h1>
-    <a class="text2 text22"href="gestionarIns.php">Volver</a>
   <div class="panel-body">
 
     <?php 
@@ -51,62 +50,102 @@
 
     ?>
 
-   <form id="add" method="post">
+  <a href="gestionarIns.php" class="btn btn-danger"><i class="glyphicon glyphicon-arrow-left"></i>Volver</a>
+    <form action="" method="post"><br>
                     <div class="form-group">
-                        <input type="text" value="<?= $row['nombre']  ?>" name="nombre" class="form-control" data-validation="required">
+                         <label for=""><strong>Nombres</strong></label>
+                        <input value="<?php echo $row['nombres'] ?>" type="text"  class="form-control"name="nombres" data-validation="required" placeholder="Nombres">
+                        <hr>
+                    </div>
+
+                    <div class="form-group">
+                         <label for=""><strong>Apellidos</strong></label>
+                        <input value="<?php echo $row['apellidos'] ?>" type="text"  class="form-control"name="apellidos" data-validation="required" placeholder="Nombres">
+                        <hr>
+                    </div>
+
+                     
+                     <div class="form-group">
+                         <label for=""><strong>Especialidad</strong></label>
+                         <select value="<?php echo $row['especialidad'] ?>" name="especialidad" class="form-control">
+                             <option value="">Seleccionar...</option>
+                             <option value="Tecnico">Tecnico</option>
+                             <option value="Transversal">Transversal</option>
+                             <option value="Ingles">Ingles</option>
+
+                         </select>
+                        <hr>
                     </div>
                     <div class="form-group">
-                        <input type="text" value="<?= $row['apellidos']?>" name="apellidos" class="form-control" data-validation="required">
-                        
+                         <label for=""><strong>Vinculacion</strong></label>
+                         <select value="<?php echo $row['vinculacion'] ?>" id="datos" name="vinculacion1" class="form-control" onchange="habilitarCombo(this.value);">
+                             <option value="">Seleccionar...</option>
+                             <option value="Planta">Planta</option>
+                             <option value="Contratista">Contratista</option>
+ 
+                         </select>
+                        <hr>
                     </div>
-                    <div class="form-group">
-                        <input type="text" value="<?= $row['especialidad']?>" name="especialidad" class="form-control" data-validation="required">
-                        
+
+                       <div class="form-group">
+                         <label for=""><strong>Tipo Planta</strong></label>
+                         <select id="d1" name="tipoplanta" class="form-control" disabled="true">
+                             <option value="">Seleccionar...</option>
+                             <option value="Carrera">Carrera</option>
+                             <option value="Provisional">Provisional</option>
+ 
+                         </select>
+                        <hr>
                     </div>
-                    <div class="form-group">
-                        <input type="text" value="<?=$row['apoyo_grupos']?>" name="apoyo_grupos" class="form-control" data-validation="required">
+
+                     
+                       <div class="form-group">
+                         <label for=""><strong>Tipo Contrato</strong></label>
+                         <select id="d2" name="tipocontrato" class="form-control" disabled="true">
+                             <option value="">Seleccionar...</option>
+                             <option value="Por Horas">Por Horas</option>
+                             <option value="Término Fijo">Termino Fijo</option>
+ 
+                         </select>
+                        <hr>
                     </div>
-                    <div class="form-group">
-                        <input type="text" value="<?=$row['tipo_contrato']?>" name="tipo_contrato" class="form-control" data-validation="required">
+
+                     <div class="form-group">
+                         <label for=""><strong>Catntidad Horas*</strong></label>
+                         <select id="d2" name="cantidadhoras" class="form-control">
+                             <option value="">Seleccionar...</option>
+                             <option value="32">32</option>
+                             <option value="48">40</option>
+ 
+                         </select>
+                        <hr>
                     </div>
-                    <div class="form-group">
-                        <input type="text" value="<?=$row['cantidad_horas']?>" name="cantidad_horas" class="form-control" data-validation="required">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" value="<?=$row['restricciones']?>" name="restricciones" class="form-control" data-validation="required">
-                    </div>
-                    <div class="form-group">
-                        <input type="text"  value="<?=$row['horario']?>" name="horario" class="form-control" data-validation="required">
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-default btn-success"> 
-                            <i class="glyphicon glyphicon-plus"></i>Enviar
-                        </button>
-                        <button type="reset" class="btn btn-default "> 
-                            <i class="glyphicon glyphicon-trash"></i>Limpiar
-                        </button>
-                    </div>
-                </form>
+
+                    <button type="submit" class="btn btn-success">Añadir</button>
+                    <button type="reset" class="btn btn-default">Reiniciar</button>
+
+
+                </div>
+
+         </form>
                         
                 <?php 
 
                     if($_POST){
-                        $nombre=$_POST['nombre'];
+                        $nombres=$_POST['nombres'];
                         $apellidos=$_POST['apellidos'];
                         $especialidad=$_POST['especialidad'];
-                        $apoyo_grupos=$_POST['apoyo_grupos'];
-                        $tipo_contrato=$_POST['tipo_contrato'];
-                        $cantidad_horas=$_POST['cantidad_horas'];
-                        $restricciones=$_POST['restricciones'];
-                        $horario=$_POST['horario'];
+                        $vinculacion1=$_POST['vinculacion1'];
+                        $tipocontrato=$_POST['tipocontrato'];
+                        $tipoplanta=$_POST['tipoplanta'];
+                        $cantidadhoras=$_POST['cantidadhoras'];
 
                         
 
-                        if($nombre != "" && $apellidos != "" && $especialidad != "" && $apoyo_grupos != "" && $tipo_contrato!="" && $cantidad_horas!= "" && $restricciones!="" && $horario!= ""){
-
+                     
                             $con = mysqli_connect("localhost","root","","programacion_trimestral");
-                            $query = mysqli_query($con , "UPDATE instructores SET nombre='$nombre' , apellidos='$apellidos'
-                            , especialidad='$especialidad' , apoyo_grupos='$apoyo_grupos' , tipo_contrato='$tipo_contrato' , cantidad_horas='$cantidad_horas', restricciones='restricciones',horario='$horario' where id=$id");
+                            $query = mysqli_query($con , "UPDATE instructores SET nombres='$nombres' , apellidos='$apellidos'
+                            , especialidad='$especialidad' , vinculacion1='$vinculacion1' , tipocontrato='$tipocontrato' , tipoplanta='$tipoplanta', cantidadhoras='$cantidadhoras' where id=$id");
 
                             if($query){
                                 echo "<script>alert('Modifico correctamente');document.location.replace('gestionarIns.php')</script>";
@@ -114,13 +153,7 @@
                                 echo "<script> alert('No modifico')</script>";
                             }
 
-                        }
-
-
-
-
-
-
+                        
 
 
 
@@ -146,6 +179,21 @@
             });
 
     </script>
+     <script>
+      function habilitarCombo(valor){
+    if(valor=='Planta'){
+      document.getElementById("d1").disabled = false;
+      document.getElementById("d2").disabled = true;
+
+    }
+    else {
+      document.getElementById("d2").disabled = false;
+      document.getElementById("d1").disabled = true;
+
+    }
+  }
+    </script>
+
 
 
 	
