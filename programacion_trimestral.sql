@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-05-2017 a las 18:42:58
+-- Tiempo de generación: 24-05-2017 a las 19:13:47
 -- Versión del servidor: 10.1.19-MariaDB
 -- Versión de PHP: 7.0.13
 
@@ -116,12 +116,10 @@ CREATE TABLE `instructores` (
 --
 
 INSERT INTO `instructores` (`id`, `nombres`, `apellidos`, `especialidad`, `vinculacion1`, `tipoplanta`, `tipocontrato`, `cantidadhoras`, `actadministrativas`, `area`) VALUES
-(4, 'Oscar Fernando', 'Aristizabal Cardona', 'Tecnico', 'Planta', 'Carrera', '', '48', '', ''),
-(5, 'Oscar Fernando', 'Aristizabal Cardona', 'Tecnico', 'Contratista', '', 'Por Horas', '32', '', ''),
 (6, 'Oscar Fernando', 'Aristizabal Cardona', 'Tecnico', 'Contratista', '', 'Por Horas', '32', '', ''),
 (7, 'Oscar Fernando', 'Aristizabal Cardona', 'Tecnico', 'Planta', 'Carrera', 'No Aplica', '48', 'Articulacion', 'Informatica y Sistemas'),
 (8, 'Oscar Fernando', 'Aristizabal Cardona', 'Transversal', 'Planta', 'Carrera', 'No Aplica', '48', 'Articulacion', 'Gestion Integrada de la Calidad'),
-(9, 'Oscar Fernando', 'Aristizabal Cardona', 'Tecnico', 'Planta', 'Provisional', 'No Aplica', '32', 'Articulacion', 'Motos');
+(9, 'Oscar Fernando', 'Aristizabal Cardona', 'Tecnico', 'Contratista', 'No Aplica', 'Por Horas', '32', 'Articulacion', 'Joyeria');
 
 -- --------------------------------------------------------
 
@@ -140,6 +138,24 @@ CREATE TABLE `login` (
 
 INSERT INTO `login` (`usuario`, `clave`) VALUES
 ('administrador', '594ee6d90bad73f0228b16e50d8954ed');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `manejo_dist`
+--
+
+CREATE TABLE `manejo_dist` (
+  `user` varchar(128) NOT NULL,
+  `password` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `manejo_dist`
+--
+
+INSERT INTO `manejo_dist` (`user`, `password`) VALUES
+('administrador', 'admin');
 
 --
 -- Índices para tablas volcadas
