@@ -78,7 +78,7 @@
                     </div>
                     <div class="form-group">
                          <label for=""><strong>Vinculacion</strong></label>
-                         <select value="<?php echo $row['vinculacion'] ?>" id="datos" name="vinculacion1" class="form-control" onchange="habilitarCombo(this.value);">
+                         <select id="datos" name="vinculacion1" class="form-control" onchange="habilitarCombo(this.value);">
                              <option value="">Seleccionar...</option>
                              <option value="Planta">Planta</option>
                              <option value="Contratista">Contratista</option>
@@ -112,7 +112,7 @@
 
                      <div class="form-group">
                          <label for=""><strong>Catntidad Horas*</strong></label>
-                         <select id="d2" name="cantidadhoras" class="form-control">
+                         <select  name="cantidadhoras" class="form-control">
                              <option value="">Seleccionar...</option>
                              <option value="32">32</option>
                              <option value="48">40</option>
@@ -121,7 +121,58 @@
                         <hr>
                     </div>
 
-                    <button type="submit" class="btn btn-success">Añadir</button>
+
+                    <div class="form-group">
+                         <label for=""><strong>Actividades Administrativas</strong></label>
+                         <select  name="actadministrativas" class="form-control">
+                             <option value="">Seleccionar...</option>
+                             <option value="Sindesena">Sindesena</option>
+                             <option value="Articulacion">Articulacion</option>
+                             <option value="Virtual">Virtual</option>
+
+ 
+                         </select>
+                        <hr>
+                    </div>
+
+                     <div class="form-group">
+                         <label for=""><strong>Area</strong></label>
+                         <select  name="area" class="form-control">
+                             <option value="">Seleccionar...</option>
+                             <option value="Ambiental">Ambiental</option>
+                             <option value="Automotriz">Automotriz</option>
+                             <option value="Etica y Comunicacion">Etica y Comunicacion</option>
+                             <option value="Confeccion">Confeccion</option>
+                             <option value="Construccion">Construccion</option>
+                             <option value="Redes para Gas">Redes para Gas</option>
+                             <option value="Salud Ocupacional">Salud Ocupacional</option>
+                             <option value="Soldadura">Soldadura</option>
+                             <option value="Ingles Presencial">Ingles Presencial</option>
+                             <option value="Ingles Voluntarios">Ingles Voluntarios</option>
+                             <option value="Equipo Tecnico pedagogico">Equipo Tecnico pedagogico</option>
+                             <option value="Cultura Fisica">Cultura Fisica</option>
+                             <option value="Diseño Mecanico">Diseño Mecanico</option>
+                             <option value="Electricidad">Electricidad</option>
+                             <option value="Gestion Integrada de la Calidad">Gestion Integrada de la Calidad</option>
+                             <option value="Informatica y Sistemas">Informatica y Sistemas</option>
+                             <option value="Joyeria">Joyeria</option>
+                             <option value="Mantenimiento">Mantenimiento</option>
+                             <option value="Motos">Motos</option>
+                             <option value="Mobiliario y Maderas">Mobiliario y Maderas</option>
+                             <option value="Proyectos y Emprendimiento">Proyectos y Emprendimiento</option>
+
+
+
+
+
+
+
+ 
+                         </select>
+                        <hr>
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Modificar</button>
                     <button type="reset" class="btn btn-default">Reiniciar</button>
 
 
@@ -132,20 +183,31 @@
                 <?php 
 
                     if($_POST){
-                        $nombres=$_POST['nombres'];
+                      $nombres=$_POST['nombres'];
                         $apellidos=$_POST['apellidos'];
                         $especialidad=$_POST['especialidad'];
                         $vinculacion1=$_POST['vinculacion1'];
-                        $tipocontrato=$_POST['tipocontrato'];
-                        $tipoplanta=$_POST['tipoplanta'];
+                        if ($_POST['vinculacion1'] == 'Contratista') {
+                          $tipoplanta='No Aplica';
+                          $tipocontrato=$_POST['tipocontrato'];
+                        } else{
+                          $tipoplanta=$_POST['tipoplanta'];
+                          $tipocontrato='No Aplica';
+
+                        }
                         $cantidadhoras=$_POST['cantidadhoras'];
+                        $actadministrativas=$_POST['actadministrativas'];
+                        $area=$_POST['area'];
+
+
+
+
 
                         
 
                      
                             $con = mysqli_connect("localhost","root","","programacion_trimestral");
-                            $query = mysqli_query($con , "UPDATE instructores SET nombres='$nombres' , apellidos='$apellidos'
-                            , especialidad='$especialidad' , vinculacion1='$vinculacion1' , tipocontrato='$tipocontrato' , tipoplanta='$tipoplanta', cantidadhoras='$cantidadhoras' where id=$id");
+                            $query = mysqli_query($con , "UPDATE instructores  SET nombres='$nombres' , apellidos='$apellidos', especialidad='$especialidad' , vinculacion1='$vinculacion1' , tipoplanta='$tipoplanta' , tipocontrato='$tipocontrato', cantidadhoras='$cantidadhoras',actadministrativas='$actadministrativas',  area='$area' WHERE id=$id");
 
                             if($query){
                                 echo "<script>alert('Modifico correctamente');document.location.replace('gestionarIns.php')</script>";
