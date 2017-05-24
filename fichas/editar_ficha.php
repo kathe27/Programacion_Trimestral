@@ -51,7 +51,7 @@
 							<div class="col-md-8 col-md-offset-2">
 								<form action="" method="POST">
 									<div class="form-group">
-									<label>Ficha</label>
+									<label>Ficha*</label>
 										<input type="number" 
 											 class="form-control" 
 											 name="ficha" 
@@ -59,27 +59,29 @@
 											 value="<?php echo $row['ficha'] ?>">
 									</div>	
 									<div class="form-group">
-<<<<<<< HEAD
-										<label>Nombre Ficha</label>
-=======
-									<label>Especializacion</label>
->>>>>>> 48e303bfa96ac598511eaf8381e057f9538224b7
-										<input type="text" 
-											class="form-control" 
-											name="nombre" 
-											placeholder="Nombre*"
-											value="<?php echo $row['nombre'] ?>">
-									</div>	 
+										<label>Nombre Ficha*</label>
+										<input type="text"
+											   class="form-control"
+											   name="nombre"
+											   placeholder="Nombre Ficha"
+											   value="<?php echo $row['nombre'] ?>">
 									<div class="form-group">
-									<label>Especialidad</label>
-										<input type="text" 
-											class="form-control" 
-											name="especialidad" 
-											placeholder="Especialidad*"
-											value="<?php echo $row['especialidad'] ?>">
+
+									<label>Especialidad*</label>
+										<select name="especialidad" class="form-control">
+											<option>Seleccione una opcion...</option>
+											<option value="Eectricidad">Electricidad</option>
+											<option value="Informatica">Informatica</option>
+											<option value="Salud Ocupacionak">Salud Ocupacional</option>
+											<option value="Mecanica">Mecanica</option>
+											<option value="Automotriz">Automotriz</option>
+											<option value="Construccion">Construccion</option>
+											<option value="Confeccion">Confeccion</option>
+											<option value="Ambiental">Ambiental</option>
+										</select>
 									</div>
 									<div class="form-group">
-										<label>Instructor</label>
+										<label>Instructor*</label>
 										<input type="text" 
 											class="form-control" 
 											name="instructor" 
@@ -87,28 +89,28 @@
 											value="<?php echo $row['instructor'] ?>">
 									</div>
 									<div class="form-group">
-										<label>Fecha de Inicio</label><br>
+										<label>Fecha de Inicio*</label><br>
 										<input type="date" 
 											class="form-control" 
 											name="fecha_inicio"
 											value="<?php echo $row['fecha_inicio'] ?>">
 									</div>
 									<div class="form-group">
-										<label>Fin Lectiva</label><br>
+										<label>Fin Lectiva*</label><br>
 										<input type="date" 
 											class="form-control" 
 											name="fecha_lectiva"
 											value="<?php echo $row['fecha_lectiva'] ?>">
 									</div>
 									<div class="form-group">
-										<label>Fecha Final</label><br>
+										<label>Fecha Final*</label><br>
 										<input type="date" 
 											class="form-control" 
 											name="fecha_final"
 											value="<?php echo $row['fecha_final'] ?>">
 									</div>
 									<div class="form-group">
-										<label>Horario</label>
+										<label>Horario*</label>
 										<input type="text" 
 											class="form-control" 
 											name="horario"

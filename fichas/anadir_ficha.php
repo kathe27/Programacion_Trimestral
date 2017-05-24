@@ -46,22 +46,15 @@
 										<input type="number" 
 											 class="form-control" 
 											 name="ficha" 
-<<<<<<< HEAD
 											 placeholder="Ingrese numero ficha">
 									</div>	
 									<div class="form-group">
 										<label>Nombre Ficha*</label>
-=======
-											 placeholder="Ingrese su ficha">
-									</div>		 
-									<div class="form-group">
-									<label>Especializacion*</label>
->>>>>>> 48e303bfa96ac598511eaf8381e057f9538224b7
-										<input type="text" 
-											class="form-control" 
-											name="nombre" 
-											placeholder="Nombre Ficha">
-									</div>	 
+										<input type="text"
+											   class="form-control"
+											   name="nombre"
+											   placeholder="Nombre Ficha">
+									</div>		  
 									<div class="form-group">
 									<label>Especialidad*</label>
 										<select name="especialidad" class="form-control">

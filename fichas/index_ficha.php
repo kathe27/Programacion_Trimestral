@@ -43,11 +43,7 @@
 							<table class=" table table-hover">
 							<br>
 								<tr>
-<<<<<<< HEAD
 									<td class="text-center"><strong>Ficha</strong></td>
-=======
-									<td class="text-center"><strong>Nombre</strong></td>
->>>>>>> 48e303bfa96ac598511eaf8381e057f9538224b7
 									<td class="text-center"><strong>Acciones</strong></td>
 								</tr>
 								<script src="js/jquery-3.1.1.js"></script>
@@ -63,11 +59,7 @@
 									while ($row = mysqli_fetch_array($insertar)) {
 										echo "
 											<tr>
-<<<<<<< HEAD
 												<td class='text-center'>".$row['ficha']."</td>
-=======
-												<td class='text-center'>".$row['especializacion']."</td>
->>>>>>> 48e303bfa96ac598511eaf8381e057f9538224b7
 												<td class='text-center'>
 													<a class='btn btn-info glyphicon glyphicon-search' data-toggle='tooltip' title='Consultar' href='consultar_ficha.php?id=".$row['id']."'></a>
 													<a class='btn btn-success glyphicon glyphicon-pencil' data-toggle='tooltip' title='Modificar' href='editar_ficha.php?id=".$row['id']."'></a>

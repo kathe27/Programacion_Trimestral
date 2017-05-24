@@ -35,9 +35,6 @@
 	</div>
 	<br>
 	<hr>
-
-
-
         <div class="col-md-6 col-md-offset-3 box ">
 			   <a href="ambientes.php" class="btn btn-danger"><i class="glyphicon glyphicon-arrow-left"></i>Volver</a>
 	            <form id="add" action="" method="POST"><br>
@@ -46,35 +43,14 @@
 	                    <input type="text"  class="form-control"name="nombre" data-validation="required" placeholder="Nombre">
 	                    <hr>
 	                </div>
-<<<<<<< HEAD
-	                 <div class="form-group">
-=======
 	                <div class="form-group">
-	                <label for=""><strong>Especialidad*</strong></label>
-	                   <input type="text" class="form-control" name="especialidad" placeholder="Especialidad" required>
-	                   <hr>
-	                </div>
-	                 <div class="form-group">
-	                 	<label for=""><strong>Disponibilidad*</strong></label>
-	                    <input type="text" name="disponibilidad" class="form-control" placeholder="Dispobibilidad" >
-	                    <hr>
-	                </div>
-	                <div class="form-group">
->>>>>>> 48e303bfa96ac598511eaf8381e057f9538224b7
 	                 	<label for=""><strong>Descripcion*</strong></label>
 	                    <textarea type="text" name="descripcion" class="form-control" placeholder="Descripcion" ></textarea>
 	                    <hr>
 	                </div>
-<<<<<<< HEAD
-	                 <div class="form-group">
+	               	<div class="form-group">
 	                 	<label for=""><strong>Disponibilidad*</strong></label>
 	                    <input type="text" name="disponibilidad" class="form-control" placeholder="Dispobibilidad" >
-=======
-
-	                  <div class="form-group">
-	                 	<label for=""><strong>Descripcion*</strong></label>
-	                   <textarea name="descripcion" placeholder="Descripcion" id="" cols="20" rows="8" class="form-control"></textarea>
->>>>>>> 48e303bfa96ac598511eaf8381e057f9538224b7
 	                    <hr>
 	                </div>
 	                <div class="form-group">
@@ -104,35 +80,16 @@
 
 			} 
 			$nombre= mysqli_real_escape_string($con , $_POST["nombre"]);
-<<<<<<< HEAD
 			$descripcion= mysqli_real_escape_string($con , $_POST["descripcion"]);
 			$disponibilidad= mysqli_real_escape_string($con , $_POST["disponibilidad"]);
 
 		
 			$sql= "INSERT INTO ambientes (nombre,descripcion,disponibilidad)
 				VALUES ('$nombre', '$descripcion', '$disponibilidad')";
-=======
-			$especialidad= mysqli_real_escape_string($con , $_POST["especialidad"]);
-<<<<<<< HEAD
+
+			$nombre= mysqli_real_escape_string($con , $_POST["nombre"]);
 			$descripcion= mysqli_real_escape_string($con , $_POST["descripcion"]);
 			$disponibilidad= mysqli_real_escape_string($con , $_POST["disponibilidad"]);
-
-		
-			$sql= "INSERT INTO ambientes (nombre,especialidad,descripcion,disponibilidad)
-				VALUES ('$nombre', '$especialidad', '$descripcion', '$disponibilidad')";
-=======
-			$instructor= mysqli_real_escape_string($con , $_POST["instructor"]);
-			$hora_inicio= mysqli_real_escape_string($con , $_POST["hora_inicio"]);
-			$hora_entrega= mysqli_real_escape_string($con , $_POST["hora_entrega"]);
-			$descripcion= mysqli_real_escape_string($con , $_POST["descripcion"]);
-
-
-			
-
-			$sql= "INSERT INTO ambientes (nombre,especialidad,instructor,hora_inicio, hora_entrega, descripcion)
-				VALUES ('$nombre', '$especialidad', '$instructor', '$hora_inicio', '$hora_entrega', '$descripcion')";
->>>>>>> df904acc644e57d8bdf3f1d3567d811317c35bfe
->>>>>>> 48e303bfa96ac598511eaf8381e057f9538224b7
 
 			if(!mysqli_query($con,$sql)){
 				die('Error: ' . mysqli_error($con));
