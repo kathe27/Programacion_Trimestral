@@ -59,7 +59,11 @@
 											 value="<?php echo $row['ficha'] ?>">
 									</div>	
 									<div class="form-group">
+<<<<<<< HEAD
 										<label>Nombre Ficha</label>
+=======
+									<label>Especializacion</label>
+>>>>>>> 48e303bfa96ac598511eaf8381e057f9538224b7
 										<input type="text" 
 											class="form-control" 
 											name="nombre" 

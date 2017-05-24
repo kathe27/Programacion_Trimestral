@@ -42,8 +42,24 @@
 		<table  class="text-center table table-hover box">
 			<tr>
 				<td><strong>Ambiente</strong></td>
+<<<<<<< HEAD
 				<td><strong>Disponibilidad</strong></td>
 				<td><strong>Descripcion</strong></td>
+=======
+				<td><strong>Especialidad</strong></td>
+<<<<<<< HEAD
+				<td><strong>Disponibilidad</strong></td>
+				<td><strong>Descripcion</strong></td>
+=======
+				<td><strong>Instructor</strong></td>
+				<td><strong>Hora de Inicio</strong></td>
+				<td><strong>Hora de Entrega</strong></td>
+				<td><strong>Descripcion</strong></td>
+
+
+				
+>>>>>>> df904acc644e57d8bdf3f1d3567d811317c35bfe
+>>>>>>> 48e303bfa96ac598511eaf8381e057f9538224b7
 			</tr>
 
 		
@@ -64,9 +80,25 @@
 
 
 							<td>'.$row["nombre"].'</td>
+<<<<<<< HEAD
 							<td>'.$row["disponibilidad"].'</td>
 							<td>'.$row["descripcion"].'</td>
 							
+=======
+							<td>'.$row["especialidad"].'</td>
+<<<<<<< HEAD
+							<td>'.$row["disponibilidad"].'</td>
+							<td>'.$row["descripcion"].'</td>
+							
+=======
+							<td>'.$row["instructor"].'</td>
+							<td>'.$row["hora_inicio"].'</td>
+							<td>'.$row["hora_entrega"].'</td>
+							<td>'.$row["descripcion"].'</td>
+
+
+>>>>>>> df904acc644e57d8bdf3f1d3567d811317c35bfe
+>>>>>>> 48e303bfa96ac598511eaf8381e057f9538224b7
 
 						 </tr>';
 				}	

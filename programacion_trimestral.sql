@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-05-2017 a las 18:57:29
+-- Tiempo de generación: 24-05-2017 a las 15:34:18
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -29,7 +29,6 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `ambientes` (
 `id` int(11) NOT NULL,
   `nombre` varchar(100) COLLATE utf8_bin NOT NULL,
-  `especialidad` varchar(100) COLLATE utf8_bin NOT NULL,
   `descripcion` varchar(200) COLLATE utf8_bin NOT NULL,
   `disponibilidad` varchar(200) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
@@ -38,9 +37,8 @@ CREATE TABLE IF NOT EXISTS `ambientes` (
 -- Volcado de datos para la tabla `ambientes`
 --
 
-INSERT INTO `ambientes` (`id`, `nombre`, `especialidad`, `descripcion`, `disponibilidad`) VALUES
-(1, 'Sistemas 3', 'Informatica', '15 computadores, 15 teclados, 15 antenas, 15 mouse', 'Disponible'),
-(2, 'Sistemas 1', 'Informatica', '15 computadores, 15 teclados, 8 antenas, 10 mouse', 'Ocupado');
+INSERT INTO `ambientes` (`id`, `nombre`, `descripcion`, `disponibilidad`) VALUES
+(2, 'Sistemas 1', '15 computadores, 15 teclados, 8 antenas, 10 mouse', 'Ocupado');
 
 -- --------------------------------------------------------
 
@@ -77,20 +75,21 @@ INSERT INTO `eventos` (`id`, `title`, `body`, `url`, `class`, `start`, `end`, `i
 CREATE TABLE IF NOT EXISTS `fichas` (
 `id` int(11) NOT NULL,
   `ficha` int(100) NOT NULL,
-  `especializacion` varchar(100) COLLATE utf8_bin NOT NULL,
+  `nombre` varchar(200) COLLATE utf8_bin NOT NULL,
+  `especialidad` varchar(100) COLLATE utf8_bin NOT NULL,
   `instructor` varchar(100) COLLATE utf8_bin NOT NULL,
   `fecha_inicio` date NOT NULL,
   `fecha_lectiva` date NOT NULL,
   `fecha_final` date NOT NULL,
   `horario` text COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `fichas`
 --
 
-INSERT INTO `fichas` (`id`, `ficha`, `especializacion`, `instructor`, `fecha_inicio`, `fecha_lectiva`, `fecha_final`, `horario`) VALUES
-(1, 1132816, 'ADSI', 'Yaneth Mejia', '2016-01-11', '2017-10-11', '2018-04-11', 'Mixto');
+INSERT INTO `fichas` (`id`, `ficha`, `nombre`, `especialidad`, `instructor`, `fecha_inicio`, `fecha_lectiva`, `fecha_final`, `horario`) VALUES
+(1, 1132816, 'ADSI', 'Informatica', 'Yaneth Mejia', '2016-04-11', '2017-10-11', '2018-04-11', 'Mixto');
 
 -- --------------------------------------------------------
 
@@ -174,7 +173,7 @@ MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT de la tabla `fichas`
 --
 ALTER TABLE `fichas`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT de la tabla `instructores`
 --

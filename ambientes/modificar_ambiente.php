@@ -64,10 +64,30 @@
 	                 	<label for=""><strong>Disponibilidad</strong></label>
 	                    <input type="text" value="<?php echo $row['disponibilidad'] ?>" name="disponibilidad" class="form-control" placeholder="Horario" >
 	                </div>
+<<<<<<< HEAD
 	                
 	                 
 						<hr>
 	                </div>
+=======
+	                 <div class="form-group">
+	                 	<label for=""><strong>Disponibilidad</strong></label>
+	                    <input type="text" value="<?php echo $row['disponibilidad'] ?>" name="disponibilidad" class="form-control" placeholder="Horario" >
+	                    <hr>
+	                </div>
+	                 <div class="form-group">
+<<<<<<< HEAD
+	                <label for=""><strong>Descripcion</strong></label>
+	                	<textarea class="form-control" name="descripcion" cols="20" rows="8" placeholder="Descripcion"><?php echo $row['descripcion'] ?></textarea>
+	                 
+						<hr>
+=======
+	                 	<label for=""><strong>Descripcion</strong></label>
+	                    <input type="time" value="<?php echo $row['descripcion'] ?>" name="descripcion" class="form-control" placeholder="Descripcion" >
+	                    <hr>
+>>>>>>> df904acc644e57d8bdf3f1d3567d811317c35bfe
+	                </div>
+>>>>>>> 48e303bfa96ac598511eaf8381e057f9538224b7
 	                <div class="form-group">
 	                    <button type="submit" class="btn btn-success">
 	                        <i class="glyphicon glyphicon-pencil"></i>
@@ -95,13 +115,21 @@
 
 			} 
 			$nombre= mysqli_real_escape_string($con , $_POST["nombre"]);
+<<<<<<< HEAD
+=======
+			$especialidad= mysqli_real_escape_string($con , $_POST["especialidad"]);
+>>>>>>> 48e303bfa96ac598511eaf8381e057f9538224b7
 			$descripcion= mysqli_real_escape_string($con , $_POST["descripcion"]);
 			$disponibilidad= mysqli_real_escape_string($con , $_POST["disponibilidad"]);
 
 
 			
 
+<<<<<<< HEAD
 			$sql= "UPDATE ambientes SET nombre='$nombre',descripcion='$descripcion', disponibilidad = '$disponibilidad' WHERE id = $id";
+=======
+			$sql= "UPDATE ambientes SET nombre='$nombre', especialidad='$especialidad',descripcion='$descripcion', disponibilidad = '$disponibilidad' WHERE id = $id";
+>>>>>>> 48e303bfa96ac598511eaf8381e057f9538224b7
 
 			if(!mysqli_query($con,$sql)){
 				die('Error: ' . mysqli_error($con));
