@@ -20,7 +20,7 @@
 		      <li><a href="#">Fichas</a></li>
 		      <li><a href="../instructores/gestionarIns.php">Instructores</a></li>
 		    </ul>
-		    <form method="get" class="navbar-form navbar-right">
+		    <form method="POST" class="navbar-form navbar-right">
 		      <div class="form-group">
 		        <input type="text" name="navb" class="form-control" placeholder="Buscar">
 
@@ -31,7 +31,11 @@
 		</nav>
 
 
-	<?php $nav=$_GET['navb'] ?>
+	<?php
+		if ($_POST) {
+			$nav=$_POST['navb'] ;
+		}
+	 ?>
 	
 	<div class="container-fluid mov">
 		<div class="row">
@@ -96,7 +100,7 @@
 								<?php 
 
 									if (!empty($nav)) {
-										$nav=$_GET['navb'];
+										$nav=$_POST['navb'];
 									$conexion = mysqli_connect('localhost', 'root', '', 'programacion_trimestral');
 									$insertar = mysqli_query($conexion, "SELECT * FROM fichas where ficha='$nav'");
 									
