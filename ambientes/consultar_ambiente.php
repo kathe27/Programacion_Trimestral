@@ -43,7 +43,7 @@
 			<tr>
 				<td><strong>Ambiente</strong></td>
 				<td><strong>Descripcion</strong></td>
-				<td><strong>Disponibilidad</strong></td>
+<!-- 				<td><strong>Disponibilidad</strong></td> -->
 			</tr>
 		</div>
 
@@ -57,7 +57,6 @@
 					echo '<tr>
 							<td>'.$row["nombre"].'</td>
 							<td>'.$row["descripcion"].'</td>
-							<td>'.$row["disponibilidad"].'</td>
 						 </tr>';
 				}	
 		 ?>

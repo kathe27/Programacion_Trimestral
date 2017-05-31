@@ -207,7 +207,7 @@
 
                      
                             $con = mysqli_connect("localhost","root","","programacion_trimestral");
-                            $query = mysqli_query($con , "UPDATE instructores  SET nombres='$nombres' , apellidos='$apellidos', especialidad='$especialidad' , vinculacion1='$vinculacion1' , tipoplanta='$tipoplanta' , tipocontrato='$tipocontrato', cantidadhoras='$cantidadhoras',actadministrativas='$actadministrativas',  area='$area' WHERE id=$id");
+                            $query = mysqli_query($con , "UPDATE instructores  SET nombres='$nombres' , apellidos='$apellidos', especialidad='$especialidad' , vinculacion1='$vinculacion1' , tipoplanta='$tipoplanta' , tipocontrato='$tipocontrato', cantidadhoras='$cantidadhoras',actadministrativas='$actadministrativas', area='$area' WHERE id=$id");
 
                             if($query){
                                 echo "<script>alert('Modifico correctamente');document.location.replace('gestionarIns.php')</script>";

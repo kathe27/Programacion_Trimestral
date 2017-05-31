@@ -79,7 +79,7 @@
 										<td><?php echo $row['fecha_final']?></td>
 									</tr>
 									<tr>
-										<td><strong>Horario</strong></td>
+										<td><strong>Tipo Horario</strong></td>
 										<td><?php echo $row['horario'] ?></td>
 									</tr>
 								</table>

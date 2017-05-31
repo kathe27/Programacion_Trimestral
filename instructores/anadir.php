@@ -180,8 +180,6 @@
                 <?php 
 
                     if($_POST){
-                        echo var_dump($_POST);
-
                         $nombres=$_POST['nombres'];
                         $apellidos=$_POST['apellidos'];
                         $especialidad=$_POST['especialidad'];

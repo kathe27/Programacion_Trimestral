@@ -40,6 +40,42 @@
 		<br>
 			<hr>
 			<div class="col-md-6 col-md-offset-3">
+			<?php 
+				if ($_GET) {
+				 	
+					$valor=$_GET['val'];
+
+					if ($valor=='a') {
+						echo "<div class='panel-body'>
+						<div class='row'>
+							<div class='alert alert-success alert-dismissable'>
+	  						<a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+	  						La ficha fue adicionada con exito!
+						</div>";
+				 } 
+
+				 	
+
+					if ($valor=='e') {
+						echo "<div class='panel-body'>
+						<div class='row'>
+							<div class='alert alert-danger alert-dismissable'>
+	  						<a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+	  						La ficha se eliminó con exito!
+						</div>";
+				 }
+
+				 if ($valor=='ed') {
+						echo "<div class='panel-body'>
+						<div class='row'>
+							<div class='alert alert-success alert-dismissable'>
+	  						<a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+	  						La ficha se modificó con exito!
+						</div>";
+				 }
+				}
+				
+			?>
 				<div class="panel-body">
 					<div class="row">
 						<a href="anadir_ficha.php" class="btn btn-success pull-left">Añadir Ficha <i class="glyphicon glyphicon-plus"></i></a><br><br>

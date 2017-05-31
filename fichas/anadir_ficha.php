@@ -95,11 +95,15 @@
 											name="fecha_final">
 									</div>
 									<div class="form-group">
-										<label>Horario*</label>
-										<input type="text" 
-											class="form-control" 
-											name="horario"
-											placeholder="Horario">
+										<label>Tipo de Horario*</label>
+										<select name="horario" id="" class="form-control">
+											<option value="">Seleccione...</option>
+											<option value="Diurna">Diurna</option>
+											<option value="Mixta">Mixta</option>
+											<option value="Nocturna">Nocturna</option>
+											<option value="Nocturna-Dual">Nocturna-Dual</option>
+											<option value="Dual">Dual</option>
+										</select>
 									</div>
 									<button class="btn btn-success">Añadir 
 										<i class="glyphicon glyphicon-plus"></i>
@@ -124,7 +128,6 @@
 			$especialidad = $_POST['especialidad'];
 			$instructor = $_POST['instructor'];
 			$fecha_inicio = $_POST['fecha_inicio'];
-			$fecha_inicio = $_POST['fecha_inicio'];
 			$fecha_lectiva = $_POST['fecha_lectiva'];
 			$fecha_final = $_POST['fecha_final'];
 			$horario = $_POST['horario'];
@@ -135,11 +138,10 @@
 			$insertar = "INSERT INTO fichas VALUES('', '$ficha', '$nombre', '$especialidad', '$instructor', '$fecha_inicio', '$fecha_lectiva', '$fecha_final', '$horario')";
 			$row = mysqli_query($conexion,$insertar);
 			if ($row) {
+
 				echo "
-				<script>
-				alert('Se añadio correctamente');
-				window.location.replace('index_ficha.php');
-				</script>";
+				<script>window.location.replace('index_ficha.php?val=a')</script>";
+
 			} else{
 				echo "
 				<script>

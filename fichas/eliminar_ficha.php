@@ -10,8 +10,7 @@ $sql = mysqli_query ($con, "DELETE FROM fichas WHERE id = $id");
 
 echo " 
 	<script>
-	alert('Desea eliminar?');
-	window.location.replace('index_ficha.php');
+	window.location.replace('index_ficha.php?val=e');
 	</script>
 "; 
 ?> 

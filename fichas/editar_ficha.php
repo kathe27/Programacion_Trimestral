@@ -110,11 +110,17 @@
 											value="<?php echo $row['fecha_final'] ?>">
 									</div>
 									<div class="form-group">
-										<label>Horario*</label>
-										<input type="text" 
-											class="form-control" 
-											name="horario"
-											value="<?php echo $row['horario'] ?>">
+										<div class="form-group">
+										<label>Tipo de Horario*</label>
+										<select name="horario" id="" class="form-control">
+											<option value="">Seleccione...</option>
+											<option value="Diurna">Diurna</option>
+											<option value="Mixta">Mixta</option>
+											<option value="Nocturna">Nocturna</option>
+											<option value="Nocturna-Dual">Nocturna-Dual</option>
+											<option value="Dual">Dual</option>
+										</select>
+									</div>
 									</div>
 									<button class="btn btn-success">Modificar 
 										<i class="glyphicon glyphicon-plus"></i>
@@ -150,8 +156,7 @@
 			if ($row) {
 				echo "
 				<script>
-					alert('Se modifico correctamente');
-					window.location.replace('index_ficha.php');
+					window.location.replace('index_ficha.php?val=ed');
 				</script>";
 			} else{
 				echo "

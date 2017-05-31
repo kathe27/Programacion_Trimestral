@@ -43,14 +43,14 @@
 	                    <input type="text"  class="form-control"name="nombre" data-validation="required" placeholder="Nombre">
 	                    <hr>
 	                </div>
+	               <!-- 	<div class="form-group">
+	                 	<label for=""><strong>Disponibilidad*</strong></label>
+	                    <input type="text" name="disponibilidad" class="form-control" placeholder="Dispobibilidad" >
+	                    <hr>
+	                </div> -->
 	                <div class="form-group">
 	                 	<label for=""><strong>Descripcion*</strong></label>
 	                    <textarea type="text" name="descripcion" class="form-control" placeholder="Descripcion" ></textarea>
-	                    <hr>
-	                </div>
-	               	<div class="form-group">
-	                 	<label for=""><strong>Disponibilidad*</strong></label>
-	                    <input type="text" name="disponibilidad" class="form-control" placeholder="Dispobibilidad" >
 	                    <hr>
 	                </div>
 	                <div class="form-group">

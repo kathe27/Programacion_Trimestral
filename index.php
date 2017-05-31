@@ -24,7 +24,7 @@
 		      <li><a href="instructores/gestionarIns.php">Instructores</a></li>
 		    </ul>
 		    <ul class="nav navbar-nav navbar-right">
-	      		<li><a href="*" class="glyphicon glyphicon-off "></a></li>
+	      		<li><a href="Manejo_Disponibilidad/index.php" class="glyphicon glyphicon-off "></a></li>
 			    <form class="navbar-form navbar-right">
 			      <div class="form-group">
 			        <input type="text" class="form-control" placeholder="Buscar">

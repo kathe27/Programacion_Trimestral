@@ -60,10 +60,10 @@
 	                <label for=""><strong>Descripcion</strong></label>
 	                	<textarea class="form-control" name="descripcion" cols="20" rows="8" placeholder="Descripcion"><?php echo $row['descripcion'] ?></textarea>
 	                 <hr>
-	                 <div class="form-group">
+	                 <!-- <div class="form-group">
 	                 	<label for=""><strong>Disponibilidad</strong></label>
 	                    <input type="text" value="<?php echo $row['disponibilidad'] ?>" name="disponibilidad" class="form-control" placeholder="Horario" >
-	                </div>
+	                </div> -->
 	                <div class="form-group">
 	                    <button type="submit" class="btn btn-success">
 	                        <i class="glyphicon glyphicon-pencil"></i>
@@ -91,10 +91,9 @@
 			} 
 			$nombre= mysqli_real_escape_string($con , $_POST["nombre"]);
 			$descripcion= mysqli_real_escape_string($con , $_POST["descripcion"]);
-			$disponibilidad= mysqli_real_escape_string($con , $_POST["disponibilidad"]);
 
 
-			$sql= "UPDATE ambientes SET nombre='$nombre',descripcion='$descripcion', disponibilidad = '$disponibilidad' WHERE id = $id";
+			$sql= "UPDATE ambientes SET nombre='$nombre',descripcion='$descripcion' WHERE id = $id";
 
 			if(!mysqli_query($con,$sql)){
 				die('Error: ' . mysqli_error($con));
