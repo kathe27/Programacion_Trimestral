@@ -21,14 +21,20 @@
           <li><a href="../fichas/index_ficha.php">Fichas</a></li>
           <li><a href="#">Instructores</a></li>
         </ul>
-        <form class="navbar-form navbar-right">
+        <form method="POST" class="navbar-form navbar-right">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Buscar">
+            <input type="text" name="navb" class="form-control" placeholder="Buscar">
           </div>
           <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-zoom-in"></i></button>
         </form>
       </div>
     </nav>
+  
+      <?php 
+      if($_POST){
+        $nav=$_POST['navb'] ;
+      }
+      ?>
   <div class="container-fluid">
   
     <h1 class="text-center" >Lista de  Instructores</h1><br>
@@ -54,35 +60,50 @@
      <script src="js/jquery-3.1.1.js"></script>
      <script src="js/bootstrap.js"></script>
        <script src="js/bootstrap.min.js"></script>
+  
 
-       
+
+  
 
   <?php 
 
+
+     if(!empty($nav)){
+        $nav = $_POST['navb'];
     $con = mysqli_connect('localhost','root','','programacion_trimestral');
+    $sql = mysqli_query($con, "SELECT * FROM instructores WHERE nombres = '$nav'");
+
+   
+
+
+      }else{
+        $con = mysqli_connect('localhost','root','','programacion_trimestral');
 
     $sql = mysqli_query($con, "SELECT * FROM instructores");
+      }
+    
 
-    while($row = mysqli_fetch_array($sql)){
-      echo "<tr>
-          <td>".$row['nombres']."</td>
+    while($row = mysqli_fetch_array($sql)){ ?>
+      <tr>
+          <td><?php echo $row['nombres'] ?></td>
           <td>
-            <a class='btn btn-info' href='consultar_instructor.php?id=".$row['id']."'>
-              <i data-toggle='tooltip' data-placement='top' title='Consultar'  class='glyphicon glyphicon-search' ></i>
+            <a class='btn btn-info' href='consultar_instructor.php?id=<?php echo $row['id'] ?>' >
+              
+              <i data-toggle='tooltip' data-placement="top" title="Consultar" class='glyphicon glyphicon-search' ></i>
             </a>
             
-            <a class='btn btn-success' href='Modificar.php?id=".$row['id']."'>
+            <a class='btn btn-success' href='Modificar.php?id=<?php echo $row['id'] ?>'>
               <i data-toggle='tooltip' data-placement='top' title='Modificar' class='glyphicon glyphicon-pencil' ></i>
             </a>
-            <a class='btn btn-danger' href='delete.php?id=".$row['id']."'>
-              <i data-toggle='tooltip' data-placement='top' title='Eliminar' class='glyphicon glyphicon-trash' ></i>
+            <a class='btn btn-danger' href='<?php  ?> delete.php?id=<?php echo $row['id'] ?>'>
+              <i data-toggle=tooltip data-placement='top' title='Eliminar' class='glyphicon glyphicon-trash' ></i>
             </a>
             
           </td>
-        </tr>";
+        </tr>
 
-    }
-   ?>
+   <?php } ?> 
+   
   </table>
 </div>
 

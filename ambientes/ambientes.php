@@ -21,14 +21,19 @@
 		      <li><a href="../fichas/index_ficha.php">Fichas</a></li>
 		      <li><a href="../instructores/gestionarIns.php">Instructores</a></li>
 		    </ul>
-		    <form class="navbar-form navbar-right">
+		    <form method="post" class="navbar-form navbar-right">
 		      <div class="form-group">
-		        <input type="text" class="form-control" placeholder="Buscar">
+		        <input type="text" name="navb" class="form-control" placeholder="Buscar">
 		      </div>
 		      <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-zoom-in"></i></button>
 		    </form>
 		  </div>
 		</nav>
+
+	<?php if ($_POST) {
+		$nav=$_POST['navb'];
+	} ?>
+
 	<div class="container-fluid">
 	
 		<h1 class="text-center" >Lista de  Ambientes</h1><br>
@@ -61,30 +66,38 @@
 
 	<?php 
 
-		$con = mysqli_connect('localhost','root','','programacion_trimestral');
+
+		if (!empty($nav)) {
+			$con = mysqli_connect('localhost','root','','programacion_trimestral');
+		$nav=$_POST['navb'];
+		$sql = mysqli_query($con, "SELECT * FROM ambientes where nombre='$nav' ");
+		}else{
+			$con = mysqli_connect('localhost','root','','programacion_trimestral');
 
 		$sql = mysqli_query($con, "SELECT * FROM ambientes");
+		}
+		
 
-		while($row = mysqli_fetch_array($sql)){
-			echo "<tr>
-					<td>".$row['nombre']."</td>
+		while($row = mysqli_fetch_array($sql)){ ?>
+			<tr>
+					<td><?php echo $row['nombre'] ?></td>
 					<td>
-						<a class='btn btn-info' href='consultar_ambiente.php?id=".$row['id']."'>
+						<a class='btn btn-info' href='consultar_ambiente.php?id=<?php echo $row['id'] ?>'>
 							<i data-toggle='tooltip' data-placement='top' title='Consultar'  class='glyphicon glyphicon-search' ></i>
 						</a>
 						
-						<a class='btn btn-success' href='modificar_ambiente.php?id=".$row['id']."'>
+						<a class='btn btn-success' href='modificar_ambiente.php?id=<?php echo $row['id'] ?>'>
 							<i data-toggle='tooltip' data-placement='top' title='Modificar' class='glyphicon glyphicon-pencil' ></i>
 						</a>
-						<a class='btn btn-danger' href='eliminar_ambiente.php?id=".$row['id']."'>
+						<a class='btn btn-danger' href='eliminar_ambiente.php?id=<?php echo $row['id'] ?>'>
 							<i data-toggle='tooltip' data-placement='top' title='Eliminar' class='glyphicon glyphicon-trash' ></i>
 						</a>
 						
 					</td>
-				</tr>";
+				</tr>
 
-		}
-	 ?>
+		<?php } ?>
+	 
 	</table>
 </div>
 

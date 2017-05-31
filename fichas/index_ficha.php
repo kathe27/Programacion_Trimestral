@@ -20,15 +20,19 @@
 		      <li><a href="#">Fichas</a></li>
 		      <li><a href="../instructores/gestionarIns.php">Instructores</a></li>
 		    </ul>
-		    <form class="navbar-form navbar-right">
+		    <form method="get" class="navbar-form navbar-right">
 		      <div class="form-group">
-		        <input type="text" class="form-control" placeholder="Buscar">
+		        <input type="text" name="navb" class="form-control" placeholder="Buscar">
+
 		      </div>
 		      <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-zoom-in"></i></button>
 		    </form>
 		  </div>
 		</nav>
 
+
+	<?php $nav=$_GET['navb'] ?>
+	
 	<div class="container-fluid mov">
 		<div class="row">
 		<br>
@@ -54,8 +58,22 @@
 									});
 								</script>
 								<?php 
+
+									if (!empty($nav)) {
+										$nav=$_GET['navb'];
 									$conexion = mysqli_connect('localhost', 'root', '', 'programacion_trimestral');
-									$insertar = mysqli_query($conexion, "SELECT *FROM fichas");
+									$insertar = mysqli_query($conexion, "SELECT * FROM fichas where ficha='$nav'");
+									
+
+
+									}else{
+									
+										$conexion = mysqli_connect('localhost', 'root', '', 'programacion_trimestral');
+									    $insertar = mysqli_query($conexion, "SELECT * FROM fichas");
+									    
+									}
+									
+									
 									while ($row = mysqli_fetch_array($insertar)) {
 										echo "
 											<tr>

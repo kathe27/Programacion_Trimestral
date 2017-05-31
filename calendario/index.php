@@ -189,7 +189,7 @@ if (isset($_POST['from']))
 
 
                         // Hora de inicio
-                        time_start: '08:00', 
+                        time_start: '07:00', 
 
                         // y Hora final de cada dia
                         time_end: '22:00',   
