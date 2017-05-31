@@ -28,6 +28,8 @@ function login($con,$usuario,$password){
 									// $rows = $stm ->fetchAll();
 									// var_dump($rows);
 									return true;
+
+									session_start();
 								}else{
 									return false;
 								}
