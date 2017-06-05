@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-05-2017 a las 18:53:35
--- Versión del servidor: 10.1.19-MariaDB
--- Versión de PHP: 7.0.13
+-- Tiempo de generación: 05-06-2017 a las 16:12:35
+-- Versión del servidor: 10.1.21-MariaDB
+-- Versión de PHP: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -38,8 +38,28 @@ CREATE TABLE `ambientes` (
 --
 
 INSERT INTO `ambientes` (`id`, `nombre`, `descripcion`, `disponibilidad`) VALUES
-(1, 'Sistemas 3', '15 computadores, 15 teclados, 15 antenas, 15 mouse', 'Disponible'),
-(2, 'Sistemas 1', '15 computadores, 15 teclados, 8 antenas, 10 mouse', 'Ocupado');
+(3, 'SISTEMAS 1', '', ''),
+(4, 'SISTEMAS 2', '', ''),
+(5, 'SISTEMAS 3', '', ''),
+(6, 'CAD', '', ''),
+(7, 'AUDITORIO', '', ''),
+(8, 'AUTOMOTRIZ', '', ''),
+(9, 'CONFECCIÃ“N', '', ''),
+(10, 'DIBUJO', '', ''),
+(11, 'DIESEL', '', ''),
+(12, 'ELECTRICIDAD 1 (Electrotecnia)', '', ''),
+(13, 'ELECTRICIDAD 2 (Calidad de EnergÃ­a y DistribuciÃ³n)', '', ''),
+(14, 'ELECTRICIDAD 3 (MÃ¡quinas y Controles)', '', ''),
+(15, 'ELECTRICIDAD 4 (Instalaciones ElÃ©ctricas - Internas -  Domotica - IluminaciÃ³n)', '', ''),
+(16, 'MANUFACTURA MADERAS', '', ''),
+(17, 'MANTENIMIENTO', '', ''),
+(18, 'MECANIZADO', '', ''),
+(19, 'METALOGRAFÃA', '', ''),
+(20, 'SALUD OCUPACIONAL', '', ''),
+(21, 'SOLDADURA', '', ''),
+(22, 'REDES PARA GAS', '', ''),
+(23, 'REFRIGERACIÃ“N (AJUSTE)', '', ''),
+(24, 'MOTOS', '', '');
 
 -- --------------------------------------------------------
 
@@ -65,7 +85,8 @@ CREATE TABLE `eventos` (
 
 INSERT INTO `eventos` (`id`, `title`, `body`, `url`, `class`, `start`, `end`, `inicio_normal`, `final_normal`) VALUES
 (1, 'Clase de analisis', 'Los estudiantes tendran una clase de analisis', 'http://localhost/calendario/descripcion_evento.php?id=1', 'event-important', '1495112640000', '1495199040000', '18/05/2017 9:04', '19/05/2017 9:04'),
-(2, 'MAICOL', 'Induccion adsi', 'http://localhost/yaneth/programacion_trimestral/calendario/descripcion_evento.php?id=2', 'event-info', '1495738620000', '1495825020000', '25/05/2017 14:57', '26/05/2017 14:57');
+(6, 'Induccion', 'Grupo nuevo de electricidad', 'http://localhost/yaneth/programacion_trimestral/calendario/descripcion_evento.php?id=6', 'event-info', '1496746800000', '1496768400000', '06/06/2017 7:00', '06/06/2017 13:00'),
+(7, 'Reunion', 'Grupo Primario', 'http://localhost/yaneth/programacion_trimestral/calendario/descripcion_evento.php?id=7', 'event-important', '1496772000000', '1496786400000', '06/06/2017 14:00', '06/06/2017 18:00');
 
 -- --------------------------------------------------------
 
@@ -161,7 +182,8 @@ INSERT INTO `instructores` (`id`, `nombres`, `apellidos`, `especialidad`, `vincu
 (6, 'Oscar Fernando', 'Aristizabal Cardona', 'Tecnico', 'Contratista', '', 'Por Horas', '32', '', ''),
 (7, 'Oscar Fernando', 'Aristizabal Cardona', 'Tecnico', 'Planta', 'Carrera', 'No Aplica', '48', 'Articulacion', 'Informatica y Sistemas'),
 (8, 'Oscar Fernando', 'Aristizabal Cardona', 'Transversal', 'Planta', 'Carrera', 'No Aplica', '48', 'Articulacion', 'Gestion Integrada de la Calidad'),
-(9, 'Oscar Fernando', 'Aristizabal Cardona', 'Tecnico', 'Contratista', 'No Aplica', 'Por Horas', '32', 'Articulacion', 'Joyeria');
+(9, 'Oscar Fernando', 'Aristizabal Cardona', 'Tecnico', 'Contratista', 'No Aplica', 'Por Horas', '32', 'Articulacion', 'Joyeria'),
+(10, 'nora', 'jimenez henao', 'Transversal', 'Contratista', 'No Aplica', 'Por Horas', '32', 'Virtual', 'Informatica y Sistemas');
 
 -- --------------------------------------------------------
 
@@ -235,22 +257,22 @@ ALTER TABLE `instructores`
 -- AUTO_INCREMENT de la tabla `ambientes`
 --
 ALTER TABLE `ambientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT de la tabla `eventos`
 --
 ALTER TABLE `eventos`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `fichas`
 --
 ALTER TABLE `fichas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 --
 -- AUTO_INCREMENT de la tabla `instructores`
 --
 ALTER TABLE `instructores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
