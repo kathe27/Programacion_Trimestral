@@ -43,6 +43,39 @@
 		<br>
 
 <div class="col-md-8 col-md-offset-2" >
+	 <?php 
+        if ($_GET) {
+          
+          $valor=$_GET['val'];
+
+          if ($valor=='a') {
+            echo "<div class='panel-body'>
+            <div class='row'> 
+              <div class='alert alert-success alert-dismissable'>
+                <a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+                  <strong>Ambiente</strong> adicionado  con exito!
+            </div>";
+         } 
+
+         if ($valor=='d') {
+            echo "<div class='panel-body'>
+            <div class='row'> 
+              <div class='alert alert-success alert-dismissable'>
+                <a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+                  <strong>Ambiente</strong> Eliminado  con exito!
+            </div>";
+         } 
+
+         if ($valor=='ed') {
+            echo "<div class='panel-body'>
+            <div class='row'> 
+              <div class='alert alert-success alert-dismissable'>
+                <a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+                  <strong>Ambiente</strong> Modificado  con exito!
+            </div>";
+         } 
+       }
+    ?>
 	<a  class="btn btn-success " href="anadir_ambiente.php">Añadir Ambiente
 		<i  class="glyphicon glyphicon glyphicon-plus" ></i>
 

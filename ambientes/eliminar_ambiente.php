@@ -13,8 +13,8 @@
 		echo "<script>
 
 
-				alert('Se eliminó correctamente');
-				window.location.replace('ambientes.php');
+				alert('Desea eliminar este ambiente?');
+				window.location.replace('ambientes.php?val=d');
 
 			</script>";
 			

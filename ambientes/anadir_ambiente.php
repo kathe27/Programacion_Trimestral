@@ -97,8 +97,8 @@
 			}else{
 				echo "
 					
-					<script>alert('Exito');
-					window.location.replace('ambientes.php');
+					<script>
+					window.location.replace('ambientes.php?val=a');
 					</script>";
 			}
 		}

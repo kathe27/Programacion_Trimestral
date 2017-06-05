@@ -40,6 +40,7 @@
   <h1 class="text2 text-center">Añadir instructor</h1>
    
   <div class="panel-body">
+ 
 
     <?php 
 
@@ -198,7 +199,7 @@
                             $query = mysqli_query($con , "INSERT INTO instructores(nombres, apellidos, especialidad, vinculacion1, tipoplanta, tipocontrato, cantidadhoras, actadministrativas, area) VALUES('$nombres','$apellidos','$especialidad','$vinculacion1','$tipoplanta','$tipocontrato','$cantidadhoras','$actadministrativas','$area')");
 
                             if($query){
-                                echo "<script>alert('Registro Correctamente');document.location.replace('gestionarIns.php')</script>";
+                                echo "<script>window.location.replace('gestionarIns.php?val=a')</script>";
                             }else{
                                 echo "<script>alert('No se registro Correctamente')</script>";
                                 

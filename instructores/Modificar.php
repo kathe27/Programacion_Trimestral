@@ -219,7 +219,7 @@
                             $query = mysqli_query($con , "UPDATE instructores  SET nombres='$nombres' , apellidos='$apellidos', especialidad='$especialidad' , vinculacion1='$vinculacion1' , tipoplanta='$tipoplanta' , tipocontrato='$tipocontrato', cantidadhoras='$cantidadhoras',actadministrativas='$actadministrativas', area='$area' WHERE id=$id");
 
                             if($query){
-                                echo "<script>alert('Modifico correctamente');document.location.replace('gestionarIns.php')</script>";
+                                echo "<script>window.location.replace('gestionarIns.php?val=ed')</script>";
                             }else{
                                 echo "<script> alert('No modifico')</script>";
                             }

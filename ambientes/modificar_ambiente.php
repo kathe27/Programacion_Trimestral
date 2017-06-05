@@ -99,8 +99,8 @@
 			if(!mysqli_query($con,$sql)){
 				die('Error: ' . mysqli_error($con));
 			}else{
-				echo "<script>alert('Se modifico con Exito');
-					window.location.replace('ambientes.php');
+				echo "<script>
+					window.location.replace('ambientes.php?val=ed');
 					</script>";
 			}
 		}

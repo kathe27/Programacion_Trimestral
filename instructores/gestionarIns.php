@@ -41,9 +41,43 @@
     <h1 class="text-center" >Lista de  Instructores</h1><br>
   </div>
   <hr>
+  
     <br>
 
 <div class="col-md-8 col-md-offset-2" >
+  <?php 
+        if ($_GET) {
+          
+          $valor=$_GET['val'];
+
+          if ($valor=='a') {
+            echo "<div class='panel-body'>
+            <div class='row'> 
+              <div class='alert alert-success alert-dismissable'>
+                <a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+                  <strong>Instructor</strong> adicionado  con exito!
+            </div>";
+         } 
+
+         if ($valor=='d') {
+            echo "<div class='panel-body'>
+            <div class='row'> 
+              <div class='alert alert-success alert-dismissable'>
+                <a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+                  <strong>Instructor</strong> Eliminado  con exito!
+            </div>";
+         } 
+
+         if ($valor=='ed') {
+            echo "<div class='panel-body'>
+            <div class='row'> 
+              <div class='alert alert-success alert-dismissable'>
+                <a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+                  <strong>Instructor</strong> Modificado  con exito!
+            </div>";
+         } 
+       }
+    ?>
   <a  class="btn btn-success " href="anadir.php">Añadir Instructor
     <i  class="glyphicon glyphicon glyphicon-plus" ></i>
 
