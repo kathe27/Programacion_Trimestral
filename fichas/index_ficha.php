@@ -55,7 +55,7 @@
 						<div class='row'>
 							<div class='alert alert-success alert-dismissable'>
 	  						<a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-	  						La ficha fue adicionada con exito!
+	  						La <strong>ficha</strong> fue adicionada con exito!
 						</div>";
 				 } 
 
@@ -64,9 +64,9 @@
 					if ($valor=='e') {
 						echo "<div class='panel-body'>
 						<div class='row'>
-							<div class='alert alert-danger alert-dismissable'>
+							<div class='alert alert-success alert-dismissable'>
 	  						<a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-	  						La ficha se eliminó con exito!
+	  						La <strong>ficha</strong> se eliminó con exito!
 						</div>";
 				 }
 
@@ -75,7 +75,7 @@
 						<div class='row'>
 							<div class='alert alert-success alert-dismissable'>
 	  						<a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-	  						La ficha se modificó con exito!
+	  						La <strong>ficha</strong> se modificó con exito!
 						</div>";
 				 }
 				}

@@ -41,24 +41,25 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-md-8 col-md-offset-2">
-								<form action="" method="POST">
+								<form action="" method="POST" id="registro">
 									<div class="form-group">
 									<label>Ficha*</label>
 										<input type="number" 
 											 class="form-control" 
 											 name="ficha" 
-											 placeholder="Ingrese numero ficha">
+											 placeholder="Ingrese numero ficha" data-validation="number required">
 									</div>	
 									<div class="form-group">
 										<label>Nombre Ficha*</label>
 										<input type="text"
 											   class="form-control"
 											   name="nombre"
-											   placeholder="Nombre Ficha">
+											   placeholder="Nombre Ficha"
+											   data-validation="required">
 									</div>		  
 									<div class="form-group">
 									<label>Especialidad*</label>
-										<select name="especialidad" class="form-control">
+										<select data-validation="required" name="especialidad" class="form-control">
 											<option>Seleccione una opcion...</option>
 											<option value="Eectricidad">Electricidad</option>
 											<option value="Informatica">Informatica</option>
@@ -75,29 +76,33 @@
 										<input type="text" 
 											class="form-control" 
 											name="instructor" 
-											placeholder="Instructor">
+											placeholder="Instructor"
+											data-validation="required">
 									</div>
 									<div class="form-group">
 										<label>Fecha de Inicio*</label><br>
 										<input type="date" 
 											class="form-control" 
-											name="fecha_inicio">
+											name="fecha_inicio"
+											data-validation="date">
 									</div>
 									<div class="form-group">
 										<label>Fin Lectiva*</label><br>
 										<input type="date" 
 											class="form-control" 
-											name="fecha_lectiva">
+											name="fecha_lectiva"
+											data-validation="date">
 									</div>
 									<div class="form-group">
 										<label>Fecha Final*</label><br>
 										<input type="date" 
 											class="form-control" 
-											name="fecha_final">
+											name="fecha_final"
+											data-validation="date">
 									</div>
 									<div class="form-group">
 										<label>Tipo de Horario*</label>
-										<select name="horario" id="" class="form-control">
+										<select data-validation="required" name="horario" id="" class="form-control">
 											<option value="">Seleccione...</option>
 											<option value="Diurna">Diurna</option>
 											<option value="Mixta">Mixta</option>
@@ -121,6 +126,18 @@
 			</div>
 		</div>
 	</div>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/jquery.form-validator.min.js"></script>
+	<script src="js/jquery.form-validator.es.js"></script>
+
+	<script>
+        $(document).ready(function() {
+                $.validate({ 
+                    form: '#registro', 
+                    language: es 
+                });
+            });
+	</script>
 	<!-- Codigo PHP para Añadir -->
 	<?php 
 		if ($_POST) {
@@ -151,5 +168,7 @@
 			}
 		}
 	 ?>
+
+	
 </body>
 </html>

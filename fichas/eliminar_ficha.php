@@ -9,7 +9,7 @@ $id = $_GET['id'];
 $sql = mysqli_query ($con, "DELETE FROM fichas WHERE id = $id");
 
 echo " 
-	<script>
+	<script>alert('Desea eliminar esta ficha?');
 	window.location.replace('index_ficha.php?val=e');
 	</script>
 "; 

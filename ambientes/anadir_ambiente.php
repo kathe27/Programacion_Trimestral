@@ -38,12 +38,13 @@
 	<hr>
         <div class="col-md-6 col-md-offset-3 box ">
 			   <a href="ambientes.php" class="btn btn-danger"><i class="glyphicon glyphicon-arrow-left"></i>Volver</a>
-	            <form id="add" action="" method="POST"><br>
+	            <form id="registro" action="" method="POST"><br>
 	                <div class="form-group">
 	                	 <label for=""><strong>Nombre de Ambiente*</strong></label>
-	                    <input type="text"  class="form-control"name="nombre" data-validation="required" placeholder="Nombre">
-	                    <hr>
+	                    <input type="text"  class="form-control" name="nombre" data-validation="required" placeholder="Nombre">
+	                    
 	                </div>
+	                <hr>
 	               <!-- 	<div class="form-group">
 	                 	<label for=""><strong>Disponibilidad*</strong></label>
 	                    <input type="text" name="disponibilidad" class="form-control" placeholder="Dispobibilidad" >
@@ -51,9 +52,10 @@
 	                </div> -->
 	                <div class="form-group">
 	                 	<label for=""><strong>Descripcion*</strong></label>
-	                    <textarea type="text" name="descripcion" class="form-control" placeholder="Descripcion" ></textarea>
-	                    <hr>
+	                    <textarea data-validation="required" type="text" name="descripcion" class="form-control" placeholder="Descripcion" ></textarea>
+	                   
 	                </div>
+	                <hr>
 	                <div class="form-group">
 	                    <button type="submit" class="btn btn-success">
 	                        <i class="glyphicon glyphicon-plus"></i>
@@ -66,6 +68,18 @@
 	                </div>
 	            </form>
 	           </div>
+
+	           <script src="js/jquery-3.2.1.min.js"> </script>
+   			   <script src="js/jquery.form-validator.min.js"></script>
+    		   <script src="js/jquery.form-validator.es.js" ></script>
+			   <script>
+				        $(document).ready(function() {
+				                $.validate({ 
+				                    form: '#registro', 
+				                    language: es 
+				                });
+				            });
+				    </script>
 
 
 
