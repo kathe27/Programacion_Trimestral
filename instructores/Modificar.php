@@ -65,18 +65,34 @@
                         <hr>
                     </div>
 
-                     
-                     <div class="form-group">
+ 
+        <?php 
+
+           $array = array("Tecnico", "Transversal", "Ingles");   
+           $espe=$row['especialidad'];
+
+         ?>
+                    <div class="form-group">
                          <label for=""><strong>Especialidad</strong></label>
                          <select name="especialidad" class="form-control">
-                             <option value=""><?php echo $row['especialidad'] ?></option>
-                             <option value="Tecnico">Tecnico</option>
-                             <option value="Transversal">Transversal</option>
-                             <option value="Ingles">Ingles</option>
+                         <option value="<?php echo $row['especialidad'] ?>"><?php echo $row['especialidad'] ?></option>
 
-                         </select>
+
+                    <?php foreach ($array as $valor) { ?>           
+
+                            <?php if ($valor != $espe ) { ?>
+                               <option value="<?= $valor ?>"><?php echo $valor?></option>   
+                            
+                                                 
+                            <?php } ?>            
+                               
+
+                    <?php } ?>
+
+                       </select>
                         <hr>
                     </div>
+
                     <div class="form-group">
                          <label for=""><strong>Vinculacion</strong></label>
                          <select id="datos" name="vinculacion1" class="form-control" onchange="habilitarCombo(this.value);">

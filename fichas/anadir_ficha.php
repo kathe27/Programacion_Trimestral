@@ -62,7 +62,7 @@
 											<option>Seleccione una opcion...</option>
 											<option value="Eectricidad">Electricidad</option>
 											<option value="Informatica">Informatica</option>
-											<option value="Salud Ocupacionak">Salud Ocupacional</option>
+											<option value="Salud Ocupacional">Salud Ocupacional</option>
 											<option value="Mecanica">Mecanica</option>
 											<option value="Automotriz">Automotriz</option>
 											<option value="Construccion">Construccion</option>

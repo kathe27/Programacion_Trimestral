@@ -68,17 +68,29 @@
 											   value="<?php echo $row['nombre'] ?>">
 									<div class="form-group">
 
+								 <?php 
+
+           $array = array("Electricidad", "Informatica", "Salud Ocupacional","Mecanica
+Mecanica","Automotriz","Construccion","Confeccion","Ambiental");   
+           $espe=$row['especialidad'];
+
+         ?>
+
+
 									<label>Especialidad*</label>
 										<select name="especialidad" class="form-control">
 											<option><?php echo $row['especialidad'] ?></option>
-											<option value="Eectricidad">Electricidad</option>
-											<option value="Informatica">Informatica</option>
-											<option value="Salud Ocupacionak">Salud Ocupacional</option>
-											<option value="Mecanica">Mecanica</option>
-											<option value="Automotriz">Automotriz</option>
-											<option value="Construccion">Construccion</option>
-											<option value="Confeccion">Confeccion</option>
-											<option value="Ambiental">Ambiental</option>
+
+
+											 <?php foreach ($array as $valor) { ?>           
+
+            <?php if ($valor != $espe ) { ?>
+
+
+											<option value="<?= $valor ?>"><?= $valor ?></option>
+
+											<?php }} ?>
+	
 										</select>
 									</div>
 									<div class="form-group">
@@ -112,14 +124,31 @@
 									</div>
 									<div class="form-group">
 										<div class="form-group">
+
+											<?php 
+
+           $array = array("Diurna", "Mixta", "Nocturna"."Nocturna-Dual","Dual");   
+           $espe=$row['horario'];
+
+         ?>
+
 										<label>Tipo de Horario*</label>
 										<select name="horario" class="form-control">
 											<option value=""><?php echo $row['horario'] ?></option>
-											<option value="Diurna">Diurna</option>
-											<option value="Mixta">Mixta</option>
-											<option value="Nocturna">Nocturna</option>
-											<option value="Nocturna-Dual">Nocturna-Dual</option>
-											<option value="Dual">Dual</option>
+
+											<?php foreach ($array as $valor) { ?>           
+
+                            <?php if ($valor != $espe ) { ?>
+                               <option value="<?= $valor ?>"><?php echo $valor?></option>   
+                            
+                                                 
+                            <?php } ?>            
+                               
+
+                    <?php } ?>
+
+										
+
 										</select>
 									</div>
 									</div>
