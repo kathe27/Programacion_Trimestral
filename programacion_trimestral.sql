@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-06-2017 a las 16:12:35
+-- Tiempo de generación: 05-06-2017 a las 19:14:43
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -30,36 +30,40 @@ CREATE TABLE `ambientes` (
   `id` int(11) NOT NULL,
   `nombre` varchar(100) COLLATE utf8_bin NOT NULL,
   `descripcion` varchar(200) COLLATE utf8_bin NOT NULL,
-  `disponibilidad` varchar(200) COLLATE utf8_bin NOT NULL
+  `disponibilidad` varchar(200) COLLATE utf8_bin NOT NULL,
+  `centro` text COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `ambientes`
 --
 
-INSERT INTO `ambientes` (`id`, `nombre`, `descripcion`, `disponibilidad`) VALUES
-(3, 'SISTEMAS 1', '', ''),
-(4, 'SISTEMAS 2', '', ''),
-(5, 'SISTEMAS 3', '', ''),
-(6, 'CAD', '', ''),
-(7, 'AUDITORIO', '', ''),
-(8, 'AUTOMOTRIZ', '', ''),
-(9, 'CONFECCIÃ“N', '', ''),
-(10, 'DIBUJO', '', ''),
-(11, 'DIESEL', '', ''),
-(12, 'ELECTRICIDAD 1 (Electrotecnia)', '', ''),
-(13, 'ELECTRICIDAD 2 (Calidad de EnergÃ­a y DistribuciÃ³n)', '', ''),
-(14, 'ELECTRICIDAD 3 (MÃ¡quinas y Controles)', '', ''),
-(15, 'ELECTRICIDAD 4 (Instalaciones ElÃ©ctricas - Internas -  Domotica - IluminaciÃ³n)', '', ''),
-(16, 'MANUFACTURA MADERAS', '', ''),
-(17, 'MANTENIMIENTO', '', ''),
-(18, 'MECANIZADO', '', ''),
-(19, 'METALOGRAFÃA', '', ''),
-(20, 'SALUD OCUPACIONAL', '', ''),
-(21, 'SOLDADURA', '', ''),
-(22, 'REDES PARA GAS', '', ''),
-(23, 'REFRIGERACIÃ“N (AJUSTE)', '', ''),
-(24, 'MOTOS', '', '');
+INSERT INTO `ambientes` (`id`, `nombre`, `descripcion`, `disponibilidad`, `centro`) VALUES
+(3, 'SISTEMAS 1', '', '', 'industria'),
+(4, 'SISTEMAS 2', '', '', 'industria'),
+(5, 'SISTEMAS 3', '', '', 'industria'),
+(6, 'CAD', '', '', 'industria'),
+(7, 'AUDITORIO', '', '', 'industria'),
+(8, 'AUTOMOTRIZ', '', '', 'industria'),
+(9, 'CONFECCIÃ“N', '', '', 'industria'),
+(10, 'DIBUJO', '', '', 'industria'),
+(11, 'DIESEL', '', '', 'industria'),
+(12, 'ELECTRICIDAD 1', '', '', 'industria'),
+(13, 'ELECTRICIDAD 2 ', '', '', 'industria'),
+(14, 'ELECTRICIDAD 3', '', '', 'industria'),
+(15, 'ELECTRICIDAD 4', '', '', 'industria'),
+(16, 'MANUFACTURA MADERAS', '', '', 'industria'),
+(17, 'MANTENIMIENTO', '', '', 'industria'),
+(18, 'MECANIZADO', '', '', 'industria'),
+(19, 'METALOGRAFÃA', '', '', 'industria'),
+(20, 'SALUD OCUPACIONAL', '', '', 'industria'),
+(21, 'SOLDADURA', '', '', 'industria'),
+(22, 'REDES PARA GAS', '', '', 'industria'),
+(23, 'REFRIGERACION (AJUSTE)', '', '', 'industria'),
+(24, 'MOTOS', '', '', 'industria'),
+(25, 'INSTRUMENTACION Y CONTROL', '', '', 'automatizacion'),
+(26, 'NEUMATICA', '', '', 'automatizacion'),
+(27, 'SERVOSISTEMAS', '', '', 'automatizacion');
 
 -- --------------------------------------------------------
 
@@ -84,7 +88,6 @@ CREATE TABLE `eventos` (
 --
 
 INSERT INTO `eventos` (`id`, `title`, `body`, `url`, `class`, `start`, `end`, `inicio_normal`, `final_normal`) VALUES
-(1, 'Clase de analisis', 'Los estudiantes tendran una clase de analisis', 'http://localhost/calendario/descripcion_evento.php?id=1', 'event-important', '1495112640000', '1495199040000', '18/05/2017 9:04', '19/05/2017 9:04'),
 (6, 'Induccion', 'Grupo nuevo de electricidad', 'http://localhost/yaneth/programacion_trimestral/calendario/descripcion_evento.php?id=6', 'event-info', '1496746800000', '1496768400000', '06/06/2017 7:00', '06/06/2017 13:00'),
 (7, 'Reunion', 'Grupo Primario', 'http://localhost/yaneth/programacion_trimestral/calendario/descripcion_evento.php?id=7', 'event-important', '1496772000000', '1496786400000', '06/06/2017 14:00', '06/06/2017 18:00');
 
@@ -111,7 +114,7 @@ CREATE TABLE `fichas` (
 --
 
 INSERT INTO `fichas` (`id`, `ficha`, `nombre`, `especialidad`, `instructor`, `fecha_inicio`, `fecha_lectiva`, `fecha_final`, `horario`) VALUES
-(2, 1132816, 'Analisis y Desarrollo de Sistemas de Informacion', 'Informatica', 'Yaneth Mejia', '2016-04-11', '2017-10-12', '2018-04-11', 'Diurna'),
+(2, 1132816, 'Analisis y Desarrollo de Sistemas de Informacion', 'Informatica', 'Yaneth Mejia', '2016-04-11', '2017-10-12', '2018-04-11', 'Mixta'),
 (3, 1323395, 'Analisis y Desarrollo de Sistemas de Informacion', 'Informatica', 'Yaneth Mejia', '2017-04-17', '0000-00-00', '2019-04-17', 'Diurna'),
 (4, 1368665, 'ESPECIALIZACION TECNOLOGICA METODOLOÃAS DE CALIDAD PARA EL DESARROLLO DE SOFTWARE', 'Informatica', 'Yaneth Mejia', '2017-04-17', '0000-00-00', '0000-00-00', 'Diurna'),
 (14, 1375843, 'AUX. TRABAJADOR DE LA MADERA', 'Construccion', 'CAMILO ANDRES ARANGO', '2017-04-17', '0000-00-00', '0000-00-00', 'Nocturna'),
@@ -171,19 +174,20 @@ CREATE TABLE `instructores` (
   `tipocontrato` varchar(100) COLLATE utf8_bin NOT NULL,
   `cantidadhoras` varchar(100) COLLATE utf8_bin NOT NULL,
   `actadministrativas` varchar(50) COLLATE utf8_bin NOT NULL,
-  `area` varchar(50) COLLATE utf8_bin NOT NULL
+  `area` varchar(50) COLLATE utf8_bin NOT NULL,
+  `centro` text COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `instructores`
 --
 
-INSERT INTO `instructores` (`id`, `nombres`, `apellidos`, `especialidad`, `vinculacion1`, `tipoplanta`, `tipocontrato`, `cantidadhoras`, `actadministrativas`, `area`) VALUES
-(6, 'Oscar Fernando', 'Aristizabal Cardona', 'Tecnico', 'Contratista', '', 'Por Horas', '32', '', ''),
-(7, 'Oscar Fernando', 'Aristizabal Cardona', 'Tecnico', 'Planta', 'Carrera', 'No Aplica', '48', 'Articulacion', 'Informatica y Sistemas'),
-(8, 'Oscar Fernando', 'Aristizabal Cardona', 'Transversal', 'Planta', 'Carrera', 'No Aplica', '48', 'Articulacion', 'Gestion Integrada de la Calidad'),
-(9, 'Oscar Fernando', 'Aristizabal Cardona', 'Tecnico', 'Contratista', 'No Aplica', 'Por Horas', '32', 'Articulacion', 'Joyeria'),
-(10, 'nora', 'jimenez henao', 'Transversal', 'Contratista', 'No Aplica', 'Por Horas', '32', 'Virtual', 'Informatica y Sistemas');
+INSERT INTO `instructores` (`id`, `nombres`, `apellidos`, `especialidad`, `vinculacion1`, `tipoplanta`, `tipocontrato`, `cantidadhoras`, `actadministrativas`, `area`, `centro`) VALUES
+(6, 'Oscar Fernando', 'Aristizabal Cardona', 'Tecnico', 'Contratista', '', 'Por Horas', '32', '', '', 'industria'),
+(7, 'Oscar Fernando', 'Aristizabal Cardona', 'Tecnico', 'Planta', 'Carrera', 'No Aplica', '48', 'Articulacion', 'Informatica y Sistemas', 'industria'),
+(8, 'Oscar Fernando', 'Aristizabal Cardona', 'Transversal', 'Planta', 'Carrera', 'No Aplica', '48', 'Articulacion', 'Gestion Integrada de la Calidad', 'industria'),
+(9, 'Oscar Fernando', 'Aristizabal Cardona', 'Tecnico', 'Contratista', 'No Aplica', 'Por Horas', '32', 'Articulacion', 'Joyeria', 'industria'),
+(10, 'Nora', 'jimenez henao', 'Transversal', '', '', 'No Aplica', '', '', '', 'automatizacion');
 
 -- --------------------------------------------------------
 
@@ -257,7 +261,7 @@ ALTER TABLE `instructores`
 -- AUTO_INCREMENT de la tabla `ambientes`
 --
 ALTER TABLE `ambientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT de la tabla `eventos`
 --
