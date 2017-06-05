@@ -127,7 +127,7 @@ if (isset($_POST['from']))
                                 </div>
                                     <div class="pull-right form-inline"><br>
                                         <a class="btn btn-primary" href="../ambientes/ambientes.php">Volver</a>
-                                        <button class="btn btn-info" data-toggle='modal' data-target='#add_evento'>Añadir Evento</button>
+                                        <button class="btn btn-info" data-toggle='modal' data-target='#add_evento'>Añadir Formación</button>
                                     </div>
 
                 </div><hr>
@@ -286,26 +286,129 @@ if (isset($_POST['from']))
 
                     <br>
 
-                    <label for="tipo">Tipo de evento</label>
-                    <select class="form-control" name="class" id="tipo">
-                        <option value="event-info">Informacion</option>
-                        <option value="event-success">Exito</option>
-                        <option value="event-important">Importantante</option>
-                        <option value="event-warning">Advertencia</option>
-                        <option value="event-special">Especial</option>
+                    <label for="tipo">Centro</label>
+                    <select class="form-control" name="class" id="tipo" onchange="habilitar(this.value);">
+                        <option value="">Seleccione...</option>
+                        <option value="Industria">Industria</option>
+                        <option value="Automatizacion">Automatizacion</option>
+                    </select>
+
+                    <br>
+                    <?php 
+
+                    $con= mysqli_connect("localhost","root","","programacion_trimestral");
+                    $qry5=mysqli_query($con, "SELECT * FROM fichas");
+                    $qry4=mysqli_query($con, "SELECT * FROM instructores WHERE centro='automatizacion' ");
+                    $qry3=mysqli_query($con, "SELECT * FROM ambientes WHERE centro='automatizacion' ");
+                    $qry2=mysqli_query($con, "SELECT * FROM instructores WHERE centro='industria' ");
+                    $qry= mysqli_query($con,"SELECT * FROM ambientes WHERE centro='industria'");
+                    $contador=0;
+                 
+
+                     ?>
+
+                    <label for="title">Ambiente</label>
+                    <select class="form-control" name="ambientesi" id="d1" disabled="true">
+
+                    <?php while($row = mysqli_fetch_array($qry)) { ?>
+                       
+                    <option value="<?= $row['nombre'] ?>"><?= $row['nombre'] ?></option>         
+                    <?php } ?>
+                    <option value=""></option>
+
+
+
+                    </select>
+
+                    <label for="">Instructor</label>
+                    <select class="form-control" name="instructori" id="d2" disabled="true">
+
+                        <?php while($row2 = mysqli_fetch_array($qry2)) { ?>  
+
+                    <option value="<?= $row2['nombres'] ?>"><?= $row2['nombres'] ?></option>            
+                    <?php } ?>
+                    <option value=""></option>
                     </select>
 
                     <br>
 
+                     <label for="title">Ambiente</label>
+                    <select class="form-control" name="ambientesa" id="d3" disabled="true">
 
-                    <label for="title">Título</label>
-                    <input type="text" required autocomplete="off" name="title" class="form-control" id="title" placeholder="Introduce un título">
+                    <?php while($row3 = mysqli_fetch_array($qry3)) { ?>
+                       
+                    <option value="<?= $row3['nombre'] ?>"><?= $row3['nombre'] ?></option>          
+                    <?php } ?>
+                    <option value=""></option>
+
+
+
+                    </select>
+
+                    <label for="">Instructor</label>
+                    <select class="form-control" name="instructora" id="d4" disabled="true">
+
+                        <?php while($row4 = mysqli_fetch_array($qry4)) { ?>  
+
+                    <option value="<?= $row2['nombres'] ?>"><?= $row4['nombres'] ?></option>          
+                    <?php } ?>
+                    <option value=""></option>
+                    </select>
 
                     <br>
 
+                     <label for="">Area</label>
+                     <select  name="area" class="form-control">
+                         <option value="">Seleccionar...</option>
+                         <option value="Ambiental">Ambiental</option>
+                         <option value="Automotriz">Automotriz</option>
+                         <option value="Etica y Comunicacion">Etica y Comunicacion</option>
+                         <option value="Confeccion">Confeccion</option>
+                         <option value="Construccion">Construccion</option>
+                         <option value="Redes para Gas">Redes para Gas</option>
+                         <option value="Salud Ocupacional">Salud Ocupacional</option>
+                         <option value="Soldadura">Soldadura</option>
+                         <option value="Ingles Presencial">Ingles Presencial</option>
+                         <option value="Ingles Voluntarios">Ingles Voluntarios</option>
+                         <option value="Equipo Tecnico pedagogico">Equipo Tecnico pedagogico</option>
+                         <option value="Cultura Fisica">Cultura Fisica</option>
+                         <option value="Diseño Mecanico">Diseño Mecanico</option>
+                         <option value="Electricidad">Electricidad</option>
+                         <option value="Gestion Integrada de la Calidad">Gestion Integrada de la Calidad</option>
+                         <option value="Informatica y Sistemas">Informatica y Sistemas</option>
+                         <option value="Joyeria">Joyeria</option>
+                         <option value="Mantenimiento">Mantenimiento</option>
+                         <option value="Motos">Motos</option>
+                         <option value="Mobiliario y Maderas">Mobiliario y Maderas</option>
+                         <option value="Proyectos y Emprendimiento">Proyectos y Emprendimiento</option>
+                     </select>
+                    <br>
 
-                    <label for="body">Evento</label>
-                    <textarea id="body" name="event" required class="form-control" rows="3"></textarea>
+                    <label for="title">Ficha</label>
+                    <select class="form-control" name="fichai" id="">
+
+                    <?php while($row5 = mysqli_fetch_array($qry5)) { ?>
+                       
+                    <option value="<?= $row5['ficha'] ?>"><?= $row5['ficha'] ?></option>         
+                    <?php } ?>
+                    <option value=""></option>
+                    </select>
+
+                    <br>
+
+                    <label>Especialidad</label>
+                    <select name="especialidad" class="form-control">
+                        <option>Seleccione una opcion...</option>
+                        <option value="Eectricidad">Electricidad</option>
+                        <option value="Informatica">Informatica</option>
+                        <option value="Salud Ocupacional">Salud Ocupacional</option>
+                        <option value="Mecanica">Mecanica</option>
+                        <option value="Automotriz">Automotriz</option>
+                        <option value="Construccion">Construccion</option>
+                        <option value="Confeccion">Confeccion</option>
+                        <option value="Ambiental">Ambiental</option>
+                    </select>
+
 
     <script type="text/javascript">
         $(function () {
@@ -319,6 +422,22 @@ if (isset($_POST['from']))
             });
 
         });
+    </script>
+    <script>
+    function habilitar(valor){
+        if (valor == 'Industria') {
+            document.getElementById('d1').disabled = false;
+            document.getElementById('d2').disabled = false;
+            document.getElementById('d3').disabled = true;
+            document.getElementById('d4').disabled = true;
+
+        }else{
+            document.getElementById('d1').disabled = true;
+            document.getElementById('d2').disabled = true;
+            document.getElementById('d3').disabled = false;
+            document.getElementById('d4').disabled = false;
+        }
+    }
     </script>
       </div>
       <div class="modal-footer">

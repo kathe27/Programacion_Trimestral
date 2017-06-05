@@ -127,7 +127,7 @@ Mecanica","Automotriz","Construccion","Confeccion","Ambiental");
 
 											<?php 
 
-           $array = array("Diurna", "Mixta", "Nocturna"."Nocturna-Dual","Dual");   
+           $array = array("Diurna", "Mixta", "Nocturna","Nocturna-Dual","Dual");   
            $espe=$row['horario'];
 
          ?>
