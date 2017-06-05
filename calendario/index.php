@@ -101,6 +101,7 @@ if (isset($_POST['from']))
         <script src="<?=$base_url?>js/bootstrap-datetimepicker.js"></script>
         <link rel="stylesheet" href="<?=$base_url?>css/bootstrap-datetimepicker.min.css" />
        <script src="<?=$base_url?>js/bootstrap-datetimepicker.es.js"></script>
+        <link rel="icon" href="../instructores/imgs/logoSena.png">
     </head>
 
 </head>

@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/custom.css">
 	<link rel="stylesheet" href="css/index.css">
+	<link rel="icon" href="../instructores/imgs/logoSena.png">
 </head>
 <body>
 

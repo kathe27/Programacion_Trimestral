@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="../instructores/imgs/logoSena.png">
 </head>
 <body>
 
@@ -67,8 +68,8 @@
                      
                      <div class="form-group">
                          <label for=""><strong>Especialidad</strong></label>
-                         <select value="<?php echo $row['especialidad'] ?>" name="especialidad" class="form-control">
-                             <option value="">Seleccionar...</option>
+                         <select name="especialidad" class="form-control">
+                             <option value=""><?php echo $row['especialidad'] ?></option>
                              <option value="Tecnico">Tecnico</option>
                              <option value="Transversal">Transversal</option>
                              <option value="Ingles">Ingles</option>
@@ -79,7 +80,7 @@
                     <div class="form-group">
                          <label for=""><strong>Vinculacion</strong></label>
                          <select id="datos" name="vinculacion1" class="form-control" onchange="habilitarCombo(this.value);">
-                             <option value="">Seleccionar...</option>
+                             <option value=""><?php echo $row['vinculacion1'] ?></option>
                              <option value="Planta">Planta</option>
                              <option value="Contratista">Contratista</option>
  
@@ -90,7 +91,7 @@
                        <div class="form-group">
                          <label for=""><strong>Tipo Planta</strong></label>
                          <select id="d1" name="tipoplanta" class="form-control" disabled="true">
-                             <option value="">Seleccionar...</option>
+                             <option value=""><?php echo $row['tipoplanta'] ?></option>
                              <option value="Carrera">Carrera</option>
                              <option value="Provisional">Provisional</option>
  
@@ -102,7 +103,7 @@
                        <div class="form-group">
                          <label for=""><strong>Tipo Contrato</strong></label>
                          <select id="d2" name="tipocontrato" class="form-control" disabled="true">
-                             <option value="">Seleccionar...</option>
+                             <option value=""><?php echo $row['tipocontrato']?></option>
                              <option value="Por Horas">Por Horas</option>
                              <option value="Término Fijo">Termino Fijo</option>
  
@@ -113,7 +114,7 @@
                      <div class="form-group">
                          <label for=""><strong>Catntidad Horas*</strong></label>
                          <select  name="cantidadhoras" class="form-control">
-                             <option value="">Seleccionar...</option>
+                             <option value=""><?php echo $row['cantidadhoras']?></option>
                              <option value="32">32</option>
                              <option value="48">40</option>
  
@@ -125,7 +126,7 @@
                     <div class="form-group">
                          <label for=""><strong>Actividades Administrativas</strong></label>
                          <select  name="actadministrativas" class="form-control">
-                             <option value="">Seleccionar...</option>
+                             <option value=""><?php echo $row['actadministrativas']?></option>
                              <option value="Sindesena">Sindesena</option>
                              <option value="Articulacion">Articulacion</option>
                              <option value="Virtual">Virtual</option>
@@ -138,7 +139,7 @@
                      <div class="form-group">
                          <label for=""><strong>Area</strong></label>
                          <select  name="area" class="form-control">
-                             <option value="">Seleccionar...</option>
+                             <option value=""><?php echo $row['area']?></option>
                              <option value="Ambiental">Ambiental</option>
                              <option value="Automotriz">Automotriz</option>
                              <option value="Etica y Comunicacion">Etica y Comunicacion</option>
@@ -160,14 +161,6 @@
                              <option value="Motos">Motos</option>
                              <option value="Mobiliario y Maderas">Mobiliario y Maderas</option>
                              <option value="Proyectos y Emprendimiento">Proyectos y Emprendimiento</option>
-
-
-
-
-
-
-
- 
                          </select>
                         <hr>
                     </div>

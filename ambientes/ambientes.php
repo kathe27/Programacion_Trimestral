@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="css/font-awesome.css">
 	<link rel="stylesheet" href="css/index.css">
+	<link rel="icon" href="../instructores/imgs/logoSena.png">
 </head>
 <body>
 
@@ -50,7 +51,7 @@
 	</a><br><br>
 
 
-	<table class="text-center table table-hover">
+	<table class="table table-hover">
 
 		<tr>
 			<td><strong>Nombre</strong></td>

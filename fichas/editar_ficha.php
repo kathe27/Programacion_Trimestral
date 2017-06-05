@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/custom.css">
 	<link rel="stylesheet" href="css/index.css">
+	<link rel="icon" href="../instructores/imgs/logoSena.png">
 </head>
 <body>
 	<?php 
@@ -69,7 +70,7 @@
 
 									<label>Especialidad*</label>
 										<select name="especialidad" class="form-control">
-											<option>Seleccione una opcion...</option>
+											<option><?php echo $row['especialidad'] ?></option>
 											<option value="Eectricidad">Electricidad</option>
 											<option value="Informatica">Informatica</option>
 											<option value="Salud Ocupacionak">Salud Ocupacional</option>
@@ -112,8 +113,8 @@
 									<div class="form-group">
 										<div class="form-group">
 										<label>Tipo de Horario*</label>
-										<select name="horario" id="" class="form-control">
-											<option value="">Seleccione...</option>
+										<select name="horario" class="form-control">
+											<option value=""><?php echo $row['horario'] ?></option>
 											<option value="Diurna">Diurna</option>
 											<option value="Mixta">Mixta</option>
 											<option value="Nocturna">Nocturna</option>

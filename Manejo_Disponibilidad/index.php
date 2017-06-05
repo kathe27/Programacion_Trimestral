@@ -25,7 +25,7 @@
 			    		<input type="text" 
 			    			   class="form-control" 
 			    			   name="user"
-			    			   placeholder="Cedula">
+			    			   placeholder="Usuario">
 			    	</div>
 			    	<div class="form-group">
 			    		<input type="password" 

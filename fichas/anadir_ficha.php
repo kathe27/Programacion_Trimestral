@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/custom.css">
 	<link rel="stylesheet" href="css/index.css">
+	<link rel="icon" href="../instructores/imgs/logoSena.png">
 </head>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">

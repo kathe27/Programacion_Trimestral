@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/custom.css">
 	<link rel="stylesheet" href="css/index.css">
+	<link rel="icon" href="../instructores/imgs/logoSena.png">
 </head>
 <body>
 	<?php 
@@ -42,14 +43,12 @@
 			<h1 class="text-center">Consultar Fichas de Caracterización</h1>
 			<br>
 			<hr>
-			<div class="col-md-6 col-md-offset-3 box">
-				<div class="panel-default">
+			<div class="col-md-8 col-md-offset-2 box">
 				<br>
 					<a href="index_ficha.php" class="btn btn-danger"><i class="glyphicon glyphicon-arrow-left"></i>Volver</a>
-					<div class="panel-body">
 						<div class="row">
-							<div class="col-md-8 col-md-offset-2">
-								<table class="table table-hover box">
+							<div class="col-md-6 col-md-offset-3">
+								<table class="table table-hover">
 									<tr>
 										<td><strong>Ficha</strong></td>
 										<td><?php echo $row['ficha'] ?></td>
@@ -85,8 +84,7 @@
 								</table>
 							</div>
 						</div>
-					</div>
-				</div>
+
 			</div>
 		</div>
 	</div>

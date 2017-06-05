@@ -9,6 +9,8 @@
 	<link rel="stylesheet" href="ambientes/css/owl.carousel.min.css">
 	<link rel="stylesheet" href="ambientes/css/owl.theme.default.min.css">
 	<link rel="stylesheet" href="ambientes/css/animate.css">
+	<link rel="icon" href="instructores/imgs/logosena.png">
+
 </head>
 
 <body>

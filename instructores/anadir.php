@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="../instructores/imgs/logoSena.png">
 </head>
 <body>
 
@@ -56,7 +57,7 @@
 
                     <div class="form-group">
                          <label for=""><strong>Apellidos*</strong></label>
-                        <input type="text"  class="form-control"name="apellidos" data-validation="required" placeholder="Nombres">
+                        <input type="text"  class="form-control"name="apellidos" data-validation="required" placeholder="Apellidos">
                         <hr>
                     </div>
 
@@ -155,14 +156,6 @@
                              <option value="Motos">Motos</option>
                              <option value="Mobiliario y Maderas">Mobiliario y Maderas</option>
                              <option value="Proyectos y Emprendimiento">Proyectos y Emprendimiento</option>
-
-
-
-
-
-
-
- 
                          </select>
                         <hr>
                     </div>
