@@ -50,17 +50,28 @@ if (isset($_POST['from']))
         // y la formateamos con la funcion _formatear
         $final_normal  = $_POST['to'];
 
-        // Recibimos los demas datos desde el form
-        $titulo = evaluar($_POST['title']);
+        $titulo  = evaluar($_POST['title']);
 
-        // y con la funcion evaluar
-        $body   = evaluar($_POST['event']);
+
 
         // reemplazamos los caracteres no permitidos
         $clase  = evaluar($_POST['class']);
 
+        $centro = evaluar($_POST['centro']);
+        $ambientei = evaluar($_POST['ambientei']);
+        $instructori = $_POST['instructori'];
+        $ambientea = $_POST['ambientea'];
+        $instructora = $_POST['instructora'];
+        $area = $_POST['area'];
+        $ficha = $_POST['ficha'];
+        $especialidad = $_POST['especialidad'];
+      
+
+
+
         // insertamos el evento
-        $query="INSERT INTO eventos VALUES(null,'$titulo','$body','','$clase','$inicio','$final','$inicio_normal','$final_normal')";
+        $query="INSERT INTO eventos VALUES(null,'$centro','$ambientei','$instructori','$ambientea','$instructora','$area','$ficha','$especialidad','$titulo','','','$clase','$inicio','$final','$inicio_normal','$final_normal')";
+        
 
         // Ejecutamos nuestra sentencia sql
         $conexion->query($query); 
@@ -213,7 +224,7 @@ if (isset($_POST['from']))
                                 $.each(events, function(key, val)
                                 {
                                         $(document.createElement('li'))
-                                                .html('<a href="' + val.url + '">' + val.title + '</a>')
+                                                .html('<a href="' + val.url + '">' + val.ficha + '</a>')
                                                 .appendTo(list);
                                 });
                         },
@@ -287,7 +298,7 @@ if (isset($_POST['from']))
                     <br>
 
                     <label for="tipo">Centro</label>
-                    <select class="form-control" name="class" id="tipo" onchange="habilitar(this.value);">
+                    <select class="form-control" name="centro" id="tipo" onchange="habilitar(this.value);">
                         <option value="">Seleccione...</option>
                         <option value="Industria">Industria</option>
                         <option value="Automatizacion">Automatizacion</option>
@@ -308,7 +319,7 @@ if (isset($_POST['from']))
                      ?>
 
                     <label for="title">Ambiente</label>
-                    <select class="form-control" name="ambientesi" id="d1" disabled="true">
+                    <select class="form-control" name="ambientei" id="d1" disabled="true">
 
                     <?php while($row = mysqli_fetch_array($qry)) { ?>
                        
@@ -333,7 +344,7 @@ if (isset($_POST['from']))
                     <br>
 
                      <label for="title">Ambiente</label>
-                    <select class="form-control" name="ambientesa" id="d3" disabled="true">
+                    <select class="form-control" name="ambientea" id="d3" disabled="true">
 
                     <?php while($row3 = mysqli_fetch_array($qry3)) { ?>
                        
@@ -350,7 +361,7 @@ if (isset($_POST['from']))
 
                         <?php while($row4 = mysqli_fetch_array($qry4)) { ?>  
 
-                    <option value="<?= $row2['nombres'] ?>"><?= $row4['nombres'] ?></option>          
+                    <option value="<?= $row4['nombres'] ?>"><?= $row4['nombres'] ?></option>          
                     <?php } ?>
                     <option value=""></option>
                     </select>
@@ -385,7 +396,7 @@ if (isset($_POST['from']))
                     <br>
 
                     <label for="title">Ficha</label>
-                    <select class="form-control" name="fichai" id="">
+                    <select class="form-control" name="ficha" id="">
 
                     <?php while($row5 = mysqli_fetch_array($qry5)) { ?>
                        
@@ -397,7 +408,7 @@ if (isset($_POST['from']))
                     <br>
 
                     <label>Especialidad</label>
-                    <select name="especialidad" class="form-control">
+                    <select name="especialidad" class="form-control" id="espe">
                         <option>Seleccione una opcion...</option>
                         <option value="Eectricidad">Electricidad</option>
                         <option value="Informatica">Informatica</option>
@@ -408,7 +419,22 @@ if (isset($_POST['from']))
                         <option value="Confeccion">Confeccion</option>
                         <option value="Ambiental">Ambiental</option>
                     </select>
+                    
+                    <br>
 
+                    <label for="">Tipo de formacion</label>
+                    <select name="class" class="form-control" id="tipo">
+                        <option value="event-info">Diurna</option>
+                        <option value="event-success">Mixta</option>
+                        <option value="event-important">Nocturna</option>
+                        <option value="event-warning">Nocturna-Dual</option>
+                        <option value="event-special">Dual</option>
+                    </select>
+                    
+                    <br>
+
+                    <label for="title">Titulo</label>
+                     <input type="text" class="form-control" name="title" id="title">
 
     <script type="text/javascript">
         $(function () {

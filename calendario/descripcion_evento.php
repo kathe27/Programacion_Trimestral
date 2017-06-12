@@ -40,6 +40,18 @@
     // cuerpo
     $evento=$row['body'];
 
+    $centro=$row['centro'];
+    $ambientei=$row['ambientei'];
+    $ambientea=$row['ambientea'];
+    $area=$row['area'];
+    $ficha=$row['ficha'];
+    $especialidad=$row['especialidad'];
+    $instructori=$row['instructori'];
+    $instructora=$row['instructora'];
+
+
+
+
     // Fecha inicio
     $inicio=$row['inicio_normal'];
 
@@ -67,13 +79,30 @@ if (isset($_POST['eliminar_evento']))
 <head>
 	<meta charset="UTF-8">
 	<title><?=$titulo?></title>
-</head>
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    
 <body>
-	 <h3><?=$titulo?></h3>
+	 <h3><?=$instructori?></h3><h3><?=$instructora?></h3>
 	 <hr>
      <b>Fecha inicio:</b> <?=$inicio?>
+     <br>
      <b>Fecha termino:</b> <?=$final?>
- 	<p><?=$evento?></p>
+     <br>
+     <b>Centro:</b> <?=$centro?>
+     <br>
+     <b>Ambiente:</b> <?=$ambientei?><?=$ambientea?>
+     <br>
+     <b>Area:</b> <?=$area?>
+     <br>
+     <b>Ficha:</b> <?=$ficha?>
+     <br>
+     <b>Especialidad:</b> <?=$especialidad?>
+        
+    <br>
+    <br>
+    <br>
+
+
 </body>
 <form action="" method="post">
     <button type="submit" class="btn btn-danger" name="eliminar_evento">Eliminar</button>

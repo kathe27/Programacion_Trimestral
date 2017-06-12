@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-06-2017 a las 19:14:43
+-- Tiempo de generación: 12-06-2017 a las 18:28:23
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -73,6 +73,14 @@ INSERT INTO `ambientes` (`id`, `nombre`, `descripcion`, `disponibilidad`, `centr
 
 CREATE TABLE `eventos` (
   `id` int(10) NOT NULL,
+  `centro` varchar(50) COLLATE utf8_bin NOT NULL,
+  `ambientei` varchar(50) COLLATE utf8_bin NOT NULL,
+  `instructori` varchar(50) COLLATE utf8_bin NOT NULL,
+  `ambientea` varchar(50) COLLATE utf8_bin NOT NULL,
+  `instructora` varchar(50) COLLATE utf8_bin NOT NULL,
+  `area` varchar(100) COLLATE utf8_bin NOT NULL,
+  `ficha` int(50) NOT NULL,
+  `especialidad` varchar(100) COLLATE utf8_bin NOT NULL,
   `title` varchar(150) COLLATE utf8_bin DEFAULT NULL,
   `body` text COLLATE utf8_bin NOT NULL,
   `url` varchar(150) COLLATE utf8_bin NOT NULL,
@@ -87,9 +95,8 @@ CREATE TABLE `eventos` (
 -- Volcado de datos para la tabla `eventos`
 --
 
-INSERT INTO `eventos` (`id`, `title`, `body`, `url`, `class`, `start`, `end`, `inicio_normal`, `final_normal`) VALUES
-(6, 'Induccion', 'Grupo nuevo de electricidad', 'http://localhost/yaneth/programacion_trimestral/calendario/descripcion_evento.php?id=6', 'event-info', '1496746800000', '1496768400000', '06/06/2017 7:00', '06/06/2017 13:00'),
-(7, 'Reunion', 'Grupo Primario', 'http://localhost/yaneth/programacion_trimestral/calendario/descripcion_evento.php?id=7', 'event-important', '1496772000000', '1496786400000', '06/06/2017 14:00', '06/06/2017 18:00');
+INSERT INTO `eventos` (`id`, `centro`, `ambientei`, `instructori`, `ambientea`, `instructora`, `area`, `ficha`, `especialidad`, `title`, `body`, `url`, `class`, `start`, `end`, `inicio_normal`, `final_normal`) VALUES
+(1, 'Industria', 'SISTEMAS 1', 'Oscar Fernando', '', '', 'Cultura Fisica', 1197616, 'Informatica', 'Ofac', '', 'http://localhost/yaneth/programacion_trimestral/calendario/descripcion_evento.php?id=1', 'event-success', '1497351600000', '1497371400000', '13/06/2017 7:00', '13/06/2017 12:30');
 
 -- --------------------------------------------------------
 
@@ -266,7 +273,7 @@ ALTER TABLE `ambientes`
 -- AUTO_INCREMENT de la tabla `eventos`
 --
 ALTER TABLE `eventos`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `fichas`
 --
