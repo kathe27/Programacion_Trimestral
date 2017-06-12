@@ -21,7 +21,7 @@
 
 // Definimos nuestra zona horaria
 date_default_timezone_set("America/Santiago");
-
+// Las validaciones son muy importantes
 // incluimos el archivo de funciones
 include 'funciones.php';
 
