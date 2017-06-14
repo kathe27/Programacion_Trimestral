@@ -53,7 +53,6 @@
 	                <div class="form-group">
 	                 	<label for=""><strong>Descripcion*</strong></label>
 	                    <textarea data-validation="required" type="text" name="descripcion" class="form-control" placeholder="Descripcion" ></textarea>
-	                   
 	                </div>
 	                <hr>
 	                <div class="form-group">

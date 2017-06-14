@@ -64,8 +64,6 @@
                         <input value="<?php echo $row['apellidos'] ?>" type="text"  class="form-control"name="apellidos" data-validation="required" placeholder="Nombres">
                         <hr>
                     </div>
-
- 
         <?php 
 
            $array = array("Tecnico", "Transversal", "Ingles");   
@@ -93,16 +91,38 @@
                         <hr>
                     </div>
 
+                    <?php 
+
+                         $array = array("Planta", "Contratista");   
+                         $tipo=$row['vinculacion1'];
+
+                    ?>
+
                     <div class="form-group">
                          <label for=""><strong>Vinculacion</strong></label>
                          <select id="datos" name="vinculacion1" class="form-control" onchange="habilitarCombo(this.value);">
                              <option value=""><?php echo $row['vinculacion1'] ?></option>
-                             <option value="Planta">Planta</option>
-                             <option value="Contratista">Contratista</option>
- 
+
+                             <?php foreach ($array as $valor) { ?>           
+
+                            <?php if ($valor != $tipo ) { ?>
+                               <option value="<?= $valor ?>"><?php echo $valor?></option>   
+                            
+                                                 
+                            <?php } ?>            
+                               
+
+                    <?php } ?>
                          </select>
                         <hr>
                     </div>
+
+                    <?php 
+
+                         $array = array("Carrera", "Provicional");   
+                         $tipo2=$row['tipoplanta'];
+
+                    ?>
 
                        <div class="form-group">
                          <label for=""><strong>Tipo Planta</strong></label>
@@ -110,7 +130,15 @@
                              <option value=""><?php echo $row['tipoplanta'] ?></option>
                              <option value="Carrera">Carrera</option>
                              <option value="Provisional">Provisional</option>
- 
+
+                            <?php foreach ($array as $valor) { ?>           
+
+                            <?php if ($valor != $tipo2 ) { ?>
+                               <option value="<?= $valor ?>"><?php echo $valor?></option>   
+                                         
+                            <?php } ?>            
+                               
+                    <?php } ?>
                          </select>
                         <hr>
                     </div>
@@ -126,19 +154,30 @@
                          </select>
                         <hr>
                     </div>
+                     <?php 
 
+                        $array = array("32", "40");   
+                        $hora=$row['cantidadhoras'];
+
+                    ?>
                      <div class="form-group">
                          <label for=""><strong>Catntidad Horas*</strong></label>
                          <select  name="cantidadhoras" class="form-control">
                              <option value=""><?php echo $row['cantidadhoras']?></option>
-                             <option value="32">32</option>
-                             <option value="48">40</option>
+
+                            <?php foreach ($array as $valor) { ?>           
+
+                            <?php if ($valor != $hora ) { ?>
+                               <option value="<?= $valor ?>"><?php echo $valor?></option>   
+                            
+                                                 
+                            <?php } ?>            
+                               
+                    <?php } ?>
  
                          </select>
                         <hr>
                     </div>
-
-
                     <div class="form-group">
                          <label for=""><strong>Actividades Administrativas</strong></label>
                          <select  name="actadministrativas" class="form-control">
@@ -146,12 +185,9 @@
                              <option value="Sindesena">Sindesena</option>
                              <option value="Articulacion">Articulacion</option>
                              <option value="Virtual">Virtual</option>
-
- 
                          </select>
                         <hr>
                     </div>
-
                      <div class="form-group">
                          <label for=""><strong>Area</strong></label>
                          <select  name="area" class="form-control">
@@ -177,6 +213,28 @@
                              <option value="Motos">Motos</option>
                              <option value="Mobiliario y Maderas">Mobiliario y Maderas</option>
                              <option value="Proyectos y Emprendimiento">Proyectos y Emprendimiento</option>
+                         </select>
+                        <hr>
+                    </div>
+                    <?php 
+
+                        $array = array("industria", "automatizacion");   
+                        $cent=$row['centro'];
+
+                    ?>
+                    <div class="form-group">
+                         <label for=""><strong>Centro*</strong></label>
+                         <select  name="centro" class="form-control">
+                             <option value=""><?php echo $row['centro']?></option>
+                        
+                            <?php foreach ($array as $valor) { ?>           
+
+                            <?php if ($valor != $cent ) { ?>
+                               <option value="<?= $valor ?>"><?php echo $valor?></option>   
+                                              
+                            <?php } ?>            
+                               
+                    <?php } ?>
                          </select>
                         <hr>
                     </div>

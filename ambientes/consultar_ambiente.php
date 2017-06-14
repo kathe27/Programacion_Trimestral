@@ -40,7 +40,7 @@
 		
 	 <div class="col-md-6 col-md-offset-3 box ">
 	 <a class=" glyphicon glyphicon-arrow-left btn btn-danger" href="ambientes.php">Volver</a><br><br>
-		<table  class="text-center table table-hover box">
+		<table  class="text-center table table-hover">
 			<tr>
 				<td><strong>Ambiente</strong></td>
 				<td><strong>Descripcion</strong></td>

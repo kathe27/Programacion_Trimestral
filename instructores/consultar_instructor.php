@@ -51,12 +51,7 @@
 				<th>Cantidad Horas</th>
 				<th>Actividades Administrativas</th>
 				<th>Area</th>
-
-
-
-
-
-
+				<th>Centro</th>
 			</tr>
 		</div>
 
@@ -71,18 +66,13 @@
 							<td>'.$row["nombres"].'</td>
 							<td>'.$row["apellidos"].'</td>
 							<td>'.$row["especialidad"].'</td>
-
 							<td>'.$row["vinculacion1"].'</td>
-
 							<td>'.$row["tipoplanta"].'</td>
 							<td>'.$row["tipocontrato"].'</td>
 							<td>'.$row["cantidadhoras"].'</td>
 							<td>'.$row["actadministrativas"].'</td>
 							<td>'.$row["area"].'</td>
-
-
-
-
+							<td>'.$row["centro"].'</td>
 						 </tr>';
 				}	
 		 ?>

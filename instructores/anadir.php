@@ -120,7 +120,6 @@
                              <option value="">Seleccionar...</option>
                              <option value="32">32</option>
                              <option value="48">40</option>
- 
                          </select>
                     </div>
                     <hr>
@@ -132,10 +131,7 @@
                              <option value="Sindesena">Sindesena</option>
                              <option value="Articulacion">Articulacion</option>
                              <option value="Virtual">Virtual</option>
-
- 
                          </select>
-                       
                     </div>
                     <hr>
 
@@ -165,10 +161,16 @@
                              <option value="Mobiliario y Maderas">Mobiliario y Maderas</option>
                              <option value="Proyectos y Emprendimiento">Proyectos y Emprendimiento</option>
                          </select>
-                        
                     </div>
                     <hr>
-
+                    <div class="form-group">
+                         <label for=""><strong>Centro*</strong></label>
+                         <select data-validation="required"  name="centro" class="form-control">
+                             <option value="">Seleccionar...</option>
+                             <option value="industria">Industria</option>
+                             <option value="automatizacion">Automatizacion</option>
+                         </select>
+                    </div>
                     <button type="submit" class="btn btn-success">Añadir</button>
                     <button type="reset" class="btn btn-default">Reiniciar</button>
 
