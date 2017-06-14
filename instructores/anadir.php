@@ -119,7 +119,7 @@
                          <select data-validation="required"  name="cantidadhoras" class="form-control">
                              <option value="">Seleccionar...</option>
                              <option value="32">32</option>
-                             <option value="48">40</option>
+                             <option value="40">40</option>
                          </select>
                     </div>
                     <hr>
@@ -167,8 +167,8 @@
                          <label for=""><strong>Centro*</strong></label>
                          <select data-validation="required"  name="centro" class="form-control">
                              <option value="">Seleccionar...</option>
-                             <option value="industria">Industria</option>
-                             <option value="automatizacion">Automatizacion</option>
+                             <option value="Industria">Industria</option>
+                             <option value="Automatizacion">Automatizacion</option>
                          </select>
                     </div>
                     <button type="submit" class="btn btn-success">Añadir</button>
@@ -199,6 +199,8 @@
                         $cantidadhoras=$_POST['cantidadhoras'];
                         $actadministrativas=$_POST['actadministrativas'];
                         $area=$_POST['area'];
+                        $centro=$_POST['centro'];
+
 
 
 
@@ -206,7 +208,8 @@
 
                             
                             $con = mysqli_connect("localhost","root","","programacion_trimestral");
-                            $query = mysqli_query($con , "INSERT INTO instructores(nombres, apellidos, especialidad, vinculacion1, tipoplanta, tipocontrato, cantidadhoras, actadministrativas, area) VALUES('$nombres','$apellidos','$especialidad','$vinculacion1','$tipoplanta','$tipocontrato','$cantidadhoras','$actadministrativas','$area')");
+                            $query = mysqli_query($con , "INSERT INTO instructores(nombres, apellidos, especialidad, vinculacion1, tipoplanta, tipocontrato, cantidadhoras, actadministrativas, area, centro) 
+                                VALUES('$nombres','$apellidos','$especialidad','$vinculacion1','$tipoplanta','$tipocontrato','$cantidadhoras','$actadministrativas','$area','$centro')");
 
                             if($query){
                                 echo "<script>window.location.replace('gestionarIns.php?val=a')</script>";

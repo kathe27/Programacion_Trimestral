@@ -46,6 +46,9 @@
 		</div>
 	</div>
 </div>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+
 
 <?php 
 
@@ -58,14 +61,14 @@
 
 			echo "<script>window.location.replace('../index.php');</script>";
 		}else{
-			echo "<div class='alert alert-danger col-md-4 col-md-offset-5 text-center'>
+			echo "<div class='alert alert-danger col-md-4 col-md-offset-4 text-center'>
 								    <div >
 									  <div class='alert-icon'>									
 									  </div>
-									  <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+									  <button type='button' class='close' data-dismiss='alert' aria-label='Closed'>
 										<span aria-hidden='true'><i class='material-icons'>clear</i></span>
 									  </button>
-									  <b>Info alert:</b> Datos incorrectos
+									  <b>Error:</b> Datos incorrectos!
 								    </div>
 									</div>";
 		}

@@ -309,9 +309,9 @@ if (isset($_POST['from']))
 
                     $con= mysqli_connect("localhost","root","","programacion_trimestral");
                     $qry5=mysqli_query($con, "SELECT * FROM fichas");
-                    $qry4=mysqli_query($con, "SELECT * FROM instructores WHERE centro='automatizacion' ");
+                    $qry4=mysqli_query($con, "SELECT * FROM instructores WHERE centro='Automatizacion' ");
                     $qry3=mysqli_query($con, "SELECT * FROM ambientes WHERE centro='automatizacion' ");
-                    $qry2=mysqli_query($con, "SELECT * FROM instructores WHERE centro='industria' ");
+                    $qry2=mysqli_query($con, "SELECT * FROM instructores WHERE centro='Industria' ");
                     $qry= mysqli_query($con,"SELECT * FROM ambientes WHERE centro='industria'");
                     $contador=0;
                  
@@ -334,14 +334,15 @@ if (isset($_POST['from']))
                     <label for="">Instructor</label>
                     <select class="form-control" name="instructori" id="d2" disabled="true">
 
-                        <?php while($row2 = mysqli_fetch_array($qry2)) { ?>  
+                        <?php while($row = mysqli_fetch_array($qry2)) { ?>  
 
-                    <option value="<?= $row2['nombres'] ?>"><?= $row2['nombres'] ?></option>            
-                    <?php } ?>
+                    <option value="<?= $row['nombres'] ?>"><?= $row['nombres'] ?></option>            
+                    <?php }?>
                     <option value=""></option>
                     </select>
 
                     <br>
+
 
                      <label for="title">Ambiente</label>
                     <select class="form-control" name="ambientea" id="d3" disabled="true">
