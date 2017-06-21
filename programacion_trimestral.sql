@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-06-2017 a las 18:28:23
+-- Tiempo de generación: 21-06-2017 a las 17:23:11
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -190,11 +190,72 @@ CREATE TABLE `instructores` (
 --
 
 INSERT INTO `instructores` (`id`, `nombres`, `apellidos`, `especialidad`, `vinculacion1`, `tipoplanta`, `tipocontrato`, `cantidadhoras`, `actadministrativas`, `area`, `centro`) VALUES
-(6, 'Oscar Fernando', 'Aristizabal Cardona', 'Tecnico', 'Contratista', '', 'Por Horas', '32', '', '', 'industria'),
-(7, 'Oscar Fernando', 'Aristizabal Cardona', 'Tecnico', 'Planta', 'Carrera', 'No Aplica', '48', 'Articulacion', 'Informatica y Sistemas', 'industria'),
-(8, 'Oscar Fernando', 'Aristizabal Cardona', 'Transversal', 'Planta', 'Carrera', 'No Aplica', '48', 'Articulacion', 'Gestion Integrada de la Calidad', 'industria'),
-(9, 'Oscar Fernando', 'Aristizabal Cardona', 'Tecnico', 'Contratista', 'No Aplica', 'Por Horas', '32', 'Articulacion', 'Joyeria', 'industria'),
-(10, 'Nora', 'jimenez henao', 'Transversal', '', '', 'No Aplica', '', '', '', 'automatizacion');
+(1, 'ROLAND', 'ROTH ECHEVERRY', 'Ingles', 'Contratista', 'No Aplica', 'Termino Fijo', '32', 'Virtual', 'Ingles Virtual', 'Industria'),
+(2, 'SANDRA MILENA', 'TRUJILLO ORTIZ', 'Transversal', 'Contratista', 'No Aplica', 'Termino Fijo', '32', 'Virtual', 'Confeccion', 'Industria'),
+(3, 'DIEGO  ', 'GIRALDO RAMIREZ', 'Transversal', 'Contratista', 'No Aplica', 'Termino Fijo', '32', 'Virtual', 'Electricidad', 'Industria'),
+(4, 'MONICA EUGENIA', 'MONTOYA ARIAS', 'Transversal', 'Contratista', 'No Aplica', 'Termino Fijo', '32', 'Virtual', 'Salud Ocupacional', 'Industria'),
+(5, 'NATALIA', 'ERAZO BECERRA', 'Transversal', 'Contratista', 'No Aplica', 'Termino Fijo', '32', 'Virtual', 'Electricidad', 'Industria'),
+(6, 'CLAUDIA SONIA', 'SERNA GRANADA', 'Ingles', 'Contratista', 'No Aplica', 'Termino Fijo', '32', 'Virtual', 'Ingles Virtual', 'Industria'),
+(7, 'CARMEN ELENA', 'HERNANDEZ RINCON', 'Transversal', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Etica y Comunicacion', 'Industria'),
+(8, 'ALEXANDER', 'ROMERO MORENO', 'Transversal', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Equipo Tecnico pedagogico', 'Industria'),
+(9, 'PAULA ANDREA ', 'CRUZ MEJÃA ', 'Transversal', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Gestion Integrada de la Calidad', 'Industria'),
+(10, 'MARIA BEATRIZ', 'PAVA HURTADO', 'Ingles', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Ingles Presencial', 'Industria'),
+(11, 'LUISA FERNANDA', 'ECHEVERRI CABALLERO', 'Transversal', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Etica y Comunicacion', 'Industria'),
+(12, 'LUISA FERNANDA', 'CASTAÃ‘O CALVO', 'Transversal', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Cultura Fisica', 'Industria'),
+(13, 'GERMAN', 'RODRIGUEZ VALENCIA', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Construccion', 'Industria'),
+(14, 'OSCAR FERNANDO', 'ARISTIZABAL CARDONA', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Informatica y Sistemas', 'Industria'),
+(15, 'ANDRES MAURICIO', 'JARAMILLO GONZALEZ', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Automotriz', 'Industria'),
+(16, 'JORGE ALBERTO', 'TAMAYO GRISALES', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Construccion', 'Industria'),
+(17, 'DIEGO ANDRES', 'SERNA VELASQUEZ', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'DiseÃ±o Mecanico', 'Industria'),
+(18, 'STHARLING MELODY', 'RAMOS GIRALDO', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Electricidad', 'Industria'),
+(19, 'LUIS CAMILO', 'ESTRADA PATIÃ‘O', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Automotriz', 'Industria'),
+(20, 'OLGA CLEMENCIA', 'MARIN HENAO', 'Transversal', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Salud Ocupacional', 'Industria'),
+(21, 'ANDRÃ‰S FELIPE', 'LÃ“PEZ CHICA', 'Transversal', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Ambiental', 'Industria'),
+(22, 'GLADYS FRANCELLY', 'CARDONA FRANCO', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Confeccion', 'Industria'),
+(23, 'JAVIER', 'ARIZA USECHE', 'Transversal', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Equipo Tecnico pedagogico', 'Industria'),
+(24, 'JAIME ADOLFO', 'FUENTES SÃNCHEZ', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Motos', 'Industria'),
+(25, 'LORENA PATRICIA', 'VALENCIA', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Salud Ocupacional', 'Industria'),
+(26, 'FERNANDO', 'ARCINIEGAS CORDOBA', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Gestion Integrada de la Calidad', 'Industria'),
+(27, 'JHON FREDY', 'DUQUE GALLEGO', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Construccion', 'Industria'),
+(28, 'ANDRÃ‰S FELIPE ', 'JURADO PATIÃ‘O ', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Equipo Tecnico pedagogico', 'Industria'),
+(29, 'ANGELA MARCELA', 'CASTELLANOS ORTEGON', 'Transversal', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Ingles Presencial', 'Industria'),
+(30, 'CAMILO ANDRES', 'ARANGO MUÃ‘OZ', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Mobiliario y Maderas', 'Industria'),
+(31, 'YANETH', 'MEJIA RENDON ', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Informatica y Sistemas', 'Industria'),
+(32, 'DANIEL FELIPE ', 'MONCADA CARDONA ', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Construccion', 'Industria'),
+(33, 'MARIO LEANDRO', 'VANEGAS VALENCIA', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Electricidad', 'Industria'),
+(34, 'VICTOR HUGO', 'ARIAS SALDARRIAGA', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Equipo Tecnico pedagogico', 'Industria'),
+(35, 'MARIO', 'RAIGOSA ARANGO', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Construccion', 'Industria'),
+(36, 'JHONATAN', 'FRANCO ARIAS', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Soldadura', 'Industria'),
+(37, 'YAMILETH', 'ERAZO BECERRA', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Informatica y Sistemas', 'Industria'),
+(38, 'ANDREA DEL PILAR', 'ANDREA DEL PILAR', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Equipo Tecnico pedagogico', 'Industria'),
+(39, 'ALEXANDRA', 'NARANJO CARDONA ', 'Transversal', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Ingles Presencial', 'Industria'),
+(40, 'ADALBERTO', 'ACEVEDO TELLES', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'DiseÃ±o Mecanico', 'Industria'),
+(41, 'LUCILA', 'NOREÃ‘A ARIAS', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Confeccion', 'Industria'),
+(42, 'JORGE HERNÃN', 'ALZATE BUITRAGO', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Construccion', 'Industria'),
+(43, 'JOHN ALEXANDER', 'ARENAS NORIEGA', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Construccion', 'Industria'),
+(44, 'DIANA EUGENIA', 'HENAO BARRAGAN', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Motos', 'Industria'),
+(45, 'ANDRES JULIAN', 'HOYOS CAICEDO', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Informatica y Sistemas', 'Industria'),
+(46, 'FERNANDO', 'MEJÃA LÃ“PEZ ', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Equipo Tecnico pedagogico', 'Industria'),
+(47, 'CLAUDIO ALBERTO', 'VALENCIA SÃNCHEZ', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Electricidad', 'Industria'),
+(48, 'CESAR AUGUSTO', 'RAMIREZ OCAMPO', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Mobiliario y Maderas', 'Industria'),
+(49, 'JUAN PABLO', 'MEJÃA RAMÃREZ', 'Transversal', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Ambiental', 'Industria'),
+(50, 'ANGELA MARÃA ', 'ALZATE BUITRAGO', 'Transversal', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Etica y Comunicacion', 'Industria'),
+(51, 'JHON KEVIN', 'FLOREZ PEÃ‘A', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Automotriz', 'Industria'),
+(52, 'LINA ROCIO', 'OSPINA DUQUE', 'Transversal', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Salud Ocupacional', 'Industria'),
+(53, 'JUNSUN', 'SUNICO CONSISTENTE', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Ingles Presencial', 'Industria'),
+(54, 'ANDRÃ‰S FELIPE', 'HENAO LÃ“PEZ', 'Transversal', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Cultura Fisica', 'Industria'),
+(55, 'SARA MARIA', 'CLAVIJO ARRUBLA ', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Construccion', 'Industria'),
+(56, 'NESTOR MAURICIO', 'PINTO NOREÃ‘A', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Electricidad', 'Industria'),
+(57, 'KAREN VIVIANA ', 'LEMOS CEBALLOS ', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Confeccion', 'Industria'),
+(58, 'JORGE AUGUSTO ', 'VILLADA SUAZA ', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Informatica y Sistemas', 'Industria'),
+(59, 'DIANA CRISTINA', 'MONTOYA HOYOS', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Informatica y Sistemas', 'Industria'),
+(60, 'LUISA FERNANDA', 'CALLEJAS ORREGO ', 'Tecnico', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Informatica y Sistemas', 'Industria'),
+(61, 'CARLOS ANDRÃ‰S', 'HENAO LEMA ', 'Transversal', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Ambiental', 'Industria'),
+(62, 'EMILCE SILVANA ', 'CERON ROSERO ', 'Transversal', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Salud Ocupacional', 'Industria'),
+(63, 'PAOLA NATALIA ', 'OROZCO OROZCO ', 'Transversal', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Ingles Presencial', 'Industria'),
+(64, 'ASDRUBAL ', 'GOMEZ GALEANO ', 'Transversal', 'Contratista', 'No Aplica', 'TÃ©rmino Fijo', '32', 'Articulacion', 'Ingles Voluntarios', 'Industria'),
+(65, 'JAVIER MAURICIO', 'CORTES MORENO', 'Tecnico', 'Contratista', 'No Aplica', 'Por Horas', '32', 'Articulacion', 'Joyeria', 'Industria'),
+(66, 'JOSE URIEL', 'GALLEGO BERNAL', 'Tecnico', 'Contratista', 'No Aplica', 'Por Horas', '32', 'Articulacion', 'Redes para Gas', 'Industria');
 
 -- --------------------------------------------------------
 
@@ -268,7 +329,7 @@ ALTER TABLE `instructores`
 -- AUTO_INCREMENT de la tabla `ambientes`
 --
 ALTER TABLE `ambientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT de la tabla `eventos`
 --
@@ -283,7 +344,7 @@ ALTER TABLE `fichas`
 -- AUTO_INCREMENT de la tabla `instructores`
 --
 ALTER TABLE `instructores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

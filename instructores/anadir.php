@@ -148,6 +148,7 @@
                              <option value="Salud Ocupacional">Salud Ocupacional</option>
                              <option value="Soldadura">Soldadura</option>
                              <option value="Ingles Presencial">Ingles Presencial</option>
+                             <option value="Ingles Virtual">Ingles Virtual</option>
                              <option value="Ingles Voluntarios">Ingles Voluntarios</option>
                              <option value="Equipo Tecnico pedagogico">Equipo Tecnico pedagogico</option>
                              <option value="Cultura Fisica">Cultura Fisica</option>
