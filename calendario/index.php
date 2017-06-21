@@ -320,6 +320,8 @@ if (isset($_POST['from']))
 
                     <label for="title">Ambiente</label>
                     <select class="form-control" name="ambientei" id="d1" disabled="true">
+                    <option value="">Seleccione...</option>
+
 
                     <?php while($row = mysqli_fetch_array($qry)) { ?>
                        
@@ -333,6 +335,7 @@ if (isset($_POST['from']))
 
                     <label for="">Instructor</label>
                     <select class="form-control" name="instructori" id="d2" disabled="true">
+                    <option value="">Seleccione...</option>
 
                         <?php while($row = mysqli_fetch_array($qry2)) { ?>  
 
@@ -346,6 +349,8 @@ if (isset($_POST['from']))
 
                      <label for="title">Ambiente</label>
                     <select class="form-control" name="ambientea" id="d3" disabled="true">
+                    <option value="">Seleccione...</option>
+
 
                     <?php while($row3 = mysqli_fetch_array($qry3)) { ?>
                        
@@ -359,6 +364,8 @@ if (isset($_POST['from']))
 
                     <label for="">Instructor</label>
                     <select class="form-control" name="instructora" id="d4" disabled="true">
+                    <option value="">Seleccione...</option>
+                    
 
                         <?php while($row4 = mysqli_fetch_array($qry4)) { ?>  
 
