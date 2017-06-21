@@ -1,4 +1,5 @@
 <?php
+        
 
 /**
 **
@@ -33,6 +34,7 @@
 
     // Obtenemos los datos
     $row = $bd->fetch_assoc();
+  
 
     // titulo 
     $titulo=$row['title'];
@@ -106,5 +108,11 @@ if (isset($_POST['eliminar_evento']))
 </body>
 <form action="" method="post">
     <button type="submit" class="btn btn-danger" name="eliminar_evento">Eliminar</button>
+    <a href="exportar_pdf.php?id=<?= $row['id']  ?>" class="btn btn-success" name="exportar_pdf">
+       EXportar a PDF
+    </a>
 </form>
 </html>
+
+
+
