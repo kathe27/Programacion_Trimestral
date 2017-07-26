@@ -78,9 +78,6 @@
     ?>
 	<a  class="btn btn-success " href="anadir_ambiente.php">Añadir Ambiente
 		<i  class="glyphicon glyphicon glyphicon-plus" ></i>
-
-		<a  class="btn btn-info pull-right" href="../calendario/index.php">Detalles
-		<i  class="glyphicon glyphicon glyphicon-search" ></i>
 	</a><br><br>
 
 
@@ -116,6 +113,7 @@
 			<tr>
 					<td><?php echo $row['nombre'] ?></td>
 					<td>
+			
 						<a class='btn btn-info' href='consultar_ambiente.php?id=<?php echo $row['id'] ?>'>
 							<i data-toggle='tooltip' data-placement='top' title='Consultar'  class='glyphicon glyphicon-search' ></i>
 						</a>
@@ -125,13 +123,19 @@
 						</a>
 						<a class='btn btn-danger' href='eliminar_ambiente.php?id=<?php echo $row['id'] ?>'>
 							<i data-toggle='tooltip' data-placement='top' title='Eliminar' class='glyphicon glyphicon-trash' ></i>
+
+						</a>
+							<a class='btn btn-default' href="../calendario<?=$row['id']?>/index.php?id=<?php echo $row['id'] ?>&&men=bien"> <?= $row['nombre'] ?>
+							<i data-toggle='tooltip' data-placement='top' title='Horario' class='glyphicon glyphicon-time' ></i>
 						</a>
 						
 					</td>
 				</tr>
 
 		<?php } ?>
-	 
+						
+
+						
 	</table>
 </div>
 
