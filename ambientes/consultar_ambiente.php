@@ -27,7 +27,7 @@
 		      <div class="form-group">
 		        <input type="text" class="form-control" placeholder="Buscar">
 		      </div>
-		      <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-zoom-in"></i></button>
+		      <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
 		    </form>
 		  </div>
 		</nav>
@@ -43,7 +43,9 @@
 		<table  class="text-center table table-hover">
 			<tr>
 				<td><strong>Ambiente</strong></td>
-				<td><strong>Descripcion</strong></td>
+				<td><strong>Cupo</strong></td>
+				<td><strong>Centro</strong></td>
+
 <!-- 				<td><strong>Disponibilidad</strong></td> -->
 			</tr>
 		</div>
@@ -57,7 +59,8 @@
 		while ($row = mysqli_fetch_array($sql)) {
 					echo '<tr>
 							<td>'.$row["nombre"].'</td>
-							<td>'.$row["descripcion"].'</td>
+							<td>'.$row["cupo"].'</td>
+							<td>'.$row["centro"].'</td>
 						 </tr>';
 				}	
 		 ?>

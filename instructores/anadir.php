@@ -28,7 +28,7 @@
               <div class="form-group">
                 <input type="text" class="form-control" placeholder="Buscar">
               </div>
-              <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-zoom-in"></i></button>
+              <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
             </form>
           </div>
         </nav>
@@ -144,11 +144,11 @@
                              <option value="Etica y Comunicacion">Etica y Comunicacion</option>
                              <option value="Confeccion">Confeccion</option>
                              <option value="Construccion">Construccion</option>
+                             <option value="Emprendimiento">Emprendimiento</option>
                              <option value="Redes para Gas">Redes para Gas</option>
                              <option value="Salud Ocupacional">Salud Ocupacional</option>
                              <option value="Soldadura">Soldadura</option>
                              <option value="Ingles Presencial">Ingles Presencial</option>
-                             <option value="Ingles Virtual">Ingles Virtual</option>
                              <option value="Ingles Voluntarios">Ingles Voluntarios</option>
                              <option value="Equipo Tecnico pedagogico">Equipo Tecnico pedagogico</option>
                              <option value="Cultura Fisica">Cultura Fisica</option>
@@ -161,6 +161,24 @@
                              <option value="Motos">Motos</option>
                              <option value="Mobiliario y Maderas">Mobiliario y Maderas</option>
                              <option value="Proyectos y Emprendimiento">Proyectos y Emprendimiento</option>
+                             <option value="Metalmecanica">Metalmecanica</option>
+                             <option value="Competencias Laborales">Competencias Laborales</option>
+                             <option value="Electroneumatica">Electroneumatica</option>
+                             <option value="Neumatica y Electroneumatica">Neumatica y Electroneumatica</option>
+                             <option value="PLC">PLC</option>
+                             <option value="Electronica">Electronica</option>
+                             <option value="Electronica e Instrumentacion">Electronica e Instrumentacion</option>
+                             <option value="CNC">CNC</option>
+                             <option value="Multimedia">Multimedia</option>
+
+
+
+
+
+
+
+
+
                          </select>
                     </div>
                     <hr>

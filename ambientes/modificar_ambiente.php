@@ -36,7 +36,7 @@
 		      <div class="form-group">
 		        <input type="text" class="form-control" placeholder="Buscar">
 		      </div>
-		      <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-zoom-in"></i></button>
+		      <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
 		    </form>
 		  </div>
 		</nav>
@@ -58,8 +58,8 @@
 	                    <hr>
 	                </div>
 	                 <div class="form-group">
-	                <label for=""><strong>Descripcion</strong></label>
-	                	<textarea class="form-control" name="descripcion" cols="20" rows="8" placeholder="Descripcion"><?php echo $row['descripcion'] ?></textarea>
+	                <label for=""><strong>Cupo</strong></label>
+	                	<input data-validation="required" value="<?php echo $row['cupo'] ?>" type="number" name="cupo" class="form-control" placeholder="Cupo" >
 	                 <hr>
 	                 <!-- <div class="form-group">
 	                 	<label for=""><strong>Disponibilidad</strong></label>
@@ -91,10 +91,10 @@
 
 			} 
 			$nombre= mysqli_real_escape_string($con , $_POST["nombre"]);
-			$descripcion= mysqli_real_escape_string($con , $_POST["descripcion"]);
+			$cupo= mysqli_real_escape_string($con , $_POST["cupo"]);
 
 
-			$sql= "UPDATE ambientes SET nombre='$nombre',descripcion='$descripcion' WHERE id = $id";
+			$sql= "UPDATE ambientes SET nombre='$nombre',cupo='$cupo' WHERE id = $id";
 
 			if(!mysqli_query($con,$sql)){
 				die('Error: ' . mysqli_error($con));

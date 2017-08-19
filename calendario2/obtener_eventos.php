@@ -25,7 +25,7 @@ include 'config.php';
 // Sentencia sql para traer los eventos desde la base de datos
 
 
-$sql="SELECT * FROM eventos where ambientei='SISTEMAS 2' "; 
+$sql="SELECT * FROM eventos WHERE ambientei = 'SISTEMAS 2' "; 
 
 
 

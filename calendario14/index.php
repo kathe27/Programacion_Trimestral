@@ -39,6 +39,7 @@ if (isset($_POST['from']))
         // Recibimos el fecha de inicio y la fecha final desde el form
 
         $inicio = _formatear($_POST['from']);
+
         // y la formateamos con la funcion _formatear
 
         $final  = _formatear($_POST['to']);
@@ -48,7 +49,7 @@ if (isset($_POST['from']))
         // $inicio_normal = $_POST['from'];
 
         // y la formateamos con la funcion _formatear
-        $final_normal  = $_POST['to'];
+        
 
         $titulo  = evaluar($_POST['title']);
         // reemplazamos los caracteres no permitidos
@@ -71,50 +72,170 @@ if (isset($_POST['from']))
         }  
 
       
-         $conexion = mysqli_connect("localhost","root","","programacion_trimestral");  
-                     $fecha_inicio=mysqli_query($conexion,"SELECT inicio_normal FROM eventos");
-                     $inicio_normal = $_POST['from'];
-                     while($row =mysqli_fetch_array($fecha_inicio)){
-                        echo "hora ".$row['inicio_normal']."<br>";
+                      $conexion = mysqli_connect("localhost","root","","programacion_trimestral");  
 
+                     //consulta si contador fue iniciado
 
-                        if ($inicio_normal==$row['inicio_normal']) {
-                            $fecha_igual=$inicio_normal;
-                        }
-
-
-
-
+                     $session = mysqli_query($conexion,"SELECT * FROM contador");
+                     $session_row = mysqli_fetch_array($session);
+                     if(empty($session_row['contador'])){
+                        $verdadero = true;
+                     }else{
+                        $verdadero = false;
                      }
 
-                    if (empty($fecha_igual)) {
-                    // insertamos el evento
-                     $query="INSERT INTO eventos VALUES(null,'$centro','$ambientei','$instructori','$ambientea','$instructora','$area','$ficha','$especialidad','$titulo','','','$clase','$inicio','$final','$inicio_normal','$final_normal')";
-       
-                     // Ejecutamos nuestra sentencia sql
-                     $conexion->query($query); 
-                     $im=$conexion->query("SELECT MAX(id) AS id FROM eventos");
-                     $row = $im->fetch_row();  
-                     $id = trim($row[0]);
+                     $fecha_inicio=mysqli_query($conexion,"SELECT inicio_normal FROM eventos");
+                     $inicio_normal = $_POST['from'];
+                     $final_normal  = $_POST['to'];
 
-                     // para generar el link del evento
-                     $link = "$base_url"."descripcion_evento.php?id=$id";
+                     //validaciones para que no se crucen
 
-                     // y actualizamos su link
-                     $query="UPDATE eventos SET url = '$link' WHERE id = $id";
+                    $validacion1 = mysqli_query($conexion,"SELECT * FROM eventos 
+                    where inicio_normal >= '$inicio_normal' and final_normal <= '$final_normal' and ambientei ='MANUFACTURA MADERAS' ");
 
-                     // Ejecutamos nuestra sentencia sql
-                     $conexion->query($query); 
+                    $val = mysqli_fetch_array($validacion1);
 
-                     // redireccionamos a nuestro calendario
-                     header("Location:http://localhost/yaneth/programacion_trimestral/calendario?men=ver&&id=$id"); 
+                    //validacion2
+
+                      $query="INSERT INTO eventos VALUES(null,'$centro','$ambientei','$instructori','$ambientea','$instructora','$area','$ficha','$especialidad','$titulo','','','$clase','$inicio','$final','$inicio_normal','$final_normal')";             
+                      $conexion->query($query); 
+                      $limit = mysqli_query($conexion,"SELECT COUNT(id) FROM eventos WHERE ambientei ='MANUFACTURA MADERAS' ");
+                      $limit2 = mysqli_fetch_array($limit);
+                      $numero = $limit2['COUNT(id)'];
+                      $numero -=1;
+                      $traer_datos = mysqli_query($conexion,"SELECT * FROM eventos WHERE ambientei = 'MANUFACTURA MADERAS' limit $numero"); 
+                      $boolean = false;
+                      while($traer_datos2 = mysqli_fetch_array($traer_datos)){
+        
+
+        $inicio = $traer_datos2['inicio_normal'];
+        $final = $traer_datos2['final_normal'];
+
+        echo "<h1>".$inicio."</h1>";
+        echo "<h1>".$final."</h1>";
+
+        $VALIDAR2 = mysqli_query($conexion,"SELECT COUNT(id) FROM eventos WHERE inicio_normal >= '$inicio'
+        and final_normal <= '$final'");
+
+        $VALIDAR22 = mysqli_fetch_array($VALIDAR2);
+        
+        if($VALIDAR22['COUNT(id)'] > 1){
+                echo "<h1> la validacion ".$VALIDAR22['COUNT(id)']."</h1>"; 
+                $boolean = true;     
+        }
+
+
+     }    
+
+            
+
+        
+                     
+
+
+                     //validaciones del formulario
+
+
+                     $xYear = substr($inicio_normal, 0,4);
+                     $yYear = substr($final_normal, 0,4);
+
+                     $xMonth = substr($inicio_normal, 5,2);
+                     $yMonth = substr($final_normal, 5,2);
+
+                     $xDay = substr($inicio_normal, 8,2);
+                     $yDay = substr($final_normal, 8,2);
+
+
+                    $select = mysqli_query($conexion,"SELECT * FROM eventos WHERE inicio_normal BETWEEN '$inicio_normal'
+                    AND '$final_normal' AND final_normal BETWEEN '$final_normal' AND '$inicio_normal'");
+
+                    
+              
+                    
+                    
+
+                     
+                    if (empty($val)) {                                                               
+                       if($xYear == $yYear  ){
+                            if($xMonth <= $yMonth ) {
+                                if ($xDay <= $yDay  ) {
+                                    if ($boolean == false) {                                     
+                                                                  
+                                                 
+                                $inicio4 = _formatear($_POST['from']);    
+
+                                $final4  = _formatear($_POST['to']);                    
+                           
+                                 $query="INSERT INTO eventos VALUES(null,'$centro','$ambientei','$instructori','$ambientea','$instructora','$area','$ficha','$especialidad','$titulo','','','$clase','$inicio4','$final4','$inicio_normal','$final_normal')";
+                   
+                                 // Ejecutamos nuestra sentencia sql
+                                 $conexion->query($query); 
+                                 $im=$conexion->query("SELECT MAX(id) AS id FROM eventos");
+                                 $row = $im->fetch_row();  
+                                 $id = trim($row[0]);
+
+                                 // para generar el link del evento
+                                 $link = "http://localhost/yaneth/programacion_trimestral/calendario14/"."descripcion_evento.php?id=$id";
+
+                                 // y actualizamos su link
+                                 $query="UPDATE eventos SET url = '$link' WHERE id = $id";
+
+                                 // Ejecutamos nuestra sentencia sql
+                                 $conexion->query($query); 
+
+
+                                 // redireccionamos a nuestro calendario
+                                 header("Location:http://localhost/yaneth/programacion_trimestral/calendario14?men=ver&&id=$id"); 
+                               
+                                }else{
+                                    $conexion->query($query); 
+                                    $im=$conexion->query("SELECT MAX(id) AS id FROM eventos");
+                                    $row = $im->fetch_row();  
+                                    $id = trim($row[0]);
+                                    header("Location:http://localhost/yaneth/programacion_trimestral/calendario14?men=fal12&&id=$id");
+
+                         
+                                }
+                                }else{
+                                     $conexion->query($query); 
+                                     $im=$conexion->query("SELECT MAX(id) AS id FROM eventos");
+                                     $row = $im->fetch_row();  
+                                     $id = trim($row[0]);
+                                     header("Location:http://localhost/yaneth/programacion_trimestral/calendario14?men=fal2&&id=$id");
+
+             
+                                }
+
+                            }else{
+                                    $conexion->query($query); 
+                                     $im=$conexion->query("SELECT MAX(id) AS id FROM eventos");
+                                     $row = $im->fetch_row();  
+                                     $id = trim($row[0]);
+                                     header("Location:http://localhost/yaneth/programacion_trimestral/calendario14?men=fal3&&id=$id");
+
+                                    
+                            }
+                        }else{
+                                     $conexion->query($query); 
+                                     $im=$conexion->query("SELECT MAX(id) AS id FROM eventos");
+                                     $row = $im->fetch_row();  
+                                     $id = trim($row[0]);
+                                     header("Location:http://localhost/yaneth/programacion_trimestral/calendario14?men=fal4&&id=$id");
+
+   
+           
+                        }
                     }else{
                      $conexion->query($query); 
                      $im=$conexion->query("SELECT MAX(id) AS id FROM eventos");
                      $row = $im->fetch_row();  
                      $id = trim($row[0]);
-                     header("Location:http://localhost/yaneth/programacion_trimestral/calendario?men=fal&&id=$id");
+                     header("Location:http://localhost/yaneth/programacion_trimestral/calendario14?men=fal&&id=$id");
+
+                    
                     }
+
+                  
 
                     
     }
@@ -142,6 +263,27 @@ if (isset($_POST['from']))
 
 </head>
 <body style="background: white;">
+
+<?php 
+    
+     
+        //borrar ultimo registro
+
+
+                    $borrar_url =  mysqli_query($conexion,"SELECT * FROM eventos WHERE url ='' ");  
+                    
+
+                     while($borrar_url1 = mysqli_fetch_array($borrar_url)){
+                          $borrar_id1 = $borrar_url1['id'];
+                          echo "<h1>Numero: ".$borrar_id1."</h1>";
+                          $borrar_ul = "DELETE FROM eventos WHERE id='$borrar_id1'";   
+                          $conexion->query($borrar_ul);
+                     }
+
+?>
+
+
+
         <?php  if ($_GET) {
 
                     
@@ -155,20 +297,56 @@ if (isset($_POST['from']))
                     if ($valor == 'fal') {
                          echo "<div class='alert alert-danger alert-dismissible' role='alert'>
                       <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-                      <strong>IMPORTANTE!</strong> La hora que usted intenta agregar ya se encuentra ocupada en este ambiente
+                      <strong>IMPORTANTE!</strong> La hora que usted intenta agregar ya se encuentra ocupada en este ambiente!
+                    </div>";
+                    }
+
+                    if ($valor == 'fal12') {
+                         echo "<div class='alert alert-danger alert-dismissible' role='alert'>
+                      <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                      <strong>IMPORTANTE!</strong> **La hora que usted intenta agregar ya se encuentra ocupada en este ambiente!
+                    </div>";
+                    }
+
+
+                    if ($valor == 'fal10') {
+                         echo "<div class='alert alert-danger alert-dismissible' role='alert'>
+                      <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                      <strong>IMPORTANTE!</strong> La hora ya se encuentra ocupada!
+                    </div>";
+                    }
+
+                     if ($valor == 'fal2') {
+                         echo "<div class='alert alert-danger alert-dismissible' role='alert'>
+                      <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                      <strong>IMPORTANTE!</strong> El dia de fecha final esta antes de la de inicio!
+                    </div>";
+                    }
+
+                      if ($valor == 'fal3') {
+                         echo "<div class='alert alert-danger alert-dismissible' role='alert'>
+                          <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                          <strong>IMPORTANTE!</strong> El mes de fecha final esta antes de la de inicio!
+                        </div>";
+                    }
+
+                      if ($valor == 'fal4') {
+                         echo "<div class='alert alert-danger alert-dismissible' role='alert'>
+                      <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                      <strong>IMPORTANTE!</strong> El año de fecha final esta antes de la de inicio!
                     </div>";
                     }
 
                     if ($valor == 'ver') {
                          echo "<div class='alert alert-success alert-dismissible' role='alert'>
                       <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-                      <strong>Exito!</strong> La hora se ha agregado correctamente
+                      <strong>Exito!</strong> La hora se ha agregado correctamente!
                     </div>";
                     }
                     if($valor == 'bien'){
                          echo "<div class='alert alert-success alert-dismissible' role='alert'>
                       <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-                      <strong>Exito!</strong> Bienvenido
+                      <strong>Exito!</strong> Bienvenido!
                     </div>";
                     }
 
@@ -191,7 +369,7 @@ if (isset($_POST['from']))
         <div class="container">
                 <div class="row">
                         <div class="page-header"><h2></h2></div>
-                        <?php $ambientes = mysqli_query($conexion,"SELECT * from ambientes where id=$id"); 
+                        <?php $ambientes = mysqli_query($conexion,"SELECT * from ambientes where id=14"); 
                               $row = mysqli_fetch_array($ambientes);
                         ?>
                         <h1><?= $row['nombre']?></h1>
@@ -358,7 +536,7 @@ if (isset($_POST['from']))
         <form action="" method="post">
                     <label for="from">Inicio</label>
                     <div class='input-group date' id='from'>
-                        <input type='text' id="from" name="from" class="form-control" readonly />
+                        <input type='datetime' id="from" name="from" class="form-control"  />
                         <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                     </div>
 
@@ -366,17 +544,15 @@ if (isset($_POST['from']))
 
                     <label for="to">Final</label>
                     <div class='input-group date' id='to'>
-                        <input type='text' name="to" id="to" class="form-control" readonly />
+                        <input type='datetime' name="to" id="to" class="form-control"  />
                         <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                     </div>
 
                     <br>
 
                     <label for="tipo">Centro</label>
-                    <select class="form-control" name="centro" id="tipo" onchange="habilitar(this.value);">
-                        <option value="">Seleccione...</option>
+                    <select class="form-control" name="centro">
                         <option value="Industria">Industria</option>
-                        <option value="Automatizacion">Automatizacion</option>
                     </select>
 
                     <br>
@@ -394,22 +570,14 @@ if (isset($_POST['from']))
                      ?>
 
                     <label for="title">Ambiente</label>
-                    <select class="form-control" name="ambientei" id="d1" disabled="true">
-                    <option value="">Seleccione...</option>
-
-
-                    <?php while($row = mysqli_fetch_array($qry)) { ?>
-                       
-                    <option value="<?= $row['nombre'] ?>"><?= $row['nombre'] ?></option>         
-                    <?php } ?>
-                    <option value=""></option>
-
-
-
+                    <select class="form-control" name="ambientei">
+                        <option value="MANUFACTURA MADERAS">MANUFACTURA MADERAS</option>
                     </select>
 
+                    <br>
+
                     <label for="">Instructor</label>
-                    <select class="form-control" name="instructori" id="d2" disabled="true">
+                    <select class="form-control" name="instructori">
                     <option value="">Seleccione...</option>
 
                         <?php while($row = mysqli_fetch_array($qry2)) { ?>  
@@ -421,39 +589,9 @@ if (isset($_POST['from']))
 
                     <br>
 
-
-                     <label for="title">Ambiente</label>
-                    <select class="form-control" name="ambientea" id="d3" disabled="true">
-                    <option value="">Seleccione...</option>
-
-
-                    <?php while($row3 = mysqli_fetch_array($qry3)) { ?>
-                       
-                    <option value="<?= $row3['nombre'] ?>"><?= $row3['nombre'] ?></option>          
-                    <?php } ?>
-                    <option value=""></option>
-
-
-
-                    </select>
-
-                    <label for="">Instructor</label>
-                    <select class="form-control" name="instructora" id="d4" disabled="true">
-                    <option value="">Seleccione...</option>
-                    
-
-                        <?php while($row4 = mysqli_fetch_array($qry4)) { ?>  
-
-                    <option value="<?= $row4['nombres'] ?>"><?= $row4['nombres'] ?></option>          
-                    <?php } ?>
-                    <option value=""></option>
-                    </select>
-
-                    <br>
-
                      <label for="">Area</label>
                      <select  name="area" class="form-control">
-                         <option value="">Seleccionar...</option>
+                         <option value="">Seleccione...</option>
                          <option value="Ambiental">Ambiental</option>
                          <option value="Automotriz">Automotriz</option>
                          <option value="Etica y Comunicacion">Etica y Comunicacion</option>
@@ -480,6 +618,7 @@ if (isset($_POST['from']))
 
                     <label for="title">Ficha</label>
                     <select class="form-control" name="ficha" id="">
+                        <option value="">Seleccione...</option>
 
                     <?php while($row5 = mysqli_fetch_array($qry5)) { ?>
                        
@@ -492,7 +631,7 @@ if (isset($_POST['from']))
 
                     <label>Especialidad</label>
                     <select name="especialidad" class="form-control" id="espe">
-                        <option>Seleccione una opcion...</option>
+                        <option>Seleccione...</option>
                         <option value="Eectricidad">Electricidad</option>
                         <option value="Informatica">Informatica</option>
                         <option value="Salud Ocupacional">Salud Ocupacional</option>
@@ -507,6 +646,7 @@ if (isset($_POST['from']))
 
                     <label for="">Tipo de formacion</label>
                     <select name="class" class="form-control" id="tipo">
+                        <option value="">Seleccione...</option>
                         <option value="event-info">Diurna</option>
                         <option value="event-success">Mixta</option>
                         <option value="event-important">Nocturna</option>
@@ -531,22 +671,6 @@ if (isset($_POST['from']))
             });
 
         });
-    </script>
-    <script>
-    function habilitar(valor){
-        if (valor == 'Industria') {
-            document.getElementById('d1').disabled = false;
-            document.getElementById('d2').disabled = false;
-            document.getElementById('d3').disabled = true;
-            document.getElementById('d4').disabled = true;
-
-        }else{
-            document.getElementById('d1').disabled = true;
-            document.getElementById('d2').disabled = true;
-            document.getElementById('d3').disabled = false;
-            document.getElementById('d4').disabled = false;
-        }
-    }
     </script>
       </div>
       <div class="modal-footer">

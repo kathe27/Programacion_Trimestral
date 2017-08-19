@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Index</title>
+	<title>Fichas</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/custom.css">
 	<link rel="stylesheet" href="css/index.css">
@@ -16,7 +16,7 @@
 
 		    </div>
 		    <ul class="nav navbar-nav ">
-		      <li><a href="../index.php">Inicio</a></li>
+		      <li><a href="../index2.php">Inicio</a></li>
 		      <li><a href="../ambientes/ambientes.php">Ambientes</a></li>
 		      <li><a href="#">Fichas</a></li>
 		      <li><a href="../instructores/gestionarIns.php">Instructores</a></li>
@@ -26,7 +26,7 @@
 		        <input type="text" name="navb" class="form-control" placeholder="Buscar">
 
 		      </div>
-		      <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-zoom-in"></i></button>
+		      <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
 		    </form>
 		  </div>
 		</nav>
@@ -46,6 +46,29 @@
 			<hr>
 			<div class="col-md-6 col-md-offset-3">
 			<?php 
+
+
+			if ($_GET) {
+			$elimino = $_GET['val'];
+		
+			if ($elimino == 'elimino') {			   
+			   echo "<div class='panel-body'>
+            <div class='row'> 
+              <div class='alert alert-success alert-dismissable'>
+                <a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+                  <strong>La ficha</strong> se ha eliminado!
+            </div>";
+			}
+
+			if ($elimino == 'noelimino') {
+			   echo "<div class='panel-body'>
+            <div class='row'> 
+              <div class='alert alert-success alert-dismissable'>
+                <a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+                  <strong>La ficha</strong> no se pudo eliminar! 
+            </div>";
+			}
+		}
 				if ($_GET) {
 				 	
 					$valor=$_GET['val'];
@@ -103,7 +126,7 @@
 									if (!empty($nav)) {
 										$nav=$_POST['navb'];
 									$conexion = mysqli_connect('localhost', 'root', '', 'programacion_trimestral');
-									$insertar = mysqli_query($conexion, "SELECT * FROM fichas where ficha='$nav'");
+									$insertar = mysqli_query($conexion, "SELECT * FROM fichas where ficha LIKE '%".$nav."%'");
 									
 
 
@@ -115,18 +138,24 @@
 									}
 									
 									
-									while ($row = mysqli_fetch_array($insertar)) {
-										echo "
-											<tr>
-												<td class='text-center'>".$row['ficha']."</td>
-												<td class='text-center'>
-													<a class='btn btn-info glyphicon glyphicon-search' data-toggle='tooltip' title='Consultar' href='consultar_ficha.php?id=".$row['id']."'></a>
-													<a class='btn btn-success glyphicon glyphicon-pencil' data-toggle='tooltip' title='Modificar' href='editar_ficha.php?id=".$row['id']."'></a>
-													<a class ='btn btn-danger glyphicon glyphicon-trash' data-toggle='tooltip' title='Eliminar' href='eliminar_ficha.php?id=".$row['id']."'></a>
-												</td>
-											</tr>";
-									}
-								 ?>
+									while($row = mysqli_fetch_array($insertar)){ ?>
+			<tr>
+					<td><?php echo $row['ficha'] ?></td>
+					<td>
+			
+						<a class='btn btn-info' href='consultar_ficha.php?id=<?php echo $row['id'] ?>'>
+							<i data-toggle='tooltip' data-placement='top' title='Consultar'  class='glyphicon glyphicon-search' ></i>
+						</a>
+						
+						<a class='btn btn-success' href='editar_ficha.php?id=<?php echo $row['id'] ?>'>
+							<i data-toggle='tooltip' data-placement='top' title='Modificar' class='glyphicon glyphicon-pencil' ></i>
+						</a>
+						<a class='btn btn-danger btn-delete' data-delete="<?=$row['id']?>">
+							<i data-toggle='tooltip' data-placement='top' title='Eliminar' class='glyphicon glyphicon-trash' ></i>
+					</td>
+				</tr>
+
+		<?php } ?>
 							</table>
 						</div>
 					</div>
@@ -134,5 +163,16 @@
 			</div>
 		</div>
 	</div>
+		<script>
+		$(document).ready(function() {
+			$('.btn-delete').click(function(event) {
+				
+				if (confirm('Realmente desea eliminar esta ficha?')){
+					$id = $(this).attr('data-delete');
+					window.location.replace('eliminar_ficha.php?id='+$id);
+			}
+			});
+		});
+	</script>
 </body>
 </html>

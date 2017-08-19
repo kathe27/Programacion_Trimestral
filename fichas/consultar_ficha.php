@@ -32,7 +32,7 @@
 		      <div class="form-group">
 		        <input type="text" class="form-control" placeholder="Buscar">
 		      </div>
-		      <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-zoom-in"></i></button>
+		      <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
 		    </form>
 		  </div>
 		</nav>

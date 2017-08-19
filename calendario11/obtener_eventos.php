@@ -24,8 +24,12 @@ include 'config.php';
 
 // Sentencia sql para traer los eventos desde la base de datos
 
-$sql="SELECT * FROM eventos where ambientei='   
-DIESEL' "; 
+
+$sql="SELECT * FROM eventos WHERE ambientei = 'ELECTRICIDAD 2' "; 
+
+
+
+
 
 // Verificamos si existe un dato
 if ($conexion->query($sql)->num_rows)

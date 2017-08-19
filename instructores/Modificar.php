@@ -28,7 +28,7 @@
               <div class="form-group">
                 <input type="text" class="form-control" placeholder="Buscar">
               </div>
-              <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-zoom-in"></i></button>
+              <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
             </form>
           </div>
         </nav>
@@ -100,13 +100,19 @@
 
                     <div class="form-group">
                          <label for=""><strong>Vinculacion</strong></label>
-                         <select id="datos" name="vinculacion1" class="form-control" onchange="habilitarCombo(this.value);">
-                             <option value=""><?php echo $row['vinculacion1'] ?></option>
+                         <select id="datos" name="vinculacion1" class="form-control" onchange="habilitarCombo(this.value)">
+                             <option value="<?php echo $row['vinculacion1'] ?>"><?php echo $row['vinculacion1'] ?></option>
+
+
+
 
                              <?php foreach ($array as $valor) { ?>           
 
                             <?php if ($valor != $tipo ) { ?>
-                               <option value="<?= $valor ?>"><?php echo $valor?></option>   
+                               
+
+       
+                               <option value="<?= "$valor" ?>"> <?= $valor ?> </option> 
                             
                                                  
                             <?php } ?>            
@@ -127,14 +133,12 @@
                        <div class="form-group">
                          <label for=""><strong>Tipo Planta</strong></label>
                          <select id="d1" name="tipoplanta" class="form-control" disabled="true">
-                             <option value=""><?php echo $row['tipoplanta'] ?></option>
-                             <option value="Carrera">Carrera</option>
-                             <option value="Provisional">Provisional</option>
+                             <option value="<?php echo $row['tipoplanta'] ?>"><?php echo $row['tipoplanta'] ?></option>
 
                             <?php foreach ($array as $valor) { ?>           
 
                             <?php if ($valor != $tipo2 ) { ?>
-                               <option value="<?= $valor ?>"><?php echo $valor?></option>   
+                               <option value="<?= "$valor" ?>"><?php echo $valor?></option>   
                                          
                             <?php } ?>            
                                
@@ -142,14 +146,27 @@
                          </select>
                         <hr>
                     </div>
+                     <?php 
+
+                        $array = array("Por Horas", "Termino Fijo");   
+                        $tipo3=$row['tipocontrato'];
+
+                    ?>
 
                      
                        <div class="form-group">
                          <label for=""><strong>Tipo Contrato</strong></label>
                          <select id="d2" name="tipocontrato" class="form-control" disabled="true">
-                             <option value=""><?php echo $row['tipocontrato']?></option>
-                             <option value="Por Horas">Por Horas</option>
-                             <option value="Término Fijo">Termino Fijo</option>
+                              <option value="<?php echo $row['tipocontrato'] ?>"><?php echo $row['tipocontrato'] ?></option>
+
+                            <?php foreach ($array as $valor) { ?>           
+
+                            <?php if ($valor != $tipo3 ) { ?>
+                               <option value="<?= "$valor" ?>"><?php echo $valor?></option>   
+                                         
+                            <?php } ?>            
+                               
+                    <?php } ?>
  
                          </select>
                         <hr>
@@ -163,12 +180,12 @@
                      <div class="form-group">
                          <label for=""><strong>Catntidad Horas*</strong></label>
                          <select  name="cantidadhoras" class="form-control">
-                             <option value=""><?php echo $row['cantidadhoras']?></option>
+                             <option value="<?php echo $row['cantidadhoras']?>"><?php echo $row['cantidadhoras']?></option>
 
                             <?php foreach ($array as $valor) { ?>           
 
                             <?php if ($valor != $hora ) { ?>
-                               <option value="<?= $valor ?>"><?php echo $valor?></option>   
+                               <option value="<?= "$valor" ?>"><?php echo $valor?></option>   
                             
                                                  
                             <?php } ?>            
@@ -181,7 +198,7 @@
                     <div class="form-group">
                          <label for=""><strong>Actividades Administrativas</strong></label>
                          <select  name="actadministrativas" class="form-control">
-                             <option value=""><?php echo $row['actadministrativas']?></option>
+                             <option value="<?php echo $row['actadministrativas']?>"><?php echo $row['actadministrativas']?></option>
                              <option value="Sindesena">Sindesena</option>
                              <option value="Articulacion">Articulacion</option>
                              <option value="Virtual">Virtual</option>
@@ -191,12 +208,13 @@
                      <div class="form-group">
                          <label for=""><strong>Area</strong></label>
                          <select  name="area" class="form-control">
-                             <option value=""><?php echo $row['area']?></option>
+                             <option value="<?php echo $row['area']?>"><?php echo $row['area']?></option>
                              <option value="Ambiental">Ambiental</option>
                              <option value="Automotriz">Automotriz</option>
                              <option value="Etica y Comunicacion">Etica y Comunicacion</option>
                              <option value="Confeccion">Confeccion</option>
                              <option value="Construccion">Construccion</option>
+                             <option value="Emprendimiento">Emprendimiento</option>
                              <option value="Redes para Gas">Redes para Gas</option>
                              <option value="Salud Ocupacional">Salud Ocupacional</option>
                              <option value="Soldadura">Soldadura</option>
@@ -213,6 +231,12 @@
                              <option value="Motos">Motos</option>
                              <option value="Mobiliario y Maderas">Mobiliario y Maderas</option>
                              <option value="Proyectos y Emprendimiento">Proyectos y Emprendimiento</option>
+                             <option value="Metalmecanica">Metalmecanica</option>
+                             <option value="Competencias Laborales">Competencias Laborales</option>
+
+
+
+
                          </select>
                         <hr>
                     </div>
@@ -230,7 +254,7 @@
                             <?php foreach ($array as $valor) { ?>           
 
                             <?php if ($valor != $cent ) { ?>
-                               <option value="<?= $valor ?>"><?php echo $valor?></option>   
+                               <option value="<?= "$valor" ?>"><?php echo $valor?></option>   
                                               
                             <?php } ?>            
                                

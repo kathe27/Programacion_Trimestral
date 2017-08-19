@@ -17,7 +17,7 @@
            <a class="navbar-brand" href="#"><img id="img1" src="imgs/sena.png" class="img-rounded" width="100" height="100"></a>
         </div>
         <ul class="nav navbar-nav">
-          <li><a href="../index.php">Inicio</a></li>
+          <li><a href="../index2.php">Inicio</a></li>
           <li><a href="../ambientes/ambientes.php">Ambientes</a></li>
           <li><a href="../fichas/index_ficha.php">Fichas</a></li>
           <li><a href="#">Instructores</a></li>
@@ -26,7 +26,7 @@
           <div class="form-group">
             <input type="text" name="navb" class="form-control" placeholder="Buscar">
           </div>
-          <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-zoom-in"></i></button>
+          <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
         </form>
       </div>
     </nav>
@@ -46,6 +46,29 @@
 
 <div class="col-md-8 col-md-offset-2" >
   <?php 
+
+    if ($_GET) {
+      $elimino = $_GET['val'];
+    
+      if ($elimino == 'elimino') {         
+         echo "<div class='panel-body'>
+            <div class='row'> 
+              <div class='alert alert-success alert-dismissable'>
+                <a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+                  <strong>El instructor</strong> se ha eliminado!
+            </div>";
+      }
+
+      if ($elimino == 'noelimino') {
+         echo "<div class='panel-body'>
+            <div class='row'> 
+              <div class='alert alert-success alert-dismissable'>
+                <a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+                  <strong>El instructor</strong> no se pudo eliminar!
+            </div>";
+      }
+    }
+
         if ($_GET) {
           
           $valor=$_GET['val'];
@@ -55,7 +78,7 @@
             <div class='row'> 
               <div class='alert alert-success alert-dismissable'>
                 <a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-                  <strong>Instructor</strong> adicionado  con exito!
+                  <strong>El instructor</strong> se adiciono con exito!
             </div>";
          } 
 
@@ -64,7 +87,7 @@
             <div class='row'> 
               <div class='alert alert-success alert-dismissable'>
                 <a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-                  <strong>Instructor</strong> Eliminado  con exito!
+                  <strong>El instructor</strong> se ha eliminado con exito!
             </div>";
          } 
 
@@ -73,7 +96,7 @@
             <div class='row'> 
               <div class='alert alert-success alert-dismissable'>
                 <a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-                  <strong>Instructor</strong> Modificado  con exito!
+                  <strong>El instructor</strong> se ha modificado con exito!
             </div>";
          } 
        }
@@ -104,9 +127,9 @@
 
 
      if(!empty($nav)){
-        $nav = $_POST['navb'];
+    $nav = $_POST['navb'];
     $con = mysqli_connect('localhost','root','','programacion_trimestral');
-    $sql = mysqli_query($con, "SELECT * FROM instructores WHERE nombres = '$nav'");
+    $sql = mysqli_query($con, "SELECT * FROM instructores WHERE nombres LIKE '%".$nav."%'");
 
    
 
@@ -130,9 +153,9 @@
             <a class='btn btn-success' href='Modificar.php?id=<?php echo $row['id'] ?>'>
               <i data-toggle='tooltip' data-placement='top' title='Modificar' class='glyphicon glyphicon-pencil' ></i>
             </a>
-            <a class='btn btn-danger' href='<?php  ?> delete.php?id=<?php echo $row['id'] ?>'>
-              <i data-toggle=tooltip data-placement='top' title='Eliminar' class='glyphicon glyphicon-trash' ></i>
-            </a>
+           <a class='btn btn-danger btn-delete' data-delete="<?=$row['id']?>">
+              <i data-toggle='tooltip' data-placement='top' title='Eliminar' class='glyphicon glyphicon-trash' ></i>
+              </a>
             
           </td>
         </tr>
@@ -147,6 +170,18 @@
           $('[data-toggle="tooltip"]').tooltip(); 
       });
      </script>
+
+     <script>
+         $(document).ready(function() {
+             $('.btn-delete').click(function(event) {
+        
+            if (confirm('Realmente desea eliminar este instructor?')){
+             $id = $(this).attr('data-delete');
+            window.location.replace('delete.php?id='+$id);
+         }
+      });
+    });
+  </script>
   
 </body>
 </html>

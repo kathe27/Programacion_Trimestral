@@ -26,7 +26,7 @@
 		      <div class="form-group">
 		        <input type="text" class="form-control" placeholder="Buscar">
 		      </div>
-		      <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-zoom-in"></i></button>
+		      <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
 		    </form>
 		  </div>
 		</nav>
@@ -51,9 +51,18 @@
 	                    <hr>
 	                </div> -->
 	                <div class="form-group">
-	                 	<label for=""><strong>Descripcion*</strong></label>
-	                    <textarea data-validation="required" type="text" name="descripcion" class="form-control" placeholder="Descripcion" ></textarea>
+	                 	<label for=""><strong>Cupos*</strong></label>
+	                    <input data-validation="required" type="number" name="cupo" class="form-control" placeholder="Cupo" >
 	                </div>
+	                <hr>
+	       			<div class="form-group">
+                         <label for=""><strong>Centro*</strong></label>
+                         <select data-validation="required" name="centro" class="form-control">
+                             <option value="">Seleccionar...</option>
+                             <option value="industria">Industria</option>
+                             <option value="automatizacion">Automatizacion</option>
+                         </select>
+                    </div>
 	                <hr>
 	                <div class="form-group">
 	                    <button type="submit" class="btn btn-success">
@@ -94,16 +103,16 @@
 
 			} 
 			$nombre= mysqli_real_escape_string($con , $_POST["nombre"]);
-			$descripcion= mysqli_real_escape_string($con , $_POST["descripcion"]);
-			$disponibilidad= mysqli_real_escape_string($con , $_POST["disponibilidad"]);
+			$cupo= mysqli_real_escape_string($con , $_POST["cupo"]);
+			$centro= mysqli_real_escape_string($con , $_POST["centro"]);
 
 		
-			$sql= "INSERT INTO ambientes (nombre,descripcion,disponibilidad)
-				VALUES ('$nombre', '$descripcion', '$disponibilidad')";
+			$sql= "INSERT INTO ambientes (nombre,cupo,centro)
+				VALUES ('$nombre', '$cupo', '$centro')";
 
 			$nombre= mysqli_real_escape_string($con , $_POST["nombre"]);
-			$descripcion= mysqli_real_escape_string($con , $_POST["descripcion"]);
-			$disponibilidad= mysqli_real_escape_string($con , $_POST["disponibilidad"]);
+			$cupo= mysqli_real_escape_string($con , $_POST["cupo"]);
+			$centro= mysqli_real_escape_string($con , $_POST["centro"]);
 
 			if(!mysqli_query($con,$sql)){
 				die('Error: ' . mysqli_error($con));

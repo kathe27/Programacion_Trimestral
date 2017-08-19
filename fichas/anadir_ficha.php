@@ -25,7 +25,7 @@
 		      <div class="form-group">
 		        <input type="text" class="form-control" placeholder="Buscar">
 		      </div>
-		      <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-zoom-in"></i></button>
+		      <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
 		    </form>
 		  </div>
 		</nav>
@@ -34,7 +34,7 @@
 		<div class="row">
 		<h1 class="text-center">Añadir Fichas de Caracterización</h1>
 		<hr>
-			<div class="col-md-6 col-md-offset-3 box">
+			<div class="col-md-8 col-md-offset-2 box">
 			<br>
 				<div class="panel-default">
 					<a href="index_ficha.php" class="btn btn-danger"><i class="glyphicon glyphicon-arrow-left"></i>Volver</a>
@@ -90,8 +90,7 @@
 										<label>Fin Lectiva*</label><br>
 										<input type="date" 
 											class="form-control" 
-											name="fecha_lectiva"
-											data-validation="date">
+											name="fecha_lectiva">
 									</div>
 									<div class="form-group">
 										<label>Fecha Final*</label><br>
@@ -109,6 +108,7 @@
 											<option value="Nocturna">Nocturna</option>
 											<option value="Nocturna-Dual">Nocturna-Dual</option>
 											<option value="Dual">Dual</option>
+											<option value="Virtual">Virtual</option>
 										</select>
 									</div>
 									<button class="btn btn-success">Añadir 
